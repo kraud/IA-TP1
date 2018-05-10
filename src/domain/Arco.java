@@ -8,13 +8,14 @@ public class Arco {
 	private char tipoDeArco; // Define si es un arco horizontal (este-oeste) o vertical (norte-sur). 
 	private Casillero extremoA; // (tipoDeArco == h) => corresponde al nodo este ; (tipoDeArco == v) => corresponde al nodo norte
 	private Casillero extremoB; // (tipoDeArco == h) => corresponde al nodo oeste ; (tipoDeArco == v) => corresponde al nodo sur
+	private double longitud;
 	
-	
-	public Arco(String id, char tipo, Casillero cA, Casillero cB){
-		this.setId(id);
-		this.setTipoDeArco(tipo);
-		this.setExtremoA(cA);
-		this.setExtremoB(cB);
+	public Arco(String id, char tipo, Casillero cA, Casillero cB, double longitud){
+		this.id = id;
+		this.tipoDeArco = tipo;
+		this.extremoA = cA;
+		this.extremoB = cB;
+		this.longitud = longitud;
 	}
 
 
@@ -48,5 +49,15 @@ public class Arco {
 
 	public Casillero getExtremoB() {
 		return extremoB;
+	}
+
+
+	public void setLongitud(double longitud) {
+		this.longitud = longitud;
+	}
+
+
+	public double getLongitud() {
+		return longitud;
 	}
 }
