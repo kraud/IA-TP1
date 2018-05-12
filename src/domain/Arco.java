@@ -6,8 +6,8 @@ public class Arco {
 
 	private String id;
 	private char tipoDeArco; // Define si es un arco horizontal (este-oeste) o vertical (norte-sur). 
-	private Casillero extremoA; // (tipoDeArco == h) => corresponde al nodo este ; (tipoDeArco == v) => corresponde al nodo norte
-	private Casillero extremoB; // (tipoDeArco == h) => corresponde al nodo oeste ; (tipoDeArco == v) => corresponde al nodo sur
+	private Casillero extremoA; // (tipoDeArco == h) => corresponde al nodo oeste ; (tipoDeArco == v) => corresponde al nodo norte
+	private Casillero extremoB; // (tipoDeArco == h) => corresponde al nodo este ; (tipoDeArco == v) => corresponde al nodo sur
 	private double longitud;
 	
 	public Arco(String id, char tipo, Casillero cA, Casillero cB, double longitud){

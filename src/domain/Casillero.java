@@ -8,7 +8,7 @@ public class Casillero {
 	private double factorVelocidadSuperficie;
 	private boolean visitado;
 	private boolean obstaculo; // el area tiene un obstaculo solido (ropa, silla, etc)
-	private boolean mojado;
+	private int obstruccion; // -1 basura, 0 nada, 1 agua
 	
 	
 	public Casillero (String id){
@@ -16,7 +16,7 @@ public class Casillero {
 		this.factorVelocidadSuperficie = 1.0; // El valor por defecto, para superficies que no afectan la velocidad.
 		this.visitado = false;
 		this.obstaculo = false;
-		this.mojado = false;
+		this.obstruccion = 0;
 	}
 	
 	public Casillero (String id, double factorVelocidad){
@@ -24,15 +24,15 @@ public class Casillero {
 		this.factorVelocidadSuperficie = factorVelocidad;
 		this.visitado = false;
 		this.obstaculo = false;
-		this.mojado = false;
+		this.obstruccion = 0;
 	}
 	
-	public Casillero (String id, double factorVelocidad, boolean obstaculo, boolean mojado){
+	public Casillero (String id, double factorVelocidad, boolean obstaculo, int obstruccion){
 		this.id = id;
 		this.factorVelocidadSuperficie = factorVelocidad;
 		this.visitado = false;
 		this.obstaculo = obstaculo;
-		this.mojado = mojado;
+		this.obstruccion = obstruccion;
 	}
 	
 	public void setFactorVelocidadSuperficie(double factorVelocidadSuperficie) {
@@ -59,12 +59,12 @@ public class Casillero {
 		return obstaculo;
 	}
 
-	public void setMojado(boolean mojado) {
-		this.mojado = mojado;
+	public void setObstruccion(int obstruccion) {
+		this.obstruccion = obstruccion;
 	}
 
-	public boolean isMojado() {
-		return mojado;
+	public int getObstruccion() {
+		return obstruccion;
 	}
 	
 }

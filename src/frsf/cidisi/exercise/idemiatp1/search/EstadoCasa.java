@@ -1,5 +1,8 @@
 package frsf.cidisi.exercise.idemiatp1.search;
 
+import java.util.List;
+
+import domain.Casillero;
 import frsf.cidisi.faia.state.EnvironmentState;
 
 /**
@@ -8,9 +11,9 @@ import frsf.cidisi.faia.state.EnvironmentState;
 public class EstadoCasa extends EnvironmentState {
 	
 	//TODO: Setup Variables
-    private int posicionAgente;
-    private int destinoAgente;
-    private int obstaculosCasa;
+    private Casillero posicionAgente;
+    private Casillero destinoAgente;
+    private List<Casillero> obstaculosCasa;
 	
     public EstadoCasa() {
         
@@ -47,22 +50,22 @@ public class EstadoCasa extends EnvironmentState {
 	//TODO: Complete this section with agent-specific methods
     // The following methods are agent-specific:
 	
-     public int getposicionAgente(){
+     public Casillero getposicionAgente(){
         return posicionAgente;
      }
-     public void setposicionAgente(int arg){
+     public void setposicionAgente(Casillero arg){
         posicionAgente = arg;
      }
-     public int getdestinoAgente(){
+     public Casillero getdestinoAgente(){
         return destinoAgente;
      }
-     public void setdestinoAgente(int arg){
+     public void setdestinoAgente(Casillero arg){
         destinoAgente = arg;
      }
-     public int getobstaculosCasa(){
+     public List<Casillero> getobstaculosCasa(){
         return obstaculosCasa;
      }
-     public void setobstaculosCasa(int arg){
+     public void setobstaculosCasa(List<Casillero> arg){
         obstaculosCasa = arg;
      }
 	

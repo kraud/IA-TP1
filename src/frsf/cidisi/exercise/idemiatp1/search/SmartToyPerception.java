@@ -1,5 +1,9 @@
 package frsf.cidisi.exercise.idemiatp1.search;
 
+import java.util.List;
+
+import domain.Casillero;
+
 import frsf.cidisi.faia.agent.Agent;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
@@ -7,17 +11,21 @@ import frsf.cidisi.faia.environment.Environment;
 public class SmartToyPerception extends Perception {
 
 	//TODO: Setup Statics
-    //public static int UNKNOWN_PERCEPTION = -1;   
-	
-	
-	//TODO: Setup Sensors
-	private int obstaculos;
-	private int destino;
+    public static int UNKNOWN_PERCEPTION = -1;
+    public static List<String> UNKNOWN_PERCEPTION_LIST = null;
+    public static String UNKNOWN_PERCEPTION_ITEM = null;
+  
+    //TODO: Setup Sensors
+    private List<String> obstaculos;
+	private String destino;
 	
  
 
     public  SmartToyPerception() {
     	//TODO: Complete Method
+    	obstaculos = UNKNOWN_PERCEPTION_LIST;
+    	destino = UNKNOWN_PERCEPTION_ITEM;
+    	
     }
 
     public SmartToyPerception(Agent agent, Environment environment) {
@@ -32,12 +40,24 @@ public class SmartToyPerception extends Perception {
     	
     	//TODO: Complete Method
         
-        //SmartToy agent = (SmartToy) agentIn;
-        //Casa environment = (Casa) environmentIn;
-        //EstadoCasa environmentState =
-        //        environment.getEnvironmentState();
-       
+        SmartToy agent = (SmartToy) agentIn;
+        Casa environment = (Casa) environmentIn;
+        EstadoCasa environmentState = environment.getEnvironmentState();
         
+        
+        Casillero c = environmentState.getposicionAgente();
+        EstadoAgente estadoAg = (EstadoAgente) agent.getAgentState();
+        Casillero siguienteNodo = estadoAg.getmapa().proximoEnDireccion(c, estadoAg.getorientacion());
+        
+        boolean estaEnObjetivo  = environmentState.getdestinoAgente().equals(c);
+        boolean hayObstaculo = environmentState.getobstaculosCasa().contains(siguienteNodo);
+        
+        if (estaEnObjetivo){
+        	
+        }
+        else{
+        	
+        }
     }
     
     @Override
@@ -52,16 +72,16 @@ public class SmartToyPerception extends Perception {
     // The following methods are agent-specific:
     //TODO: Complete this section with the agent-specific methods
 	
-     public int getobstaculos(){
+     public List<String> getobstaculos(){
         return obstaculos;
      }
-     public void setobstaculos(int arg){
+     public void setobstaculos(List<String> arg){
         this.obstaculos = arg;
      }
-     public int getdestino(){
+     public String getdestino(){
         return destino;
      }
-     public void setdestino(int arg){
+     public void setdestino(String arg){
         this.destino = arg;
      }
 	

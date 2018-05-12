@@ -10,9 +10,9 @@ public class EstadoAgente extends SearchBasedAgentState {
 	
 	//TODO: Setup Variables
     private int posicion;
-    private int orientacion;
+    private char orientacion;
     private int destino;
-    private int mapa;
+    private GrafoCasa mapa;
     private int obstaculos;
 	
 
@@ -94,10 +94,10 @@ public class EstadoAgente extends SearchBasedAgentState {
      public void setposicion(int arg){
         posicion = arg;
      }
-     public int getorientacion(){
+     public char getorientacion(){
         return orientacion;
      }
-     public void setorientacion(int arg){
+     public void setorientacion(char arg){
         orientacion = arg;
      }
      public int getdestino(){
@@ -106,10 +106,10 @@ public class EstadoAgente extends SearchBasedAgentState {
      public void setdestino(int arg){
         destino = arg;
      }
-     public int getmapa(){
+     public GrafoCasa getmapa(){
         return mapa;
      }
-     public void setmapa(int arg){
+     public void setmapa(GrafoCasa arg){
         mapa = arg;
      }
      public int getobstaculos(){
