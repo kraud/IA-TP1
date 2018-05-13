@@ -9,6 +9,7 @@ public class Casillero {
 	private boolean visitado;
 	private boolean obstaculo; // el area tiene un obstaculo solido (ropa, silla, etc)
 	private int obstruccion; // -1 basura, 0 nada, 1 agua
+	private List<Double> coordenada; // el primer valor representa X, el segundo valor representa Y
 	
 	public Casillero(){
 		this.id = null;
@@ -16,6 +17,7 @@ public class Casillero {
 		this.visitado = false;
 		this.obstaculo = false;
 		this.obstruccion = 0;
+		this.setCoordenada(null);
 	}
 	
 	
@@ -25,6 +27,7 @@ public class Casillero {
 		this.visitado = false;
 		this.obstaculo = false;
 		this.obstruccion = 0;
+		this.setCoordenada(null);
 	}
 	
 	public Casillero (String id, double factorVelocidad){
@@ -33,14 +36,16 @@ public class Casillero {
 		this.visitado = false;
 		this.obstaculo = false;
 		this.obstruccion = 0;
+		this.setCoordenada(null);
 	}
 	
-	public Casillero (String id, double factorVelocidad, boolean obstaculo, int obstruccion){
+	public Casillero (String id, double factorVelocidad, boolean obstaculo, int obstruccion, List<Double> coord){
 		this.id = id;
 		this.factorVelocidadSuperficie = factorVelocidad;
 		this.visitado = false;
 		this.obstaculo = obstaculo;
 		this.obstruccion = obstruccion;
+		this.setCoordenada(coord);
 	}
 	
 	public void setFactorVelocidadSuperficie(double factorVelocidadSuperficie) {
@@ -93,6 +98,15 @@ public class Casillero {
 	public String getId() {
 		return id;
 	}
+
+	public void setCoordenada(List<Double> coordenada) {
+		this.coordenada = coordenada;
+	}
+
+
+	public List<Double> getCoordenada() {
+		return coordenada;
+	}
 	
 	// creo una copia del Casillero, para no generar problemas con referencias
 	public Casillero clone(){
@@ -103,6 +117,7 @@ public class Casillero {
 		nuevoCasillero.setVisitado(this.isVisitado());
 		nuevoCasillero.setObstaculo(this.isObstaculo());
 		nuevoCasillero.setObstruccion(this.getObstruccion());
+		nuevoCasillero.setCoordenada(this.getCoordenada());
 		
 		return nuevoCasillero;
 	}

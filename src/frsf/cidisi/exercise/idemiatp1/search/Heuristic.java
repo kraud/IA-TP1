@@ -21,6 +21,6 @@ public class Heuristic implements IEstimatedCostFunction {
         Casillero dest = agState.getdestino();
         GrafoCasa mapa = agState.getmapa();
 		
-        return 0;
+        return mapa.funcionHeuristica(pos, dest);
     }
 }

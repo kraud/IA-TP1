@@ -117,15 +117,13 @@ public class GrafoCasa {
 	
 	public Double funcionHeuristica(Casillero posicion, Casillero destino){
 		
-		/*
-		double tiempoPitagora = 	Math.sqrt(
-										(Math.pow((posicion.getCoordenadas().get(1) - destino.getCoordenadas().get(1)), 2))
+		double distanciaPitagora = 	Math.sqrt(
+										(Math.pow((posicion.getCoordenada().get(1) - destino.getCoordenada().get(1)), 2))
 										+
-										(Math.pow((posicion.getCoordenadas().get(2) - destino.getCoordenadas().get(2)), 2))
-									);
-		return tiempoPitagora;
-		*/
-		return 1.0;
+										(Math.pow((posicion.getCoordenada().get(2) - destino.getCoordenada().get(2)), 2))
+							);
+		return distanciaPitagora; // en realidad es tiempoPitagora, pero usamos la velocidad promedio de 1 metro/segundo
+								  // velocidad*distancia = tiempo => cuando velocidad es 1: valor de distancia = valor tiempo
 	}
 	
 }
