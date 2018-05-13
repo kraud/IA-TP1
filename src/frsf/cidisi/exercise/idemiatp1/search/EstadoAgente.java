@@ -94,12 +94,34 @@ public class EstadoAgente extends SearchBasedAgentState {
     public void updateState(Perception p) {
         
         //TODO: Complete Method
-    	Casillero siguienteCasillero = ((SmartToyPerception) p).getProximoNodo();
+    	Casillero siguienteCasillero = ((SmartToyPerception) p).getProximoNodo(); // Este Casillero 'sabe' si es un OBSTACULO o si tiene una OBSTRUCCION. Viene desde el Mapa del EstadoAmbiente
+    	List<Casillero> nodosMapaAgente = this.getmapa().getNodos();
+		
+    	// actualizamos el mapa del EstadoAgente en caso de que haya un obstaculo
+    	if (siguienteCasillero.isObstaculo()){
+    		// agrego informacion sobre obstaculo en la lista obstaculos del EstadoAgente
+    		this.getobstaculos().add(siguienteCasillero);
+    		// agrego informacion sobre obstaculo en el MAPA del EstadoAgente
+    		for(Casillero cas : nodosMapaAgente){
+    			if(cas.getId().equals(siguienteCasillero.getId())){
+    				cas.setObstaculo(true);
+    			}
+    		}
+    		
+    	}
+    	// actualizamos el mapa del EstadoAgente en caso de que haya una obstruccion
+    	if(siguienteCasillero.getObstruccion() != 0){
+    		for(Casillero cas : nodosMapaAgente){
+    			if(cas.getId().equals(siguienteCasillero.getId())){
+    				cas.setObstruccion(siguienteCasillero.getObstruccion());
+    			}
+    		}
+    	}
     	
     }
 
     /**
-     * This method is optional, and sets the initial state of the agent.
+     * This method is OPTIONAL, and sets the initial state of the agent.
      */
     @Override
     public void initState() {
@@ -126,10 +148,49 @@ public class EstadoAgente extends SearchBasedAgentState {
      */
     @Override
     public boolean equals(Object obj) {
-       
-       //TODO: Complete Method
-        
-        return true;
+    	
+       EstadoAgente estado = (EstadoAgente) obj;
+
+    	boolean igualId = false;
+    	boolean igualesObstaculos = false;
+       	boolean igualesVisitados = false;
+    	boolean igualesObstrucciones = false;
+    	
+    	// IGUAL ID
+    	igualId = this.getposicion().getId().equals(estado.getposicion().getId());
+    	
+    	// IGUAL OBSTACULOS
+    	for(int i=0; i < this.getmapa().getNodos().size(); i++){
+    		igualesObstaculos =
+    			igualesObstaculos
+    			&&
+    			(this.getmapa().getNodos().get(i).isObstaculo()
+    			==
+    			estado.getmapa().getNodos().get(i).isObstaculo());
+    	}
+    	
+    	// IGUAL VISITADOS
+    	for(int i=0; i < this.getmapa().getNodos().size(); i++){
+    		igualesVisitados =
+    			igualesVisitados
+    			&&
+    			(this.getmapa().getNodos().get(i).isVisitado()
+    			==
+    			estado.getmapa().getNodos().get(i).isVisitado());
+    	}
+    	
+    	// IGUAL OBSTRUCCIONES
+    	for(int i=0; i < this.getmapa().getNodos().size(); i++){
+    		igualesObstrucciones =
+    			igualesObstrucciones
+    			&&
+    			(this.getmapa().getNodos().get(i).getObstruccion()
+    			==
+    			estado.getmapa().getNodos().get(i).getObstruccion());
+    	}
+    	
+    	
+        return (igualId && igualesObstaculos && igualesVisitados && igualesObstrucciones);
     }
 
     //TODO: Complete this section with agent-specific methods

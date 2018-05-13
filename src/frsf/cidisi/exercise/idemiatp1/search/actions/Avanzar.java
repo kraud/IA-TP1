@@ -1,5 +1,8 @@
 package frsf.cidisi.exercise.idemiatp1.search.actions;
 
+import java.util.List;
+
+import domain.Casillero;
 import frsf.cidisi.exercise.idemiatp1.search.*;
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
@@ -20,6 +23,14 @@ public class Avanzar extends SearchAction {
         // PreConditions: null
         // PostConditions: null
         
+        Casillero proximoNodo = agState.getmapa().proximoEnDireccion(agState.getposicion(), agState.getorientacion());
+        boolean obstaculizado = agState.getobstaculos().contains(proximoNodo);
+        
+        if(proximoNodo!=null && !obstaculizado){
+        	proximoNodo.setVisitado(true);
+        	agState.setposicion(proximoNodo);
+        	return agState;
+        }        
         return null;
     }
 
@@ -31,15 +42,28 @@ public class Avanzar extends SearchAction {
         EstadoCasa environmentState = (EstadoCasa) est;
         EstadoAgente agState = ((EstadoAgente) ast);
 
+        Casillero proximoNodo = agState.getmapa().proximoEnDireccion(agState.getposicion(), agState.getorientacion());
+        boolean obstaculizado = agState.getobstaculos().contains(proximoNodo);
+        
         // TODO: Use this conditions
         // PreConditions: null
         // PostConditions: null
         
-        if (true) {
+        if (proximoNodo!=null && !obstaculizado) {
             // Update the real world
-            
+        	
+        	// Busco el nodo correspondiente a 'proximoNodo', pero EN el mapa DEL AMBIENTE, para actualizar la informacion de visitado
+        	List<Casillero> listaCasillerosAmbiente = environmentState.getMapa().getNodos();
+        	for(Casillero c : listaCasillerosAmbiente){
+        		if(c.getId().equals(proximoNodo.getId())){
+        			c.setVisitado(true);
+        		}
+        	}
+        	
             // Update the agent state
-            
+            proximoNodo.setVisitado(true);
+        	agState.setposicion(proximoNodo);
+        	
             return environmentState;
         }
 
@@ -51,6 +75,9 @@ public class Avanzar extends SearchAction {
      */
     @Override
     public Double getCost() {
+    	
+    	
+    	
         return new Double(0);
     }
 

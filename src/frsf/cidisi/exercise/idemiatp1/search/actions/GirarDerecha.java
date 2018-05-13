@@ -14,13 +14,24 @@ public class GirarDerecha extends SearchAction {
      */
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
-        EstadoAgente agState = (EstadoAgente) s;
-        
-        // TODO: Use this conditions
+    	
+    	// TODO: Use this conditions
         // PreConditions: null
         // PostConditions: null
+    	EstadoAgente agState = (EstadoAgente) s;
         
-        return null;
+        switch (agState.getorientacion()){
+        	case 'n':	agState.setorientacion('e');
+        				break;
+        	case 'o':	agState.setorientacion('n');
+						break;
+        	case 's':	agState.setorientacion('o');
+						break;
+        	case 'e':	agState.setorientacion('s');
+						break;
+        }
+
+        return agState; // siempre va a poder girar, y por eso borramos el return null predeterminado
     }
 
     /**
@@ -37,12 +48,22 @@ public class GirarDerecha extends SearchAction {
         
         if (true) {
             // Update the real world
-            
-            // Update the agent state
-            
+        	switch (agState.getorientacion()){ // Uso solamente la orientacion del agState porque deberia ser igual a la del environmentState
+        		case 'n':	agState.setorientacion('e');
+        					environmentState.setOrientacionAgente('e');
+        					break;
+        		case 'o':	agState.setorientacion('n');
+        					environmentState.setOrientacionAgente('n');
+        					break;
+        		case 's':	agState.setorientacion('o');
+        					environmentState.setOrientacionAgente('o');
+        					break;
+        		case 'e':	agState.setorientacion('s');
+        					environmentState.setOrientacionAgente('s');
+        					break;
+        	}
             return environmentState;
         }
-
         return null;
     }
 
@@ -51,7 +72,7 @@ public class GirarDerecha extends SearchAction {
      */
     @Override
     public Double getCost() {
-        return new Double(0);
+        return new Double(1); // El SmartToy tarda 1 segundo en cambiar de direccion
     }
 
     /**
