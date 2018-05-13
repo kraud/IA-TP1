@@ -1,5 +1,10 @@
 package frsf.cidisi.exercise.idemiatp1.search;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import domain.Arco;
+import domain.Casillero;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
 
@@ -9,23 +14,23 @@ import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
 public class EstadoAgente extends SearchBasedAgentState {
 	
 	//TODO: Setup Variables
-    private int posicion;
+    private Casillero posicion;
     private char orientacion;
-    private int destino;
+    private Casillero destino;
     private GrafoCasa mapa;
-    private int obstaculos;
+    private List<Casillero> obstaculos;
 	
 
     public EstadoAgente() {
     
     	//TODO: Complete Method
-    	/*
-			// posicion = initData0;
-			// orientacion = initData1;
-			// destino = initData2;
-			// mapa = initData3;
-			// obstaculos = initData4;
-        */
+    	
+		posicion = new Casillero();
+		orientacion = '\0'; // Equivalente a 'null' char -> hacer condiciones considerando esto.
+		destino = new Casillero();
+		mapa = new GrafoCasa();
+		obstaculos = new ArrayList<Casillero>();
+        
         this.initState();
     }
 
@@ -37,8 +42,48 @@ public class EstadoAgente extends SearchBasedAgentState {
     public SearchBasedAgentState clone() {
         
 		//TODO: Complete Method
-		
-        return null;
+    	EstadoAgente estadoClonado = new EstadoAgente();
+    	
+    	// Atributo primitivo, se pasa por copia
+    	//	orientacion
+    	estadoClonado.setorientacion(this.getorientacion());
+    	
+    	// Atributos objeto, se clonan
+    	//	mapa
+    	List<Casillero> mapaNodosClonados = new ArrayList<Casillero>();
+    	for(Casillero c : this.mapa.getNodos()){
+    		mapaNodosClonados.add(c.clone());
+    	}
+    	List<Arco> mapaAristasClonadas = new ArrayList<Arco>();
+    	for(Arco a : this.mapa.getAristas()){
+    		mapaAristasClonadas.add(a.clone());
+    	}
+    	GrafoCasa mapaClonado = new GrafoCasa(mapaNodosClonados, mapaAristasClonadas);
+    	estadoClonado.setmapa(mapaClonado);
+    	//	obstaculos
+    	List<Casillero> obstaculosClonados = new ArrayList<Casillero>();
+    	for(Casillero ca : mapaClonado.getNodos()){
+    		for(Casillero o : this.getobstaculos()){
+    			if(ca.getId().equals(o.getId())){
+    				obstaculosClonados.add(ca);
+    			}
+    		}
+    	}
+    	estadoClonado.setobstaculos(obstaculosClonados);
+    	// posicion
+    	for(Casillero cas : mapaClonado.getNodos()){
+    		if(cas.getId().equals(this.posicion.getId())){
+    			estadoClonado.setposicion(cas);
+    		}
+    	}
+    	// destino
+    	for(Casillero casi : mapaClonado.getNodos()){
+    		if(casi.getId().equals(this.destino.getId())){
+    			estadoClonado.setdestino(casi);
+    		}
+    	}
+    	
+        return estadoClonado;
     }
 
     /**
@@ -49,6 +94,8 @@ public class EstadoAgente extends SearchBasedAgentState {
     public void updateState(Perception p) {
         
         //TODO: Complete Method
+    	Casillero siguienteCasillero = ((SmartToyPerception) p).getProximoNodo();
+    	
     }
 
     /**
@@ -88,10 +135,10 @@ public class EstadoAgente extends SearchBasedAgentState {
     //TODO: Complete this section with agent-specific methods
     // The following methods are agent-specific:
    	
-     public int getposicion(){
+     public Casillero getposicion(){
         return posicion;
      }
-     public void setposicion(int arg){
+     public void setposicion(Casillero arg){
         posicion = arg;
      }
      public char getorientacion(){
@@ -100,10 +147,10 @@ public class EstadoAgente extends SearchBasedAgentState {
      public void setorientacion(char arg){
         orientacion = arg;
      }
-     public int getdestino(){
+     public Casillero getdestino(){
         return destino;
      }
-     public void setdestino(int arg){
+     public void setdestino(Casillero arg){
         destino = arg;
      }
      public GrafoCasa getmapa(){
@@ -112,10 +159,10 @@ public class EstadoAgente extends SearchBasedAgentState {
      public void setmapa(GrafoCasa arg){
         mapa = arg;
      }
-     public int getobstaculos(){
+     public List<Casillero> getobstaculos(){
         return obstaculos;
      }
-     public void setobstaculos(int arg){
+     public void setobstaculos(List<Casillero> arg){
         obstaculos = arg;
      }
 	

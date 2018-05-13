@@ -5,6 +5,8 @@
       <DataStructure name="posicionAgente"/>
       <DataStructure name="destinoAgente"/>
       <DataStructure name="obstaculosCasa"/>
+      <DataStructure name="mapa"/>
+      <DataStructure name="orientacionAgente"/>
     </EnvironmentState>
   </Environment>
   <Agent name="SmartToy">
@@ -21,6 +23,6 @@
   <Actions execute_by="//@Agent" executed_on="//@Environment" name="Avanzar"/>
   <Actions execute_by="//@Agent" executed_on="//@Environment" name="GirarDerecha"/>
   <Actions execute_by="//@Agent" executed_on="//@Environment" name="GirarIzquierda"/>
-  <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="obstaculos"/>
+  <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="proximonodo"/>
   <Perceptions perceived_on="//@Environment" perceived_by="//@Agent" name="destino"/>
 </idemia:AgentModel>

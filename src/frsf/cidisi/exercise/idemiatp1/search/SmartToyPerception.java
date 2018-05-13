@@ -1,7 +1,9 @@
 package frsf.cidisi.exercise.idemiatp1.search;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import domain.Arco;
 import domain.Casillero;
 
 import frsf.cidisi.faia.agent.Agent;
@@ -12,19 +14,17 @@ public class SmartToyPerception extends Perception {
 
 	//TODO: Setup Statics
     public static int UNKNOWN_PERCEPTION = -1;
-    public static List<String> UNKNOWN_PERCEPTION_LIST = null;
-    public static String UNKNOWN_PERCEPTION_ITEM = null;
   
     //TODO: Setup Sensors
-    private List<String> obstaculos;
-	private String destino;
+    private Casillero proximoNodo;
+	private Casillero destino;
 	
  
 
     public  SmartToyPerception() {
     	//TODO: Complete Method
-    	obstaculos = UNKNOWN_PERCEPTION_LIST;
-    	destino = UNKNOWN_PERCEPTION_ITEM;
+    	proximoNodo = new Casillero();
+    	destino = new Casillero();
     	
     }
 
@@ -33,55 +33,79 @@ public class SmartToyPerception extends Perception {
     }
 
     /**
-     * This method is used to setup the perception.
+     * This method is used to setup the perception -> son los valores con los que se INICIALIZA el agente (solo una vez)
      */
     @Override
     public void initPerception(Agent agentIn, Environment environmentIn) {
     	
     	//TODO: Complete Method
-        
+    	
+        // AGENTE - AMBIENTE
         SmartToy agent = (SmartToy) agentIn;
         Casa environment = (Casa) environmentIn;
+        
+        // Estado AGENTE-AMBIENTE
+        EstadoAgente estadoAg = (EstadoAgente) agent.getAgentState();
         EstadoCasa environmentState = environment.getEnvironmentState();
         
+        // Informacion del agente
+        Casillero pos = environmentState.getposicionAgente();
+        Casillero dest = environmentState.getdestinoAgente();
+        Casillero siguienteNodo = estadoAg.getmapa().proximoEnDireccion(pos, estadoAg.getorientacion());
+        char orient = environmentState.getOrientacionAgente();
+        GrafoCasa mapa =  environmentState.getMapa();
         
-        Casillero c = environmentState.getposicionAgente();
-        EstadoAgente estadoAg = (EstadoAgente) agent.getAgentState();
-        Casillero siguienteNodo = estadoAg.getmapa().proximoEnDireccion(c, estadoAg.getorientacion());
+        // Asignamos al EstadoAgente la informacion del EstadoCasa
+        estadoAg.setposicion(pos.clone());
+        estadoAg.setdestino(dest.clone());
+        // estadoAg.setobstaculos(new ArrayList<Casillero>()); -> ya esta en EstadoAgente()
+        estadoAg.setorientacion(orient);
         
-        boolean estaEnObjetivo  = environmentState.getdestinoAgente().equals(c);
+        //	clonar mapa
+    	List<Casillero> nuevaListaNodosMapa = new ArrayList<Casillero>();
+    	for(Casillero c : environmentState.getMapa().getNodos()){
+    		Casillero aux = c.clone();
+    		aux.setObstaculo(false); // Es para borrar la informacion de obstaculos que el agente todavia no encontro, que si esta presente en el mapa completo del ambiente
+    		nuevaListaNodosMapa.add(aux);
+    	}
+    	List<Arco> nuevaListaAristasMapa = new ArrayList<Arco>();
+    	for(Arco a : environmentState.getMapa().getAristas()){
+    		nuevaListaAristasMapa.add(a.clone());
+    	}
+    	GrafoCasa nuevoMapa = new GrafoCasa(nuevaListaNodosMapa, nuevaListaAristasMapa);
+    	estadoAg.setmapa(nuevoMapa);
+        
+    	//	agrega el primer siguiente nodo a la lista de obstaculos, si corresponde
         boolean hayObstaculo = environmentState.getobstaculosCasa().contains(siguienteNodo);
-        
-        if (estaEnObjetivo){
-        	
-        }
-        else{
-        	
+        if(hayObstaculo){
+        	estadoAg.getobstaculos().add(siguienteNodo);
         }
     }
     
     @Override
     public String toString() {
-        StringBuffer str = new StringBuffer();
-
+        String str = "";
+        
         //TODO: Complete Method
-
+        str += "El SmartToy se dirige a ";
+        str += destino.getId();
+        
         return str.toString();
     }
 
     // The following methods are agent-specific:
     //TODO: Complete this section with the agent-specific methods
 	
-     public List<String> getobstaculos(){
-        return obstaculos;
+     public Casillero getProximoNodo(){
+        return proximoNodo;
      }
-     public void setobstaculos(List<String> arg){
-        this.obstaculos = arg;
+     public void setProximoNodo(Casillero arg){
+        this.proximoNodo = arg;
      }
-     public String getdestino(){
+     public Casillero getdestino(){
         return destino;
      }
-     public void setdestino(String arg){
+     public void setdestino(Casillero arg){
         this.destino = arg;
      }
 	

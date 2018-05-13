@@ -1,5 +1,6 @@
 package frsf.cidisi.exercise.idemiatp1.search;
 
+import domain.Casillero;
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
@@ -26,7 +27,15 @@ public class Casa extends Environment {
         // Create a new perception to return
          SmartToyPerception perception = new SmartToyPerception();
 		
-		//TODO : Set the perceptions sensors
+		//TODO : Set the perceptions sensors -- Las percepciones que el agente recibira en cada iteracion del arbol
+         EstadoCasa estadoAmbiente = this.getEnvironmentState();
+         Casillero siguienteNodo = estadoAmbiente.getMapa().proximoEnDireccion(	estadoAmbiente.getposicionAgente(),
+        		 																estadoAmbiente.getOrientacionAgente()
+        		 																);
+         Casillero destinoNodo = estadoAmbiente.getdestinoAgente();
+         
+         perception.setProximoNodo(siguienteNodo);
+         perception.setdestino(destinoNodo);
         
         // Return the perception
         return perception;
@@ -40,8 +49,7 @@ public class Casa extends Environment {
     
     public boolean agentFailed(Action actionReturned) {
 
-        EstadoCasa envState =
-                this.getEnvironmentState();
+        EstadoCasa envState = this.getEnvironmentState();
 
         // TODO: Complete Method        
 

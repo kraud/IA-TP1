@@ -12,16 +12,19 @@ public class EstadoCasa extends EnvironmentState {
 	
 	//TODO: Setup Variables
     private Casillero posicionAgente;
+    private char orientacionAgente;
     private Casillero destinoAgente;
     private List<Casillero> obstaculosCasa;
-	
-    public EstadoCasa() {
+	private GrafoCasa mapa;
+    
+	public EstadoCasa() {
         
-        //TODO: Complete Method
+        //TODO: Complete Method -- Aca se pueden crear los nodos / e inicializar
     	/*
 			// posicionAgente = initData0;
 			// destinoAgente = initData1;
 			// obstaculosCasa = initData2;
+			// mapa = initData3;
         */
         this.initState();
     }
@@ -29,7 +32,7 @@ public class EstadoCasa extends EnvironmentState {
     /**
      * This method is used to setup the initial real world.
      */
-    @Override
+    @Override // aca se pueden inicializar si no se inicializaron en EstadoCasa(). Es opcional.
     public void initState() {
 
         //TODO: Complete Method
@@ -68,6 +71,22 @@ public class EstadoCasa extends EnvironmentState {
      public void setobstaculosCasa(List<Casillero> arg){
         obstaculosCasa = arg;
      }
+
+	public void setMapa(GrafoCasa mapa) {
+		this.mapa = mapa;
+	}
+
+	public GrafoCasa getMapa() {
+		return mapa;
+	}
+
+	public void setOrientacionAgente(char orientacion) {
+		this.orientacionAgente = orientacion;
+	}
+
+	public char getOrientacionAgente() {
+		return orientacionAgente;
+	}
 	
 
 }
