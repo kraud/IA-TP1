@@ -47,8 +47,19 @@ public class Casillero {
 		this.factorVelocidadSuperficie = factorVelocidadSuperficie;
 	}
 	public double getFactorVelocidadSuperficie() {
-		return factorVelocidadSuperficie;
-		//TODO: devolver el factor de velocidad modificado si el area esta mojada
+		double factorModificado = this.factorVelocidadSuperficie;
+		
+		switch(this.getObstruccion()){
+			case(-1): 	factorModificado = factorModificado*0.5;
+						break;
+			
+			case(0):	break;
+			
+			case(1):	factorModificado = factorModificado*2;
+						break;
+		}
+		
+		return factorModificado;
 	}
 	
 	public void setVisitado(boolean visitado) {

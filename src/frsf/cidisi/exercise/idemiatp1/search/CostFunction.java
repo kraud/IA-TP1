@@ -1,5 +1,6 @@
 package frsf.cidisi.exercise.idemiatp1.search;
 
+import domain.Casillero;
 import frsf.cidisi.faia.solver.search.IStepCostFunction;
 import frsf.cidisi.faia.solver.search.NTree;
 
@@ -14,7 +15,11 @@ public class CostFunction implements IStepCostFunction {
      */
     @Override
     public double calculateCost(NTree node) {
-        
-        return node.getAction().getCost();
+        EstadoAgente estado = (EstadoAgente) node.getAgentState();
+        GrafoCasa mapa = estado.getmapa();
+           	
+    	
+        //return node.getAction().getCost(); -> no sabemos donde hacer los cambios para darle la informacion necesaria a getCost
+        return mapa.costoAvanzar(estado);
     }
 }

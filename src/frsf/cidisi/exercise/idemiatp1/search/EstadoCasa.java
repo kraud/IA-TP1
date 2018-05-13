@@ -1,5 +1,6 @@
 package frsf.cidisi.exercise.idemiatp1.search;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import domain.Casillero;
@@ -18,21 +19,20 @@ public class EstadoCasa extends EnvironmentState {
 	private GrafoCasa mapa;
     
 	public EstadoCasa() {
-        
         //TODO: Complete Method -- Aca se pueden crear los nodos / e inicializar
-    	/*
-			// posicionAgente = initData0;
-			// destinoAgente = initData1;
-			// obstaculosCasa = initData2;
-			// mapa = initData3;
-        */
-        this.initState();
+		
+		posicionAgente = new Casillero();
+		destinoAgente = new Casillero();
+		obstaculosCasa = new ArrayList<Casillero>();
+		mapa = new GrafoCasa();
+        
+		this.initState();
     }
 
     /**
      * This method is used to setup the initial real world.
      */
-    @Override // aca se pueden inicializar si no se inicializaron en EstadoCasa(). Es opcional.
+    @Override // aca se pueden inicializar si no se inicializaron en EstadoCasa(). Es OPCIONAL.
     public void initState() {
 
         //TODO: Complete Method
@@ -43,9 +43,21 @@ public class EstadoCasa extends EnvironmentState {
      */
     @Override
     public String toString() {
-        String str = "";
-
-        //TODO: Complete Method
+    	  String str = "";
+    	  String aux ="Los nodos obstaculo son los siguientes: ";
+          
+          str += "El Smart Toy se encuentra en el casillero ";
+          str += this.posicionAgente.getId() + ". ";
+          str += "El casillero objetivo es ";
+          str += this.destinoAgente.getId();
+          str += "\n";
+          
+          for(Casillero nodo : this.getobstaculosCasa()){
+        	  aux += nodo.getId() + ", ";
+          }
+          aux += "." + "\n";
+          
+          str = str + aux;
 
         return str;
     }

@@ -137,8 +137,10 @@ public class EstadoAgente extends SearchBasedAgentState {
     public String toString() {
         String str = "";
 
-        //TODO: Complete Method
-
+        str += "El Smart Toy se encuentra en el casillero ";
+        str += this.getposicion().getId() + ". Mirando hacia el ";
+        str += String.valueOf(this.getorientacion()) + ".";
+        str += "\n";
         return str;
     }
 

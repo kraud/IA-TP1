@@ -97,4 +97,35 @@ public class GrafoCasa {
 		return proximoNodo;
 	}
 	
+	public Double costoAvanzar(EstadoAgente estadoAg){
+		Casillero pos = estadoAg.getposicion();
+		Casillero sig = estadoAg.getmapa().proximoEnDireccion(pos, estadoAg.getorientacion());
+		List<Arco> aristas = this.aristas;
+		Arco ar = null;
+		for(Arco a : aristas){
+			if( (a.getExtremoA().equals(pos) && a.getExtremoB().equals(sig)) || (a.getExtremoB().equals(pos) && a.getExtremoA().equals(sig)) ){
+				ar = a;
+			}
+		}
+		double mitadDistancia = ar.getLongitud()/2;
+		
+		double tiempoPos = mitadDistancia*(pos.getFactorVelocidadSuperficie());
+		double tiempoSig = mitadDistancia*(sig.getFactorVelocidadSuperficie());
+		
+		return (tiempoPos + tiempoSig);
+	}
+	
+	public Double funcionHeuristica(Casillero posicion, Casillero destino){
+		
+		/*
+		double tiempoPitagora = 	Math.sqrt(
+										(Math.pow((posicion.getCoordenadas().get(1) - destino.getCoordenadas().get(1)), 2))
+										+
+										(Math.pow((posicion.getCoordenadas().get(2) - destino.getCoordenadas().get(2)), 2))
+									);
+		return tiempoPitagora;
+		*/
+		return 1.0;
+	}
+	
 }
