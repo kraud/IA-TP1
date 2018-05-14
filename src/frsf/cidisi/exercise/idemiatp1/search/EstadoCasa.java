@@ -34,8 +34,20 @@ public class EstadoCasa extends EnvironmentState {
      */
     @Override // aca se pueden inicializar si no se inicializaron en EstadoCasa(). Es OPCIONAL.
     public void initState() {
-
-        //TODO: Complete Method
+    	
+    	// Inicializamos el mapa
+    	GranInit iniciar = new GranInit();
+    	this.mapa.setNodos(iniciar.getMapa().getNodos());
+    	this.mapa.setAristas(iniciar.getMapa().getAristas());
+    	
+    	//Inicializamos posicion inicial del agente
+    	this.posicionAgente = this.mapa.getCasilleroPorId("PD3");
+    	
+    	//Inicializamos orientacion inicial del agente
+    	this.orientacionAgente = 'n';
+    	
+    	//Inicializamos destino del agente
+    	this.posicionAgente = this.mapa.getCasilleroPorId("K9");    	
     }
 
     /**

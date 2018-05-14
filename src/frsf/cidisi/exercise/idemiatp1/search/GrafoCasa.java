@@ -37,6 +37,19 @@ public class GrafoCasa {
 		return aristas;
 	}
 	
+	// Retorna el casillero correspondiente al id
+	public Casillero getCasilleroPorId(String id){
+		Casillero casilleroBuscado = null;
+		List<Casillero> Nodos = this.getNodos();
+		
+		for(Casillero c : Nodos){
+			if(c.getId().equals(id)){
+				casilleroBuscado = c;
+			}
+		}
+		return casilleroBuscado;
+	}
+	
 	// A partir de un nodo, busca si hay una arista que lo incluye y corrobora si hay otro nodo en la orientacion determinada. Si no lo hay, retorna null.
 	public Casillero proximoEnDireccion(Casillero posicion, char orientacion){
 		
@@ -97,6 +110,7 @@ public class GrafoCasa {
 		return proximoNodo;
 	}
 	
+	// Calcula el costo en segundos que le toma al Smart Toy para avanzar de un casillero a otro, a traves de un arco
 	public Double costoAvanzar(EstadoAgente estadoAg){
 		Casillero pos = estadoAg.getposicion();
 		Casillero sig = estadoAg.getmapa().proximoEnDireccion(pos, estadoAg.getorientacion());
@@ -115,6 +129,7 @@ public class GrafoCasa {
 		return (tiempoPos + tiempoSig);
 	}
 	
+	// Calcula el costo en segundos que le toma al Smart Toy para avanzar desde un casillero a otro en linea recta
 	public Double funcionHeuristica(Casillero posicion, Casillero destino){
 		
 		double distanciaPitagora = 	Math.sqrt(
