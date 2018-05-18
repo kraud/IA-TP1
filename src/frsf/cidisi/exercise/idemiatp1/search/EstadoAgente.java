@@ -22,14 +22,31 @@ public class EstadoAgente extends SearchBasedAgentState {
 	
 
     public EstadoAgente() {
-    
-    	//TODO: Complete Method
     	
-		posicion = new Casillero();
-		orientacion = '\0'; // Equivalente a 'null' char -> hacer condiciones considerando esto.
-		destino = new Casillero();
+    	//TODO: Complete Method
+
+    	// Inicializamos el mapa
 		mapa = new GrafoCasa();
+
+		GranInit iniciar = new GranInit();
+    	this.mapa.setNodos(iniciar.getMapa().getNodos());
+    	this.mapa.setAristas(iniciar.getMapa().getAristas());
+
 		obstaculos = new ArrayList<Casillero>();
+
+    	//Inicializamos posicion inicial del agente
+    	this.posicion = this.mapa.getCasilleroPorId("A");
+    	
+    	//Inicializamos orientacion inicial del agente
+    	this.orientacion = 's';
+    	
+    	//Inicializamos destino del agente
+    	this.destino = this.mapa.getCasilleroPorId("F");    	
+
+    	
+//		posicion = new Casillero();
+//		orientacion = '\0'; // Equivalente a 'null' char -> hacer condiciones considerando esto.
+//		destino = new Casillero();
         
         this.initState();
     }

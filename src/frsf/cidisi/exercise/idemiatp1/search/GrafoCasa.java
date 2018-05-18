@@ -61,20 +61,20 @@ public class GrafoCasa {
 		for(Arco a : aristas){
 			if(a.getTipoDeArco()=='v'){
 				aristasV.add(a.clone());
+			
 			}
 			else{
 				aristasH.add(a.clone());
+				
 			}
 		}
-		char orient = orientacion;
 		Casillero proximoNodo = null;
-		
-		switch(orient){
+
+		switch(orientacion){
 			case('n'):
 				for(Arco arco : aristasV){
 					if( (arco.getExtremoB().getId().equals(posicion.getId())) && (!arco.getExtremoA().isVisitado()) ){
 						proximoNodo = (arco.getExtremoA()).clone();
-						return proximoNodo;
 					}
 				}
 				break;
@@ -83,7 +83,6 @@ public class GrafoCasa {
 				for(Arco arco : aristasV){
 					if( (arco.getExtremoA().getId().equals(posicion.getId())) && (!arco.getExtremoB().isVisitado()) ){
 						proximoNodo = (arco.getExtremoB()).clone();
-						return proximoNodo;
 					}
 				}
 				break;
@@ -92,7 +91,6 @@ public class GrafoCasa {
 				for(Arco arco : aristasH){
 					if( (arco.getExtremoB().getId().equals(posicion.getId())) && (!arco.getExtremoA().isVisitado()) ){
 						proximoNodo = (arco.getExtremoA()).clone();
-						return proximoNodo;
 					}
 				}
 				break;
@@ -101,12 +99,16 @@ public class GrafoCasa {
 				for(Arco arco : aristasH){
 					if( (arco.getExtremoA().getId().equals(posicion.getId())) && (!arco.getExtremoB().isVisitado()) ){
 						proximoNodo = (arco.getExtremoB()).clone();
-						return proximoNodo;
 					}
 				}
 				break;
 		}
-		
+	
+		if (proximoNodo != null ) {
+			System.out.println("POS+O+V: " + posicion.getId() + "+" + orientacion + "+" + posicion.isVisitado()+ " ---> " + proximoNodo.getId()+"+" + proximoNodo.isVisitado());
+		} else {
+			System.out.println("SIN PROXIMO");
+		}
 		return proximoNodo;
 	}
 	
@@ -114,28 +116,37 @@ public class GrafoCasa {
 	public Double costoAvanzar(EstadoAgente estadoAg){
 		Casillero pos = estadoAg.getposicion();
 		Casillero sig = estadoAg.getmapa().proximoEnDireccion(pos, estadoAg.getorientacion());
-		List<Arco> aristas = this.aristas;
-		Arco ar = null;
-		for(Arco a : aristas){
-			if( (a.getExtremoA().equals(pos) && a.getExtremoB().equals(sig)) || (a.getExtremoB().equals(pos) && a.getExtremoA().equals(sig)) ){
-				ar = a;
+		
+		if (sig != null) {
+			Arco ar = null;
+			for(Arco a : aristas){
+				
+				if( (a.getExtremoA().getId().equals(pos.getId()) && a.getExtremoB().getId().equals(sig.getId())) 
+						|| (a.getExtremoB().getId().equals(pos.getId()) && a.getExtremoA().getId().equals(sig.getId())) ){
+					ar = a;
+					break;
+				}
 			}
+			double mitadDistancia = ar.getLongitud() / 2;
+			
+			double tiempoPos = mitadDistancia*(pos.getFactorVelocidadSuperficie());
+			double tiempoSig = mitadDistancia*(sig.getFactorVelocidadSuperficie());
+			
+			return (tiempoPos + tiempoSig);
+			
+		} else {
+			return 9999999.0;
 		}
-		double mitadDistancia = ar.getLongitud()/2;
 		
-		double tiempoPos = mitadDistancia*(pos.getFactorVelocidadSuperficie());
-		double tiempoSig = mitadDistancia*(sig.getFactorVelocidadSuperficie());
-		
-		return (tiempoPos + tiempoSig);
 	}
 	
 	// Calcula el costo en segundos que le toma al Smart Toy para avanzar desde un casillero a otro en linea recta
 	public Double funcionHeuristica(Casillero posicion, Casillero destino){
 		
 		double distanciaPitagora = 	Math.sqrt(
-										(Math.pow((posicion.getCoordenada().get(1) - destino.getCoordenada().get(1)), 2))
+										(Math.pow((posicion.getCoordenada().get(0) - destino.getCoordenada().get(0)), 2))
 										+
-										(Math.pow((posicion.getCoordenada().get(2) - destino.getCoordenada().get(2)), 2))
+										(Math.pow((posicion.getCoordenada().get(1) - destino.getCoordenada().get(1)), 2))
 							);
 		return distanciaPitagora; // en realidad es tiempoPitagora, pero usamos la velocidad promedio de 1 metro/segundo
 								  // velocidad*distancia = tiempo => cuando velocidad es 1: valor de distancia = valor tiempo

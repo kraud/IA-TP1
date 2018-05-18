@@ -21,8 +21,6 @@ public class EstadoCasa extends EnvironmentState {
 	public EstadoCasa() {
         //TODO: Complete Method -- Aca se pueden crear los nodos / e inicializar
 		
-		posicionAgente = new Casillero();
-		destinoAgente = new Casillero();
 		obstaculosCasa = new ArrayList<Casillero>();
 		mapa = new GrafoCasa();
         
@@ -41,13 +39,13 @@ public class EstadoCasa extends EnvironmentState {
     	this.mapa.setAristas(iniciar.getMapa().getAristas());
     	
     	//Inicializamos posicion inicial del agente
-    	this.posicionAgente = this.mapa.getCasilleroPorId("PD3");
+    	this.posicionAgente = this.mapa.getCasilleroPorId("A");
     	
     	//Inicializamos orientacion inicial del agente
-    	this.orientacionAgente = 'n';
+    	this.orientacionAgente = 's';
     	
     	//Inicializamos destino del agente
-    	this.posicionAgente = this.mapa.getCasilleroPorId("K9");    	
+    	this.destinoAgente = this.mapa.getCasilleroPorId("F");    	
     }
 
     /**

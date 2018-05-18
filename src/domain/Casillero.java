@@ -7,6 +7,7 @@ public class Casillero {
 	private String id;
 	private double factorVelocidadSuperficie;
 	private boolean visitado;
+	//private short cantidadGiros;
 	private boolean obstaculo; // el area tiene un obstaculo solido (ropa, silla, etc)
 	private int obstruccion; // -1 basura, 0 nada, 1 agua
 	private List<Double> coordenada; // el primer valor representa X, el segundo valor representa Y
@@ -25,6 +26,7 @@ public class Casillero {
 		this.id = id;
 		this.factorVelocidadSuperficie = 1.0;
 		this.visitado = false;
+	//	this.cantidadGiros = 0;
 		this.obstaculo = false;
 		this.obstruccion = 0;
 		this.setCoordenada(null);
@@ -69,6 +71,7 @@ public class Casillero {
 	
 	public void setVisitado(boolean visitado) {
 		this.visitado = visitado;
+//		System.out.print(id + " VISITADO");
 	}
 
 	public boolean isVisitado() {
@@ -121,5 +124,19 @@ public class Casillero {
 		
 		return nuevoCasillero;
 	}
+
+
+//	public void setCantidadGiros(short cantidadGiros) {
+//		this.cantidadGiros = cantidadGiros;
+//	}
+
+	/*public void incrementarCantidadGiros() {
+		this.cantidadGiros++;
+	}*/
+
+
+//	public short getCantidadGiros() {
+//		return cantidadGiros;
+//	}
 }
 

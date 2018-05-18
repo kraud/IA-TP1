@@ -60,8 +60,7 @@ public class SmartToy extends SearchBasedAgent {
         // Ask the solver for the best action
         Action selectedAction = null;
         try {
-            selectedAction =
-                    this.getSolver().solve(new Object[]{this.getProblem()});
+            selectedAction = this.getSolver().solve(new Object[]{this.getProblem()});
         } catch (Exception ex) {
             Logger.getLogger(SmartToy.class.getName()).log(Level.SEVERE, null, ex);
         }

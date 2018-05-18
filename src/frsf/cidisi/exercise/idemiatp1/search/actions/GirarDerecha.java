@@ -20,6 +20,7 @@ public class GirarDerecha extends SearchAction {
         // PostConditions: null
     	EstadoAgente agState = (EstadoAgente) s;
         
+    	System.out.println("GIRÉ DERECHA BUSQUEDA!!!!");
         switch (agState.getorientacion()){
         	case 'n':	agState.setorientacion('e');
         				break;
@@ -48,6 +49,7 @@ public class GirarDerecha extends SearchAction {
         
         if (true) {
             // Update the real world
+        	System.out.println("GIRÉ DERECHA REAL!!!!");
         	switch (agState.getorientacion()){ // Uso solamente la orientacion del agState porque deberia ser igual a la del environmentState
         		case 'n':	agState.setorientacion('e');
         					environmentState.setOrientacionAgente('e');

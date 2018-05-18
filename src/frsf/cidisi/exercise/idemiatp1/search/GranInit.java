@@ -30,7 +30,7 @@ public class GranInit {
 		
 		// EJEMPLOS
 		
-		/*
+		
 		
 		  List<Double> aCoord = Arrays.asList(1.0, 3.0);
 		Casillero a = new Casillero("A",1.0,false,0,aCoord);
@@ -79,7 +79,7 @@ public class GranInit {
 		aristas.add(new Arco("DI",'h',d,i,1.0));
 		aristas.add(new Arco("AF",'h',a,f,1.0));
 		  
-		*/
+		
 		 
 		
 		//List<Double> n1Coord = Arrays.asList(1.38, 2.56);
@@ -92,7 +92,7 @@ public class GranInit {
 		
 		
 		// nodos patio delantero:
-		List<Double> pd0Coord = Arrays.asList(1.0, 15.0);
+	/*	List<Double> pd0Coord = Arrays.asList(1.0, 15.0);
 		Casillero pd0 = new Casillero("PD0",0.5,false,0,pd0Coord);
 		nodos.add(pd0);
 		
@@ -688,10 +688,10 @@ public class GranInit {
 		
 		//aristas Corredor C
 		
-		aristas.add(new Arco("C-0-1",'h',c0,g1,2.5));
-		aristas.add(new Arco("C-1-2",'h',c1,g2,1.0));
-		aristas.add(new Arco("C-2-3",'h',c2,g3,1.0));
-		aristas.add(new Arco("C-3-4",'h',c3,g4,1.0));
+		aristas.add(new Arco("C-0-1",'h',c0,c1,2.5));
+		aristas.add(new Arco("C-1-2",'h',c1,c2,1.0));
+		aristas.add(new Arco("C-2-3",'h',c2,c3,1.0));
+		aristas.add(new Arco("C-3-4",'h',c3,c4,1.0));
 		aristas.add(new Arco("C-4-SC",'h',c4,sc,1.5));
 		aristas.add(new Arco("SC-C-5",'h',sc,c5,1.5));
 		
@@ -867,7 +867,7 @@ public class GranInit {
 		aristas.add(new Arco("D-19-18",'v',d19,d18,1.5));
 		aristas.add(new Arco("D-19-14",'v',d14,d19,2.5));
 		
-		
+		*/
 		
 		
 		this.mapa.setNodos(nodos);

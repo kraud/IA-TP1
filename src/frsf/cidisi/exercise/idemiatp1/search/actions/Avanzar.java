@@ -29,6 +29,7 @@ public class Avanzar extends SearchAction {
         if(proximoNodo!=null && !obstaculizado){
         	proximoNodo.setVisitado(true);
         	agState.setposicion(proximoNodo);
+        	System.out.println("AVANCÉ BUSQUEDA!!!!");
         	return agState;
         }        
         return null;
@@ -64,6 +65,7 @@ public class Avanzar extends SearchAction {
             proximoNodo.setVisitado(true);
         	agState.setposicion(proximoNodo);
         	
+        	System.out.println("AVANCÉ REAL!!!!");
             return environmentState;
         }
 
