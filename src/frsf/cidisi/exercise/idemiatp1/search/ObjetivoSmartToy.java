@@ -20,7 +20,8 @@ public class ObjetivoSmartToy extends GoalTest {
     	String destId = dest.getId();
     	
         if  (posId.equals(destId)){
-            return true;
+        	System.out.println("Objetivo de busqueda alcanzado");
+        	return true;
         }
         else{
         	return false;

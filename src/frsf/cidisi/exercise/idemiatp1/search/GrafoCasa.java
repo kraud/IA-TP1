@@ -50,6 +50,21 @@ public class GrafoCasa {
 		return casilleroBuscado;
 	}
 	
+	public List<Arco> getArcosPorIds (String extrA){
+		List<Arco> arcosBuscados = new ArrayList<Arco>();
+		List<Arco> arcos = this.getAristas();
+		
+		for (Arco arco : arcos){
+			if(	( extrA.equals(arco.getExtremoA().getId())) ||
+				( extrA.equals(arco.getExtremoB().getId()))){
+				
+				arcosBuscados.add(arco);
+			}
+		}		
+		return  arcosBuscados;
+	}
+	
+	
 	// A partir de un nodo, busca si hay una arista que lo incluye y corrobora si hay otro nodo en la orientacion determinada. Si no lo hay, retorna null.
 	public Casillero proximoEnDireccion(Casillero posicion, char orientacion){
 		
@@ -107,7 +122,7 @@ public class GrafoCasa {
 		if (proximoNodo != null ) {
 			System.out.println("POS+O+V: " + posicion.getId() + "+" + orientacion + "+" + posicion.isVisitado()+ " ---> " + proximoNodo.getId()+"+" + proximoNodo.isVisitado());
 		} else {
-			System.out.println("SIN PROXIMO");
+			System.out.println("SIN PROXIMO: " + posicion.getId() + ", " + orientacion);
 		}
 		return proximoNodo;
 	}

@@ -36,12 +36,13 @@ public class EstadoAgente extends SearchBasedAgentState {
 
     	//Inicializamos posicion inicial del agente
     	this.posicion = this.mapa.getCasilleroPorId("A");
+    	this.mapa.getCasilleroPorId("A").setVisitado(true);
     	
     	//Inicializamos orientacion inicial del agente
     	this.orientacion = 's';
     	
     	//Inicializamos destino del agente
-    	this.destino = this.mapa.getCasilleroPorId("F");    	
+    	this.destino = this.mapa.getCasilleroPorId("H");    	
 
     	
 //		posicion = new Casillero();
@@ -69,7 +70,7 @@ public class EstadoAgente extends SearchBasedAgentState {
     	//	mapa
     	List<Casillero> mapaNodosClonados = new ArrayList<Casillero>();
     	for(Casillero c : this.mapa.getNodos()){
-    		mapaNodosClonados.add(c.clone());
+    		mapaNodosClonados.add(c.clone()); // USAR CONSTRUCTOR EN VEZ CLONAR ´c´ 
     	}
     	List<Arco> mapaAristasClonadas = new ArrayList<Arco>();
     	for(Arco a : this.mapa.getAristas()){

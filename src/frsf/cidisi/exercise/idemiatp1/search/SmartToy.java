@@ -43,16 +43,26 @@ public class SmartToy extends SearchBasedAgent {
     public Action selectAction() {
 
         // Create the search strategy
+        
+        DepthFirstSearch strategy = new DepthFirstSearch();
+    	
+    	//BreathFirstSearch strategy = new BreathFirstSearch();
+
+		//UniformCostSearch strategy = new UniformCostSearch(new CostFunction());
+        //GreedySearch strategy = new GreedySearch(heuristic);
+        
+    	/*
         IStepCostFunction cost = new CostFunction();
         IEstimatedCostFunction heuristic = new Heuristic(); 
-        AStarSearch strategy = new AStarSearch(cost, heuristic);          
+        AStarSearch strategy = new AStarSearch(cost, heuristic);         
+        */ 
 
         // Create a Search object with the strategy
         Search searchSolver = new Search(strategy);
 
         /* Generate an XML file with the search tree. It can also be generated
          * in other formats like PDF with PDF_TREE */
-        searchSolver.setVisibleTree(Search.EFAIA_TREE);
+        searchSolver.setVisibleTree(Search.GRAPHVIZ_TREE);
 
         // Set the Search searchSolver.
         this.setSolver(searchSolver);

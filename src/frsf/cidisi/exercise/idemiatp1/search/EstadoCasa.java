@@ -45,7 +45,7 @@ public class EstadoCasa extends EnvironmentState {
     	this.orientacionAgente = 's';
     	
     	//Inicializamos destino del agente
-    	this.destinoAgente = this.mapa.getCasilleroPorId("F");    	
+    	this.destinoAgente = this.mapa.getCasilleroPorId("H");    	
     }
 
     /**

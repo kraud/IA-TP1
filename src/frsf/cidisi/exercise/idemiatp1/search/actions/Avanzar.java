@@ -2,6 +2,7 @@ package frsf.cidisi.exercise.idemiatp1.search.actions;
 
 import java.util.List;
 
+import domain.Arco;
 import domain.Casillero;
 import frsf.cidisi.exercise.idemiatp1.search.*;
 import frsf.cidisi.faia.agent.search.SearchAction;
@@ -24,10 +25,23 @@ public class Avanzar extends SearchAction {
         // PostConditions: null
         
         Casillero proximoNodo = agState.getmapa().proximoEnDireccion(agState.getposicion(), agState.getorientacion());
-        boolean obstaculizado = agState.getobstaculos().contains(proximoNodo);
+        boolean obstaculizado = agState.getobstaculos().contains(proximoNodo); // revisa si objeto pertenece a la lista. Puede ser que nunca de verdadero. Revisar por ID
         
         if(proximoNodo!=null && !obstaculizado){
-        	proximoNodo.setVisitado(true);
+        	// proximoNodo.setVisitado(true);
+        	agState.getmapa().getCasilleroPorId(proximoNodo.getId()).setVisitado(true); // Marco como visitado el NODO en el mapa DEL AGENTE
+        	
+        	// Al parecer los extremos de los arcos NO son punteros a los nodos del mapa, asique los modifico manualmente
+        	List<Arco> arcosTemp = agState.getmapa().getArcosPorIds(proximoNodo.getId());
+        	for (Arco arc : arcosTemp){ // Hay que marcarlo como visitado en todos los arcos que lo contienen
+        		if(arc.getExtremoA().getId().equals(proximoNodo.getId())){ // NO ESTA CONSIDERANDO EL CASO EN QUE NO EXISTA EL ARCO. Revisar.
+            		arc.getExtremoA().setVisitado(true);
+            	}
+            	else {
+            		arc.getExtremoB().setVisitado(true);
+            	}
+        	}
+        	
         	agState.setposicion(proximoNodo);
         	System.out.println("AVANCÉ BUSQUEDA!!!!");
         	return agState;
@@ -51,7 +65,12 @@ public class Avanzar extends SearchAction {
         // PostConditions: null
         
         if (proximoNodo!=null && !obstaculizado) {
-            // Update the real world
+
+            // Update the agent state
+            agState.setposicion(proximoNodo);
+            // proximoNodo.setVisitado(true);
+        	
+        	// Update the real world
         	
         	// Busco el nodo correspondiente a 'proximoNodo', pero EN el mapa DEL AMBIENTE, para actualizar la informacion de visitado
         	List<Casillero> listaCasillerosAmbiente = environmentState.getMapa().getNodos();
@@ -60,11 +79,7 @@ public class Avanzar extends SearchAction {
         			c.setVisitado(true);
         		}
         	}
-        	
-            // Update the agent state
-            proximoNodo.setVisitado(true);
-        	agState.setposicion(proximoNodo);
-        	
+            
         	System.out.println("AVANCÉ REAL!!!!");
             return environmentState;
         }
@@ -78,9 +93,7 @@ public class Avanzar extends SearchAction {
     @Override
     public Double getCost() {
     	
-    	
-    	
-        return new Double(0);
+        return new Double(1);
     }
 
     /**
