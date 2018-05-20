@@ -8,80 +8,48 @@ nodo7[label="{EO: 7|cost: -3.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen
 }"]
 nodo9[label="{EO: 9|cost: -4.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nC.\nMirando\nhacia\nel\no.
 }"]
-nodo11[label="{EO: 11|cost: -5.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nC.\nMirando\nhacia\nel\nn.
+nodo10[label="{EO: 10|cost: -5.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nC.\nMirando\nhacia\nel\nn.
 }"]
-nodo13[label="{EO: 13|cost: -6.0|A: Avanzar|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nC.\nMirando\nhacia\nel\ne.
+nodo11[label="{EO: 11|cost: -6.0|A: Avanzar|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nC.\nMirando\nhacia\nel\ne.
 }"]
-nodo16[label="{EO: 16|cost: -7.0|A: Avanzar|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nD.\nMirando\nhacia\nel\ne.
+nodo12[label="{EO: 12|cost: -7.0|A: Avanzar|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nD.\nMirando\nhacia\nel\ne.
 }"]
-nodo19[label="{EO: 19|cost: -8.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\ne.
+nodo15[label="{EO: 15|cost: -8.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\ne.
 }"]
-nodo21[label="{EO: 21|cost: -9.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\ns.
+nodo17[label="{EO: 17|cost: -9.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\ns.
 }"]
-nodo23[label="{EO: 23|cost: -10.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\no.
+nodo18[label="{EO: 18|cost: -10.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\no.
 }"]
-nodo25[label="{EO: 25|cost: -11.0|A: Avanzar|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\nn.
-}"]
-
-nodo23 -> nodo25;
-nodo26[label="{EO: 26|cost: -11.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\nn.
+nodo19[label="{EO: 19|cost: -11.0|A: Avanzar|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\nn.
 }"]
 
-nodo23 -> nodo26;
-nodo27[label="{EO: 27|cost: -11.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\nn.
+nodo18 -> nodo19;
+
+nodo17 -> nodo18;
+
+nodo15 -> nodo17;
+
+nodo12 -> nodo15;
+nodo16[label="{EO: 16|cost: -8.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\ne.
 }"]
 
-nodo23 -> nodo27;
+nodo12 -> nodo16;
 
-nodo21 -> nodo23;
-nodo24[label="{EO: 24|cost: -10.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\no.
+nodo11 -> nodo12;
+nodo13[label="{EO: 13|cost: -7.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nD.\nMirando\nhacia\nel\ne.
 }"]
-
-nodo21 -> nodo24;
-
-nodo19 -> nodo21;
-nodo22[label="{EO: 22|cost: -9.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\ns.
-}"]
-
-nodo19 -> nodo22;
-
-nodo16 -> nodo19;
-nodo20[label="{EO: 20|cost: -8.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nI.\nMirando\nhacia\nel\ne.
-}"]
-
-nodo16 -> nodo20;
-
-nodo13 -> nodo16;
-nodo17[label="{EO: 17|cost: -7.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nD.\nMirando\nhacia\nel\ne.
-}"]
-
-nodo13 -> nodo17;
-nodo18[label="{EO: 18|cost: -7.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nD.\nMirando\nhacia\nel\ne.
-}"]
-
-nodo13 -> nodo18;
 
 nodo11 -> nodo13;
-nodo14[label="{EO: 14|cost: -6.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nC.\nMirando\nhacia\nel\ne.
+nodo14[label="{EO: 14|cost: -7.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nD.\nMirando\nhacia\nel\ne.
 }"]
 
 nodo11 -> nodo14;
-nodo15[label="{EO: 15|cost: -6.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nC.\nMirando\nhacia\nel\ne.
-}"]
 
-nodo11 -> nodo15;
+nodo10 -> nodo11;
 
-nodo9 -> nodo11;
-nodo12[label="{EO: 12|cost: -5.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nC.\nMirando\nhacia\nel\nn.
-}"]
-
-nodo9 -> nodo12;
+nodo9 -> nodo10;
 
 nodo7 -> nodo9;
-nodo10[label="{EO: 10|cost: -4.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nC.\nMirando\nhacia\nel\no.
-}"]
-
-nodo7 -> nodo10;
 
 nodo4 -> nodo7;
 nodo8[label="{EO: 8|cost: -3.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nC.\nMirando\nhacia\nel\ns.

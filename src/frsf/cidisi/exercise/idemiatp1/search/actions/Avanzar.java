@@ -34,7 +34,7 @@ public class Avanzar extends SearchAction {
         	// Al parecer los extremos de los arcos NO son punteros a los nodos del mapa, asique los modifico manualmente
         	List<Arco> arcosTemp = agState.getmapa().getArcosPorIds(proximoNodo.getId());
         	for (Arco arc : arcosTemp){ // Hay que marcarlo como visitado en todos los arcos que lo contienen
-        		if(arc.getExtremoA().getId().equals(proximoNodo.getId())){ // NO ESTA CONSIDERANDO EL CASO EN QUE NO EXISTA EL ARCO. Revisar.
+        		if(arc.getExtremoA().getId().equals(proximoNodo.getId())){ // TODO: NO ESTA CONSIDERANDO EL CASO EN QUE NO EXISTA EL ARCO. Revisar.
             		arc.getExtremoA().setVisitado(true);
             	}
             	else {
@@ -43,7 +43,7 @@ public class Avanzar extends SearchAction {
         	}
         	
         	agState.setposicion(proximoNodo);
-        	System.out.println("AVANCÉ BUSQUEDA!!!!");
+        	System.out.println("Avance BUSQUEDA.");
         	return agState;
         }        
         return null;
@@ -68,19 +68,38 @@ public class Avanzar extends SearchAction {
 
             // Update the agent state
             agState.setposicion(proximoNodo);
-            // proximoNodo.setVisitado(true);
-        	
+            // marcar nodo del mapa como visitado
+            for(Casillero nodo : agState.getmapa().getNodos()){
+            	if(nodo.getId().equals(proximoNodo.getId())){
+            		nodo.setVisitado(true);
+            	}
+            }          
+            // marcar arcos del mapa como visitado
+            List<Arco> arcosQueContieneProximoNodo = agState.getmapa().getArcosPorIds(proximoNodo.getId());
+            for (Arco arc : arcosQueContieneProximoNodo){
+        		if(arc.getExtremoA().getId().equals(proximoNodo.getId())){ // NO ESTA CONSIDERANDO EL CASO EN QUE NO EXISTA EL ARCO. Revisar.
+            		arc.getExtremoA().setVisitado(true);
+            	}
+            	else {
+            		arc.getExtremoB().setVisitado(true);
+            	}
+        	}
+            
         	// Update the real world
-        	
-        	// Busco el nodo correspondiente a 'proximoNodo', pero EN el mapa DEL AMBIENTE, para actualizar la informacion de visitado
+            
+            /*//NO SE TIENEN QUE MARCAR COMO VISITADOS LOS NODOS DEL MAPA AMBIENTE
+        	//Busco el nodo correspondiente a 'proximoNodo', pero EN el mapa DEL AMBIENTE, para actualizar la informacion de visitado
         	List<Casillero> listaCasillerosAmbiente = environmentState.getMapa().getNodos();
         	for(Casillero c : listaCasillerosAmbiente){
         		if(c.getId().equals(proximoNodo.getId())){
         			c.setVisitado(true);
+        			// TODO: marcar arcos
         		}
         	}
+        	*/
+            environmentState.setposicionAgente(proximoNodo);
             
-        	System.out.println("AVANCÉ REAL!!!!");
+        	System.out.println("Avance REAL.");
             return environmentState;
         }
 

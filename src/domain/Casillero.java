@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Casillero {
@@ -19,6 +20,16 @@ public class Casillero {
 		this.obstaculo = false;
 		this.obstruccion = 0;
 		this.setCoordenada(null);
+	}
+	
+	// Utilizado para clonar SIN referencia. Se usa para clonar el EstadoAgente
+	public Casillero (Casillero estadoNuevo){
+		this.id = estadoNuevo.id;
+		this.factorVelocidadSuperficie = estadoNuevo.factorVelocidadSuperficie;
+		this.visitado = estadoNuevo.visitado;
+		this.obstaculo = estadoNuevo.obstaculo;
+		this.obstruccion = estadoNuevo.obstruccion;
+		this.coordenada = Arrays.asList(estadoNuevo.coordenada.get(0), estadoNuevo.coordenada.get(1));
 	}
 	
 	
@@ -113,6 +124,9 @@ public class Casillero {
 	
 	// creo una copia del Casillero, para no generar problemas con referencias
 	public Casillero clone(){
+		
+		Casillero nuevoCasillero = new Casillero (this);
+		/*
 		Casillero nuevoCasillero = new Casillero();
 		
 		nuevoCasillero.setId(this.getId());
@@ -121,7 +135,7 @@ public class Casillero {
 		nuevoCasillero.setObstaculo(this.isObstaculo());
 		nuevoCasillero.setObstruccion(this.getObstruccion());
 		nuevoCasillero.setCoordenada(this.getCoordenada());
-		
+		*/
 		return nuevoCasillero;
 	}
 

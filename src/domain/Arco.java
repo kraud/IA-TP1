@@ -18,6 +18,14 @@ public class Arco {
 		this.longitud = 0.0;
 	}
 	
+	public Arco(Arco nuevoArco){
+		this.id = nuevoArco.id;
+		this.tipoDeArco = nuevoArco.tipoDeArco;
+		this.extremoA = nuevoArco.extremoA;
+		this.extremoB = nuevoArco.extremoB;
+		this.longitud = nuevoArco.longitud;		
+	}
+	
 	public Arco(String id, char tipo, Casillero cA, Casillero cB, double longitud){
 		this.id = id;
 		this.tipoDeArco = tipo;
@@ -70,6 +78,9 @@ public class Arco {
 	}
 	
 	public Arco clone(){
+		Arco nuevoArco = new Arco(this);
+		
+		/*
 		Arco nuevoArco = new Arco();
 		
 		nuevoArco.setId(this.getId());
@@ -77,7 +88,7 @@ public class Arco {
 		nuevoArco.setExtremoA(this.getExtremoA().clone());
 		nuevoArco.setExtremoB(this.getExtremoB().clone());
 		nuevoArco.setLongitud(this.getLongitud());
-		
+		*/
 		return nuevoArco;
 	}
 }

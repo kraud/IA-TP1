@@ -27,7 +27,8 @@ public class EstadoAgente extends SearchBasedAgentState {
 
     	// Inicializamos el mapa
 		mapa = new GrafoCasa();
-
+		
+		// TODO: Proablemente la inicializacion deberia ser otra para el agente. Toda informacion sobre las condiciones del estado del mapa no deberian verse
 		GranInit iniciar = new GranInit();
     	this.mapa.setNodos(iniciar.getMapa().getNodos());
     	this.mapa.setAristas(iniciar.getMapa().getAristas());
@@ -65,19 +66,19 @@ public class EstadoAgente extends SearchBasedAgentState {
     	// Atributo primitivo, se pasa por copia
     	//	orientacion
     	estadoClonado.setorientacion(this.getorientacion());
-    	
-    	// Atributos objeto, se clonan
+    	// Atributos objeto, se clonan (usamos constructor que es lo mismo)
     	//	mapa
     	List<Casillero> mapaNodosClonados = new ArrayList<Casillero>();
     	for(Casillero c : this.mapa.getNodos()){
-    		mapaNodosClonados.add(c.clone()); // USAR CONSTRUCTOR EN VEZ CLONAR ´c´ 
+    		mapaNodosClonados.add(new Casillero(c));
     	}
     	List<Arco> mapaAristasClonadas = new ArrayList<Arco>();
     	for(Arco a : this.mapa.getAristas()){
-    		mapaAristasClonadas.add(a.clone());
+    		mapaAristasClonadas.add(new Arco(a));
     	}
     	GrafoCasa mapaClonado = new GrafoCasa(mapaNodosClonados, mapaAristasClonadas);
     	estadoClonado.setmapa(mapaClonado);
+    	
     	//	obstaculos
     	List<Casillero> obstaculosClonados = new ArrayList<Casillero>();
     	for(Casillero ca : mapaClonado.getNodos()){
@@ -111,7 +112,7 @@ public class EstadoAgente extends SearchBasedAgentState {
     @Override
     public void updateState(Perception p) {
         
-        //TODO: Complete Method
+        //TODO: Revisar que pasa cuando el siguienteCasillero retorna null (osea que no hay casillero libre y/o no-visitado)
     	Casillero siguienteCasillero = ((SmartToyPerception) p).getProximoNodo(); // Este Casillero 'sabe' si es un OBSTACULO o si tiene una OBSTRUCCION. Viene desde el Mapa del EstadoAmbiente
     	List<Casillero> nodosMapaAgente = this.getmapa().getNodos();
 		
@@ -123,6 +124,7 @@ public class EstadoAgente extends SearchBasedAgentState {
     		for(Casillero cas : nodosMapaAgente){
     			if(cas.getId().equals(siguienteCasillero.getId())){
     				cas.setObstaculo(true);
+    				// TODO: AGREGAR EL OBSTACULO EN LA LISTA DE ARISTAS.
     			}
     		}
     		
@@ -172,14 +174,19 @@ public class EstadoAgente extends SearchBasedAgentState {
        EstadoAgente estado = (EstadoAgente) obj;
 
     	boolean igualId = false;
+    	/*
     	boolean igualesObstaculos = false;
        	boolean igualesVisitados = false;
     	boolean igualesObstrucciones = false;
+    	*/
+    	boolean igualOrientacion = false;
+    	
     	
     	// IGUAL ID
     	igualId = this.getposicion().getId().equals(estado.getposicion().getId());
     	
-    	// IGUAL OBSTACULOS
+    	
+    	/* IGUAL OBSTACULOS
     	for(int i=0; i < this.getmapa().getNodos().size(); i++){
     		igualesObstaculos =
     			igualesObstaculos
@@ -211,6 +218,10 @@ public class EstadoAgente extends SearchBasedAgentState {
     	
     	
         return (igualId && igualesObstaculos && igualesVisitados && igualesObstrucciones);
+        */
+    	igualOrientacion = (this.getorientacion()==estado.getorientacion());
+    	
+    	return (igualId && igualOrientacion);
     }
 
     //TODO: Complete this section with agent-specific methods
