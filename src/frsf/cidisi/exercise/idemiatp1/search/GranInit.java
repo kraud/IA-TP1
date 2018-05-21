@@ -101,11 +101,11 @@ public class GranInit {
 		nodos.add(pd1);
 		
 		List<Double> pd2Coord = Arrays.asList(1.0, 8.0);
-		Casillero pd2 = new Casillero("PD2",1,false,0,pd2Coord);
+		Casillero pd2 = new Casillero("PD2",1.0,false,0,pd2Coord);
 		nodos.add(pd2);
 		
 		List<Double> pd3Coord = Arrays.asList(1.0, 5.5);
-		Casillero pd3 = new Casillero("PD3",1,false,0,pd3Coord);
+		Casillero pd3 = new Casillero("PD3",1.0,false,0,pd3Coord);
 		nodos.add(pd3);
 		
 		List<Double> pd4Coord = Arrays.asList(1.0, 1.0);
@@ -113,41 +113,41 @@ public class GranInit {
 		nodos.add(pd4);
 		
 		List<Double> pd5Coord = Arrays.asList(3.0, 12.0);
-		Casillero pd5 = new Casillero("PD5",1,false,0,pd5Coord);
+		Casillero pd5 = new Casillero("PD5",1.0,false,0,pd5Coord);
 		nodos.add(pd5);
 		
 		List<Double> pd6Coord = Arrays.asList(3.0, 8.0);
-		Casillero pd6 = new Casillero("PD6",1,false,0,pd6Coord);
+		Casillero pd6 = new Casillero("PD6",1.0,false,0,pd6Coord);
 		nodos.add(pd6);
 		
 		List<Double> pd7Coord = Arrays.asList(3.0, 5.5);
-		Casillero pd7 = new Casillero("PD7",1,false,0,pd7Coord);
+		Casillero pd7 = new Casillero("PD7",1.0,false,0,pd7Coord);
 		nodos.add(pd7);
 		
 		List<Double> pd8Coord = Arrays.asList(3.0, 3.0);
-		Casillero pd8 = new Casillero("PD8",1,false,0,pd8Coord);
+		Casillero pd8 = new Casillero("PD8",1.0,false,0,pd8Coord);
 		nodos.add(pd8);
 		
 		// nodos patio right
 		
 		List<Double> pr0Coord = Arrays.asList(5.5, 1.0);
-		Casillero pr0 = new Casillero("PR0",1,false,0,pr0Coord);
+		Casillero pr0 = new Casillero("PR0",1.0,false,0,pr0Coord);
 		nodos.add(pr0);
 		
 		List<Double> pr1Coord = Arrays.asList(10.0, 1.0);
-		Casillero pr1 = new Casillero("PR1",1,false,0,pr1Coord);
+		Casillero pr1 = new Casillero("PR1",1.0,false,0,pr1Coord);
 		nodos.add(pr1);
 		
 		List<Double> pr2Coord = Arrays.asList(14.5, 1.0);
-		Casillero pr2 = new Casillero("PR2",1,false,0,pr2Coord);
+		Casillero pr2 = new Casillero("PR2",1.0,false,0,pr2Coord);
 		nodos.add(pr2);
 		
 		List<Double> pr3Coord = Arrays.asList(19.0, 1.0);
-		Casillero pr3 = new Casillero("PR3",1,false,0,pr3Coord);
+		Casillero pr3 = new Casillero("PR3",1.0,false,0,pr3Coord);
 		nodos.add(pr3);
 		
 		List<Double> pr4Coord = Arrays.asList(24.0, 1.0);
-		Casillero pr4 = new Casillero("PR4",1,false,0,pr4Coord);
+		Casillero pr4 = new Casillero("PR4",1.0,false,0,pr4Coord);
 		nodos.add(pr4);
 		
 		//nodos patio left

@@ -144,10 +144,12 @@ public class GrafoCasa {
 			}
 			double mitadDistancia = ar.getLongitud() / 2;
 			
-			double tiempoPos = mitadDistancia*(pos.getFactorVelocidadSuperficie());
-			double tiempoSig = mitadDistancia*(sig.getFactorVelocidadSuperficie());
+			double tiempoPos = mitadDistancia/(pos.getFactorVelocidadSuperficie());
+			double tiempoSig = mitadDistancia/(sig.getFactorVelocidadSuperficie());
 			
-			return (tiempoPos + tiempoSig);
+			double valorFinal = (tiempoPos + tiempoSig); // Para redondear el Double a 3 digitos despues de la coma
+			
+			return valorFinal;
 			
 		} else {
 			return 9999999.0;
@@ -163,6 +165,7 @@ public class GrafoCasa {
 										+
 										(Math.pow((posicion.getCoordenada().get(1) - destino.getCoordenada().get(1)), 2))
 							);
+		
 		return distanciaPitagora; // en realidad es tiempoPitagora, pero usamos la velocidad promedio de 1 metro/segundo
 								  // velocidad*distancia = tiempo => cuando velocidad es 1: valor de distancia = valor tiempo
 	}

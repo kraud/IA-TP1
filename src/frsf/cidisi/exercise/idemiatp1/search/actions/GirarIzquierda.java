@@ -76,7 +76,7 @@ public class GirarIzquierda extends SearchAction {
      */
     @Override
     public Double getCost() {
-        return new Double(1); // El SmartToy tarda 1 segundo en cambiar de direccion
+        return new Double(0.0); // El SmartToy tarda 1 segundo en cambiar de direccion
     }
 
     /**

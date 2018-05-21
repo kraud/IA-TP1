@@ -1,5 +1,7 @@
 package frsf.cidisi.exercise.idemiatp1.search;
 
+import interfaz.VistaPrincipal;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +19,7 @@ public class EstadoCasa extends EnvironmentState {
     private Casillero destinoAgente;
     private List<Casillero> obstaculosCasa;
 	private GrafoCasa mapa;
+	private VistaPrincipal ventana;
     
 	public EstadoCasa() {
         //TODO: Complete Method -- Aca se pueden crear los nodos / e inicializar
@@ -45,8 +48,21 @@ public class EstadoCasa extends EnvironmentState {
     	this.orientacionAgente = 'e';
     	
     	//Inicializamos destino del agente
-    	this.destinoAgente = this.mapa.getCasilleroPorId("ME4");    	
+    	this.destinoAgente = this.mapa.getCasilleroPorId("ME4");
+    	
+    	//INTERFAZ
+    	List<Casillero> obstaculos = new ArrayList<Casillero>();
+    	for(Casillero n : this.getMapa().getNodos()){
+    		if(n.getObstruccion() != 0){
+    			obstaculos.add(n);
+    		}
+    	}
+    	ventana = new VistaPrincipal(this.posicionAgente,this.destinoAgente, this.getobstaculosCasa(), obstaculos);
     }
+    
+    public void modificarPosicionSmartToy(Casillero destino) {
+		ventana.actualizarPosicionAuto(destino);
+	}
 
     /**
      * String representation of the real world state.

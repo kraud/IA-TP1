@@ -98,7 +98,7 @@ public class Avanzar extends SearchAction {
         	}
         	*/
             environmentState.setposicionAgente(proximoNodo);
-            
+            environmentState.modificarPosicionSmartToy(proximoNodo);
         	System.out.println("Avance REAL.");
             return environmentState;
         }
@@ -112,7 +112,7 @@ public class Avanzar extends SearchAction {
     @Override
     public Double getCost() {
     	
-        return new Double(1);
+        return new Double(1.0);
     }
 
     /**

@@ -19,7 +19,7 @@ public class CostFunction implements IStepCostFunction {
         GrafoCasa mapa = estado.getmapa();
            	
     	
-        //return node.getAction().getCost(); -> no sabemos donde hacer los cambios para darle la informacion necesaria a getCost
-        return mapa.costoAvanzar(estado);
+        double auxCosto = mapa.costoAvanzar(estado); 
+        return auxCosto;
     }
 }
