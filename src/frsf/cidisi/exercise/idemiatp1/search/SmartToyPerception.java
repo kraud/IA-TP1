@@ -64,13 +64,14 @@ public class SmartToyPerception extends Perception {
         //	clonar mapa
     	List<Casillero> nuevaListaNodosMapa = new ArrayList<Casillero>();
     	for(Casillero c : environmentState.getMapa().getNodos()){
-    		Casillero aux = c.clone();
+    		Casillero aux = new Casillero(c); // c.clone() -> antes
     		aux.setObstaculo(false); // Es para borrar la informacion de obstaculos que el agente todavia no encontro, que si esta presente en el mapa completo del ambiente
+    		aux.setObstruccion(0);
     		nuevaListaNodosMapa.add(aux);
     	}
     	List<Arco> nuevaListaAristasMapa = new ArrayList<Arco>();
     	for(Arco a : environmentState.getMapa().getAristas()){
-    		nuevaListaAristasMapa.add(a.clone());
+    		nuevaListaAristasMapa.add(new Arco(a)); // a.clone() -> antes
     	}
     	GrafoCasa nuevoMapa = new GrafoCasa(nuevaListaNodosMapa, nuevaListaAristasMapa);
     	estadoAg.setmapa(nuevoMapa);
