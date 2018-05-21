@@ -212,55 +212,55 @@ public class GranInit {
 		
         //nodos garage
 		
-		List<Double> g0Coord = Arrays.asList(6.0, 3.0);
-		Casillero g0 = new Casillero("G0",1.0,false,0,g0Coord);
-		nodos.add(g0);
+		List<Double> ga0Coord = Arrays.asList(6.0, 3.0);
+		Casillero ga0 = new Casillero("GA0",1.0,false,0,ga0Coord);
+		nodos.add(ga0);
 		
-		List<Double> g1Coord = Arrays.asList(8.5, 3.0);
-		Casillero g1 = new Casillero("G1",1.0,false,0,g1Coord);
-		nodos.add(g1);
+		List<Double> ga1Coord = Arrays.asList(8.5, 3.0);
+		Casillero ga1 = new Casillero("GA1",1.0,false,0,ga1Coord);
+		nodos.add(ga1);
 		
-		List<Double> g2Coord = Arrays.asList(8.5, 5.5);
-		Casillero g2 = new Casillero("G2",1.0,false,0,g2Coord);
-		nodos.add(g2);
+		List<Double> ga2Coord = Arrays.asList(8.5, 5.5);
+		Casillero ga2 = new Casillero("GA2",1.0,false,0,ga2Coord);
+		nodos.add(ga2);
 		
-		List<Double> g3Coord = Arrays.asList(8.5, 8.0);
-		Casillero g3 = new Casillero("G3",1.0,false,0,g3Coord);
-		nodos.add(g3);
+		List<Double> ga3Coord = Arrays.asList(8.5, 8.0);
+		Casillero ga3 = new Casillero("GA3",1.0,false,0,ga3Coord);
+		nodos.add(ga3);
 		
-		List<Double> g4Coord = Arrays.asList(5.5, 8.0);
-		Casillero g4 = new Casillero("G4",1.0,false,0,g4Coord);
-		nodos.add(g4);
+		List<Double> ga4Coord = Arrays.asList(5.5, 8.0);
+		Casillero ga4 = new Casillero("GA4",1.0,false,0,ga4Coord);
+		nodos.add(ga4);
 		
-		List<Double> g5Coord = Arrays.asList(5.5, 5.5);
-		Casillero g5 = new Casillero("G5",1.0,false,0,g5Coord);
-		nodos.add(g5);
+		List<Double> ga5Coord = Arrays.asList(5.5, 5.5);
+		Casillero ga5 = new Casillero("GA5",1.0,false,0,ga5Coord);
+		nodos.add(ga5);
 		
 		//nodos corredor
 		
-		List<Double> c0Coord = Arrays.asList(10.5, 5.5);
-		Casillero c0 = new Casillero("C0",1.0,false,0,c0Coord);
-		nodos.add(c0);
+		List<Double> co0Coord = Arrays.asList(10.5, 5.5);
+		Casillero co0 = new Casillero("CO0",1.0,false,0,co0Coord);
+		nodos.add(co0);
 		
-		List<Double> c1Coord = Arrays.asList(13.0, 5.5);
-		Casillero c1 = new Casillero("C1",1.0,false,0,c1Coord);
-		nodos.add(c1);
+		List<Double> co1Coord = Arrays.asList(13.0, 5.5);
+		Casillero co1 = new Casillero("CO1",1.0,false,0,co1Coord);
+		nodos.add(co1);
 		
-		List<Double> c2Coord = Arrays.asList(14.0, 5.5);
-		Casillero c2 = new Casillero("C2",1.0,false,0,c2Coord);
-		nodos.add(c2);
+		List<Double> co2Coord = Arrays.asList(14.0, 5.5);
+		Casillero co2 = new Casillero("CO2",1.0,false,0,co2Coord);
+		nodos.add(co2);
 		
-		List<Double> c3Coord = Arrays.asList(15.0, 5.5);
-		Casillero c3 = new Casillero("C3",1.0,false,0,c3Coord);
-		nodos.add(c3);
+		List<Double> co3Coord = Arrays.asList(15.0, 5.5);
+		Casillero co3 = new Casillero("CO3",1.0,false,0,co3Coord);
+		nodos.add(co3);
 		
-		List<Double> c4Coord = Arrays.asList(16.0, 5.5);
-		Casillero c4 = new Casillero("C4",1.0,false,0,c4Coord);
-		nodos.add(c4);
+		List<Double> co4Coord = Arrays.asList(16.0, 5.5);
+		Casillero co4 = new Casillero("CO4",1.0,false,0,co4Coord);
+		nodos.add(co4);
 		
-		List<Double> c5Coord = Arrays.asList(19.0, 5.5);
-		Casillero c5 = new Casillero("C5",1.0,false,0,c5Coord);
-		nodos.add(c5);
+		List<Double> co5Coord = Arrays.asList(19.0, 5.5);
+		Casillero co5 = new Casillero("CO5",1.0,false,0,co5Coord);
+		nodos.add(co5);
 		
 		//NODO STEP CORREDOR SC
 		
@@ -269,9 +269,9 @@ public class GranInit {
 		nodos.add(sc);
 		
 		// nodo lavadero W
-		List<Double> wCoord = Arrays.asList(10.5, 3.0);
-		Casillero w = new Casillero("W0",1.0,false,0,wCoord);
-		nodos.add(w);
+		List<Double> wwCoord = Arrays.asList(10.5, 3.0);
+		Casillero ww = new Casillero("WW0",1.0,false,0,wwCoord);
+		nodos.add(ww);
 		
 		//nodos habitacion r HR
 		
@@ -374,49 +374,49 @@ public class GranInit {
 		
 		//nodos cocina K
 		
-		List<Double> k0Coord = Arrays.asList(12.5, 12.0);
-		Casillero k0 = new Casillero("K0",1.0,false,0,k0Coord);
-		nodos.add(k0);
+		List<Double> ki0Coord = Arrays.asList(12.5, 12.0);
+		Casillero ki0 = new Casillero("KI0",1.0,false,0,ki0Coord);
+		nodos.add(ki0);
 		
-		List<Double> k1Coord = Arrays.asList(12.5, 11.0);
-		Casillero k1 = new Casillero("K1",1.0,false,0,k1Coord);
-		nodos.add(k1);
+		List<Double> ki1Coord = Arrays.asList(12.5, 11.0);
+		Casillero ki1 = new Casillero("KI1",1.0,false,0,ki1Coord);
+		nodos.add(ki1);
 		
-		List<Double> k2Coord = Arrays.asList(11.0, 11.0);
-		Casillero k2 = new Casillero("K2",1.0,false,0,k2Coord);
-		nodos.add(k2);
+		List<Double> ki2Coord = Arrays.asList(11.0, 11.0);
+		Casillero ki2 = new Casillero("KI2",1.0,false,0,ki2Coord);
+		nodos.add(ki2);
 		
-		List<Double> k3Coord = Arrays.asList(11.0, 7.0);
-		Casillero k3 = new Casillero("K3",1.0,false,0,k3Coord);
-		nodos.add(k3);
+		List<Double> ki3Coord = Arrays.asList(11.0, 7.0);
+		Casillero ki3 = new Casillero("KI3",1.0,false,0,ki3Coord);
+		nodos.add(ki3);
 		
-		List<Double> k4Coord = Arrays.asList(12.5, 7.0);
-		Casillero k4 = new Casillero("K4",1.0,false,0,k4Coord);
-		nodos.add(k4);
+		List<Double> ki4Coord = Arrays.asList(12.5, 7.0);
+		Casillero ki4 = new Casillero("KI4",1.0,false,0,ki4Coord);
+		nodos.add(ki4);
 		
-		List<Double> k5Coord = Arrays.asList(12.5, 9.5);
-		Casillero k5 = new Casillero("K5",1.0,false,0,k5Coord);
-		nodos.add(k5);
+		List<Double> ki5Coord = Arrays.asList(12.5, 9.5);
+		Casillero ki5 = new Casillero("KI5",1.0,false,0,ki5Coord);
+		nodos.add(ki5);
 		
-		List<Double> k6Coord = Arrays.asList(14.0, 7.0);
-		Casillero k6 = new Casillero("K6",1.0,false,0,k6Coord);
-		nodos.add(k6);
+		List<Double> ki6Coord = Arrays.asList(14.0, 7.0);
+		Casillero ki6 = new Casillero("KI6",1.0,false,0,ki6Coord);
+		nodos.add(ki6);
 		
-		List<Double> k7Coord = Arrays.asList(16.0, 7.0);
-		Casillero k7 = new Casillero("K7",1.0,false,0,k7Coord);
-		nodos.add(k7);
+		List<Double> ki7Coord = Arrays.asList(16.0, 7.0);
+		Casillero ki7 = new Casillero("KI7",1.0,false,0,ki7Coord);
+		nodos.add(ki7);
 		
-		List<Double> k8Coord = Arrays.asList(16.0, 9.5);
-		Casillero k8 = new Casillero("K8",1.0,false,0,k8Coord);
-		nodos.add(k8);
+		List<Double> ki8Coord = Arrays.asList(16.0, 9.5);
+		Casillero ki8 = new Casillero("KI8",1.0,false,0,ki8Coord);
+		nodos.add(ki8);
 		
-		List<Double> k9Coord = Arrays.asList(14.0, 9.5);
-		Casillero k9 = new Casillero("K9",1.0,false,0,k9Coord);
-		nodos.add(k9);
+		List<Double> ki9Coord = Arrays.asList(14.0, 9.5);
+		Casillero ki9 = new Casillero("KI9",1.0,false,0,ki9Coord);
+		nodos.add(ki9);
 		
-		List<Double> k10Coord = Arrays.asList(14.0, 11.0);
-		Casillero k10 = new Casillero("K10",1.0,false,0,k10Coord);
-		nodos.add(k10);
+		List<Double> ki10Coord = Arrays.asList(14.0, 11.0);
+		Casillero ki10 = new Casillero("Ki10",1.0,false,0,ki10Coord);
+		nodos.add(ki10);
 		
 		//NODO STEP Cocina SK
 		
@@ -426,72 +426,72 @@ public class GranInit {
 		
 		//nodos living L
 		
-		List<Double> l0Coord = Arrays.asList(21.0, 5.5);
-		Casillero l0 = new Casillero("L0",1.0,false,0,l0Coord);
-		nodos.add(l0);
+		List<Double> li0Coord = Arrays.asList(21.0, 5.5);
+		Casillero li0 = new Casillero("LI0",1.0,false,0,li0Coord);
+		nodos.add(li0);
 		
-		List<Double> l1Coord = Arrays.asList(21.0, 7.5);
-		Casillero l1 = new Casillero("L1",1.0,false,0,l1Coord);
-		nodos.add(l1);
+		List<Double> li1Coord = Arrays.asList(21.0, 7.5);
+		Casillero li1 = new Casillero("LI1",1.0,false,0,li1Coord);
+		nodos.add(li1);
 		
-		List<Double> l2Coord = Arrays.asList(24.5, 7.5);
-		Casillero l2 = new Casillero("L2",1.0,false,0,l2Coord);
-		nodos.add(l2);
+		List<Double> li2Coord = Arrays.asList(24.5, 7.5);
+		Casillero li2 = new Casillero("LI2",1.0,false,0,li2Coord);
+		nodos.add(li2);
 		
-		List<Double> l3Coord = Arrays.asList(24.5, 4.5);
-		Casillero l3 = new Casillero("L3",1.0,false,0,l3Coord);
-		nodos.add(l3);
+		List<Double> li3Coord = Arrays.asList(24.5, 4.5);
+		Casillero li3 = new Casillero("LI3",1.0,false,0,li3Coord);
+		nodos.add(li3);
 		
-		List<Double> l4Coord = Arrays.asList(21.0, 4.5);
-		Casillero l4 = new Casillero("L4",1.0,false,0,l4Coord);
-		nodos.add(l4);
+		List<Double> li4Coord = Arrays.asList(21.0, 4.5);
+		Casillero li4 = new Casillero("LI4",1.0,false,0,li4Coord);
+		nodos.add(li4);
 		
 		//nodos media M
 		
-		List<Double> m0Coord = Arrays.asList(12.5, 13.5);
-		Casillero m0 = new Casillero("M0",0.5,false,0,m0Coord);
-		nodos.add(m0);
+		List<Double> me0Coord = Arrays.asList(12.5, 13.5);
+		Casillero me0 = new Casillero("ME0",0.5,false,0,me0Coord);
+		nodos.add(me0);
 		
-		List<Double> m1Coord = Arrays.asList(13.5, 13.5);
-		Casillero m1 = new Casillero("M1",0.5,false,0,m1Coord);
-		nodos.add(l1);
+		List<Double> me1Coord = Arrays.asList(13.5, 13.5);
+		Casillero me1 = new Casillero("ME1",0.5,false,0,me1Coord);
+		nodos.add(me1);
 		
-		List<Double> m2Coord = Arrays.asList(13.5, 12.5);
-		Casillero m2 = new Casillero("M2",0.5,false,0,m2Coord);
-		nodos.add(m2);
+		List<Double> me2Coord = Arrays.asList(13.5, 12.5);
+		Casillero me2 = new Casillero("ME2",0.5,false,0,me2Coord);
+		nodos.add(me2);
 		
-		List<Double> m3Coord = Arrays.asList(15.5, 12.5);
-		Casillero m3 = new Casillero("M3",0.5,false,0,m3Coord);
-		nodos.add(m3);
+		List<Double> me3Coord = Arrays.asList(15.5, 12.5);
+		Casillero me3 = new Casillero("ME3",0.5,false,0,me3Coord);
+		nodos.add(me3);
 		
-		List<Double> m4Coord = Arrays.asList(15.5, 14.5);
-		Casillero m4 = new Casillero("M4",0.5,false,0,m4Coord);
-		nodos.add(m4);
+		List<Double> me4Coord = Arrays.asList(15.5, 14.5);
+		Casillero me4 = new Casillero("ME4",0.5,false,0,me4Coord);
+		nodos.add(me4);
 		
-		List<Double> m5Coord = Arrays.asList(11.5, 13.5);
-		Casillero m5 = new Casillero("M5",0.5,false,0,m5Coord);
-		nodos.add(m5);
+		List<Double> me5Coord = Arrays.asList(11.5, 13.5);
+		Casillero me5 = new Casillero("ME5",0.5,false,0,me5Coord);
+		nodos.add(me5);
 		
 		
 		// nodos entrada E
 		
-		List<Double> e0Coord = Arrays.asList(6.5, 12.0);
-		Casillero e0 = new Casillero("E0",1.0,false,0,e0Coord);
-		nodos.add(e0);
+		List<Double> en0Coord = Arrays.asList(6.5, 12.0);
+		Casillero en0 = new Casillero("EN0",1.0,false,0,en0Coord);
+		nodos.add(en0);
 		
-		List<Double> e1Coord = Arrays.asList(8.0, 12.0);
-		Casillero e1 = new Casillero("E1",1.0,false,0,e1Coord);
-		nodos.add(e1);
+		List<Double> en1Coord = Arrays.asList(8.0, 12.0);
+		Casillero en1 = new Casillero("EN1",1.0,false,0,en1Coord);
+		nodos.add(en1);
 		
-		List<Double> e2Coord = Arrays.asList(10.0, 12.0);
-		Casillero e2 = new Casillero("E2",1.0,false,0,e2Coord);
-		nodos.add(e2);
+		List<Double> en2Coord = Arrays.asList(10.0, 12.0);
+		Casillero en2 = new Casillero("EN2",1.0,false,0,en2Coord);
+		nodos.add(en2);
 		
 		// nodo Office
 		
-		List<Double> oCoord = Arrays.asList(10.0, 13.0);
-		Casillero o = new Casillero("O",1.0,false,0,oCoord);
-		nodos.add(o);
+		List<Double> ofCoord = Arrays.asList(10.0, 13.0);
+		Casillero of = new Casillero("OF",1.0,false,0,ofCoord);
+		nodos.add(of);
 		
 		//nodos Habitacion de Servicio HS
 		List<Double> hs0Coord = Arrays.asList(8.0, 10.5);
@@ -520,85 +520,85 @@ public class GranInit {
 		nodos.add(bs1);
 		
 		//nodos deck 
-		List<Double> d0Coord = Arrays.asList(21.5, 9.5);
-		Casillero d0 = new Casillero("D0",1.0,false,0,d0Coord);
-		nodos.add(d0);
+		List<Double> de0Coord = Arrays.asList(21.5, 9.5);
+		Casillero de0 = new Casillero("DE0",1.0,false,0,de0Coord);
+		nodos.add(de0);
 		
-		List<Double> d1Coord = Arrays.asList(21.5, 11.0);
-		Casillero d1 = new Casillero("D1",1.0,false,0,d1Coord);
-		nodos.add(d1);
+		List<Double> de1Coord = Arrays.asList(21.5, 11.0);
+		Casillero de1 = new Casillero("DE1",1.0,false,0,de1Coord);
+		nodos.add(de1);
 		
-		List<Double> d2Coord = Arrays.asList(21.5, 12.5);
-		Casillero d2 = new Casillero("D2",1.0,false,0,d2Coord);
-		nodos.add(d2);
+		List<Double> de2Coord = Arrays.asList(21.5, 12.5);
+		Casillero de2 = new Casillero("DE2",1.0,false,0,de2Coord);
+		nodos.add(de2);
 		
-		List<Double> d3Coord = Arrays.asList(20.5, 12.5);
-		Casillero d3 = new Casillero("D3",1.0,false,0,d3Coord);
-		nodos.add(d3);
+		List<Double> de3Coord = Arrays.asList(20.5, 12.5);
+		Casillero de3 = new Casillero("DE3",1.0,false,0,de3Coord);
+		nodos.add(de3);
 		
-		List<Double> d4Coord = Arrays.asList(17.0, 12.5);
-		Casillero d4 = new Casillero("D4",1.0,false,0,d4Coord);
-		nodos.add(d4);
+		List<Double> de4Coord = Arrays.asList(17.0, 12.5);
+		Casillero de4 = new Casillero("DE4",1.0,false,0,de4Coord);
+		nodos.add(de4);
 		
-		List<Double> d5Coord = Arrays.asList(17.0, 14.0);
-		Casillero d5 = new Casillero("D5",1.0,false,0,d5Coord);
-		nodos.add(d5);
+		List<Double> de5Coord = Arrays.asList(17.0, 14.0);
+		Casillero de5 = new Casillero("DE5",1.0,false,0,de5Coord);
+		nodos.add(de5);
 		
-		List<Double> d6Coord = Arrays.asList(20.0, 14.0);
-		Casillero d6 = new Casillero("D6",1.0,false,0,d6Coord);
-		nodos.add(d6);
+		List<Double> de6Coord = Arrays.asList(20.0, 14.0);
+		Casillero de6 = new Casillero("DE6",1.0,false,0,de6Coord);
+		nodos.add(de6);
 		
-		List<Double> d7Coord = Arrays.asList(21.5, 14.0);
-		Casillero d7 = new Casillero("D7",1.0,false,0,d7Coord);
-		nodos.add(d7);
+		List<Double> de7Coord = Arrays.asList(21.5, 14.0);
+		Casillero de7 = new Casillero("DE7",1.0,false,0,de7Coord);
+		nodos.add(de7);
 		
-		List<Double> d8Coord = Arrays.asList(23.0, 14.0);
-		Casillero d8 = new Casillero("D8",1.0,false,0,d8Coord);
-		nodos.add(d8);
+		List<Double> de8Coord = Arrays.asList(23.0, 14.0);
+		Casillero de8 = new Casillero("DE8",1.0,false,0,de8Coord);
+		nodos.add(de8);
 		
-		List<Double> d9Coord = Arrays.asList(23.0, 12.5);
-		Casillero d9 = new Casillero("D9",1.0,false,0,d9Coord);
-		nodos.add(d9);
+		List<Double> de9Coord = Arrays.asList(23.0, 12.5);
+		Casillero de9 = new Casillero("DE9",1.0,false,0,de9Coord);
+		nodos.add(de9);
 		
-		List<Double> d10Coord = Arrays.asList(23.0, 9.5);
-		Casillero d10 = new Casillero("D10",1.0,false,0,d10Coord);
-		nodos.add(d10);
+		List<Double> de10Coord = Arrays.asList(23.0, 9.5);
+		Casillero de10 = new Casillero("DE10",1.0,false,0,de10Coord);
+		nodos.add(de10);
 		
-		List<Double> d11Coord = Arrays.asList(24.5, 9.5);
-		Casillero d11 = new Casillero("D11",1.0,false,0,d11Coord);
-		nodos.add(d11);
+		List<Double> de11Coord = Arrays.asList(24.5, 9.5);
+		Casillero de11 = new Casillero("DE11",1.0,false,0,de11Coord);
+		nodos.add(de11);
 		
-		List<Double> d12Coord = Arrays.asList(24.5, 12.5);
-		Casillero d12 = new Casillero("D12",1.0,false,0,d12Coord);
-		nodos.add(d12);
+		List<Double> de12Coord = Arrays.asList(24.5, 12.5);
+		Casillero de12 = new Casillero("DE12",1.0,false,0,de12Coord);
+		nodos.add(de12);
 		
-		List<Double> d13Coord = Arrays.asList(24.5, 15.0);
-		Casillero d13 = new Casillero("D13",1.0,false,0,d13Coord);
-		nodos.add(d13);
+		List<Double> de13Coord = Arrays.asList(24.5, 15.0);
+		Casillero de13 = new Casillero("DE13",1.0,false,0,de13Coord);
+		nodos.add(de13);
 		
-		List<Double> d14Coord = Arrays.asList(25.0, 15.0);
-		Casillero d14 = new Casillero("D14",1.0,false,0,d14Coord);
-		nodos.add(d14);
+		List<Double> de14Coord = Arrays.asList(25.0, 15.0);
+		Casillero de14 = new Casillero("DE14",1.0,false,0,de14Coord);
+		nodos.add(de14);
 		
-		List<Double> d15Coord = Arrays.asList(27.5, 15.0);
-		Casillero d15 = new Casillero("D15",1.0,false,0,d15Coord);
-		nodos.add(d15);
+		List<Double> de15Coord = Arrays.asList(27.5, 15.0);
+		Casillero de15 = new Casillero("DE15",1.0,false,0,de15Coord);
+		nodos.add(de15);
 		
-		List<Double> d16Coord = Arrays.asList(27.5, 13.0);
-		Casillero d16 = new Casillero("D16",1.0,false,0,d16Coord);
-		nodos.add(d16);
+		List<Double> de16Coord = Arrays.asList(27.5, 13.0);
+		Casillero de16 = new Casillero("DE16",1.0,false,0,de16Coord);
+		nodos.add(de16);
 		
-		List<Double> d17Coord = Arrays.asList(27.5, 11.0);
-		Casillero d17 = new Casillero("D17",1.0,false,0,d17Coord);
-		nodos.add(d17);
+		List<Double> de17Coord = Arrays.asList(27.5, 11.0);
+		Casillero de17 = new Casillero("DE17",1.0,false,0,de17Coord);
+		nodos.add(de17);
 		
-		List<Double> d18Coord = Arrays.asList(25.0, 11.0);
-		Casillero d18 = new Casillero("D18",1.0,false,0,d18Coord);
-		nodos.add(d18);
+		List<Double> de18Coord = Arrays.asList(25.0, 11.0);
+		Casillero de18 = new Casillero("DE18",1.0,false,0,de18Coord);
+		nodos.add(de18);
 		
-		List<Double> d19Coord = Arrays.asList(25.0, 12.5);
-		Casillero d19 = new Casillero("D19",1.0,false,0,d19Coord);
-		nodos.add(d19);
+		List<Double> de19Coord = Arrays.asList(25.0, 12.5);
+		Casillero de19 = new Casillero("DE19",1.0,false,0,de19Coord);
+		nodos.add(de19);
 		
 		//step deck SD
 		
@@ -670,33 +670,33 @@ public class GranInit {
 		
 		//union PD con Garage
 		
-		aristas.add(new Arco("PD-7-G-5",'h',pd7,g5,2.5));
-		aristas.add(new Arco("PD-8-G-O",'h',pd8,g0,3.0));
+		aristas.add(new Arco("PD-7-G-5",'h',pd7,ga5,2.5));
+		aristas.add(new Arco("PD-8-G-O",'h',pd8,ga0,3.0));
 		
 		//aristas G
 		
-		aristas.add(new Arco("G-0-1",'h',g0,g1,2.5));
-		aristas.add(new Arco("G-1-2",'v',g2,g1,2.5));
-		aristas.add(new Arco("G-2-3",'v',g3,g2,2.5));
-		aristas.add(new Arco("G-3-4",'h',g4,g3,3.0));
-		aristas.add(new Arco("G-4-5",'v',g4,g5,2.5));
-		aristas.add(new Arco("G-5-2",'h',g5,g2,3.0));
+		aristas.add(new Arco("G-0-1",'h',ga0,ga1,2.5));
+		aristas.add(new Arco("G-1-2",'v',ga2,ga1,2.5));
+		aristas.add(new Arco("G-2-3",'v',ga3,ga2,2.5));
+		aristas.add(new Arco("G-3-4",'h',ga4,ga3,3.0));
+		aristas.add(new Arco("G-4-5",'v',ga4,ga5,2.5));
+		aristas.add(new Arco("G-5-2",'h',ga5,ga2,3.0));
 		
 		//union Garage con corredor
 		
-		aristas.add(new Arco("G-2-C-0",'h',g2,c0,2.0));
+		aristas.add(new Arco("G-2-C-0",'h',ga2,co0,2.0));
 		
-		//aristas Corredor C
+		//aristas Corredor Co
 		
-		aristas.add(new Arco("C-0-1",'h',c0,c1,2.5));
-		aristas.add(new Arco("C-1-2",'h',c1,c2,1.0));
-		aristas.add(new Arco("C-2-3",'h',c2,c3,1.0));
-		aristas.add(new Arco("C-3-4",'h',c3,c4,1.0));
-		aristas.add(new Arco("C-4-SC",'h',c4,sc,1.5));
-		aristas.add(new Arco("SC-C-5",'h',sc,c5,1.5));
+		aristas.add(new Arco("C-0-1",'h',co0,co1,2.5));
+		aristas.add(new Arco("C-1-2",'h',co1,co2,1.0));
+		aristas.add(new Arco("C-2-3",'h',co2,co3,1.0));
+		aristas.add(new Arco("C-3-4",'h',co3,co4,1.0));
+		aristas.add(new Arco("C-4-SC",'h',co4,sc,1.5));
+		aristas.add(new Arco("SC-C-5",'h',sc,co5,1.5));
 		
 		// union corredor con W
-		aristas.add(new Arco("C-0-W",'v',c0,w,2.5));
+		aristas.add(new Arco("C-0-W",'v',co0,ww,2.5));
 		
 		//union Corredor con HR
 		
@@ -710,7 +710,7 @@ public class GranInit {
 	
 		//union Corredor con HL
 		
-		aristas.add(new Arco("C-5-HL-0",'v',c4,hl0,1.5));
+		aristas.add(new Arco("C-5-HL-0",'v',co4,hl0,1.5));
 		
 		//aristas HL
 		
@@ -720,7 +720,7 @@ public class GranInit {
 		
 		//union Corredor con BC
 		
-		aristas.add(new Arco("C-3-BC-0",'v',c3,bc0,1.0));
+		aristas.add(new Arco("C-3-BC-0",'v',co3,bc0,1.0));
 		
 		//aristas BC
 		
@@ -730,7 +730,7 @@ public class GranInit {
 		
 		//union corredor con HG
 		
-		aristas.add(new Arco("C-5-HG-0",'h',c5,hg0,2.0));
+		aristas.add(new Arco("C-5-HG-0",'h',co5,hg0,2.0));
 		
 		//aristas HG
 		
@@ -753,63 +753,63 @@ public class GranInit {
 		
 		//union corredor C con cocina K
 		
-		aristas.add(new Arco("C-2-K-6",'v',k6,c2,1.5));
+		aristas.add(new Arco("C-2-K-6",'v',ki6,co2,1.5));
 		
 		//aristas cocina K
-		aristas.add(new Arco("k-0-1",'v',k0,k1,1.0));
-		aristas.add(new Arco("k-1-2",'h',k2,k1,1.5));
-		aristas.add(new Arco("k-2-3",'v',k2,k3,4.0));
-		aristas.add(new Arco("k-3-4",'h',k3,k4,1.5));
-		aristas.add(new Arco("k-4-5",'v',k5,k4,2.5));
-		aristas.add(new Arco("k-5-1",'v',k1,k5,1.5));
-		aristas.add(new Arco("k-4-6",'h',k4,k6,1.5));
-		aristas.add(new Arco("k-6-7",'h',k6,k7,2.0));
-		aristas.add(new Arco("k-7-8",'v',k8,k7,1.5));
-		aristas.add(new Arco("k-5-1",'h',k1,k5,1.5));
-		aristas.add(new Arco("k-8-9",'h',k9,k8,2.0));
-		aristas.add(new Arco("k-9-10",'v',k10,k9,1.5));
-		aristas.add(new Arco("k-5-9",'h',k5,k9,1.5));
-		aristas.add(new Arco("k-1-10",'h',k1,k10,1.5));
-		aristas.add(new Arco("k-10-SK",'h',k10,sk,1.0));
+		aristas.add(new Arco("k-0-1",'v',ki0,ki1,1.0));
+		aristas.add(new Arco("k-1-2",'h',ki2,ki1,1.5));
+		aristas.add(new Arco("k-2-3",'v',ki2,ki3,4.0));
+		aristas.add(new Arco("k-3-4",'h',ki3,ki4,1.5));
+		aristas.add(new Arco("k-4-5",'v',ki5,ki4,2.5));
+		aristas.add(new Arco("k-5-1",'v',ki1,ki5,1.5));
+		aristas.add(new Arco("k-4-6",'h',ki4,ki6,1.5));
+		aristas.add(new Arco("k-6-7",'h',ki6,ki7,2.0));
+		aristas.add(new Arco("k-7-8",'v',ki8,ki7,1.5));
+		aristas.add(new Arco("k-5-1",'h',ki1,ki5,1.5));
+		aristas.add(new Arco("k-8-9",'h',ki9,ki8,2.0));
+		aristas.add(new Arco("k-9-10",'v',ki10,ki9,1.5));
+		aristas.add(new Arco("k-5-9",'h',ki5,ki9,1.5));
+		aristas.add(new Arco("k-1-10",'h',ki1,ki10,1.5));
+		aristas.add(new Arco("k-10-SK",'h',ki10,sk,1.0));
 		
 		//union SK con L
 		
-		aristas.add(new Arco("SK-L-0",'h',sk,l0,1.0));
+		aristas.add(new Arco("SK-L-0",'h',sk,li0,1.0));
 		
 		//aristas living
 		
-		aristas.add(new Arco("L-0-1",'h',l0,l1,3.0));
-		aristas.add(new Arco("L-1-2",'v',l1,l2,1.5));
-		aristas.add(new Arco("L-2-3",'v',l2,l3,2.0));
-		aristas.add(new Arco("L-3-4",'h',l4,l3,2.0));
+		aristas.add(new Arco("L-0-1",'h',li0,li1,3.0));
+		aristas.add(new Arco("L-1-2",'v',li1,li2,1.5));
+		aristas.add(new Arco("L-2-3",'v',li2,li3,2.0));
+		aristas.add(new Arco("L-3-4",'h',li4,li3,2.0));
 		
 		//union k con M
 		
-		aristas.add(new Arco("K-0-M-0",'v',m0,k0,1.5));
+		aristas.add(new Arco("K-0-M-0",'v',me0,ki0,1.5));
 		
-		//aristas living
+		//aristas media
 		
-		aristas.add(new Arco("M-0-1",'h',m0,m1,1.0));
-		aristas.add(new Arco("M-1-2",'v',m1,m2,1.0));
-		aristas.add(new Arco("M-2-3",'h',m2,m3,2.0));
-		aristas.add(new Arco("M-3-4",'v',m4,m3,2.0));
-		aristas.add(new Arco("M-0-5",'h',m0,m5,1.0));
+		aristas.add(new Arco("M-0-1",'h',me0,me1,1.0));
+		aristas.add(new Arco("M-1-2",'v',me1,me2,1.0));
+		aristas.add(new Arco("M-2-3",'h',me2,me3,2.0));
+		aristas.add(new Arco("M-3-4",'v',me4,me3,2.0));
+		aristas.add(new Arco("M-0-5",'h',me0,me5,1.0));
 		
 		
 		//union PD con E y E con K
 		
-		aristas.add(new Arco("PD-5-E-0",'h',pd5,e0,3.5));
-		aristas.add(new Arco("E-2-K-0",'h',e2,k0,2.5));
+		aristas.add(new Arco("PD-5-E-0",'h',pd5,en0,3.5));
+		aristas.add(new Arco("E-2-K-0",'h',en2,ki0,2.5));
 		
 		// aristas E
-		aristas.add(new Arco("E-0-E-1",'h',e0,e1,1.5));
-		aristas.add(new Arco("E-1-E-2",'h',e1,e2,2.0));
+		aristas.add(new Arco("E-0-E-1",'h',en0,en1,1.5));
+		aristas.add(new Arco("E-1-E-2",'h',en1,en2,2.0));
 		
 		//union E con O
-		aristas.add(new Arco("E-2-O",'v',o,e2,1.0));
+		aristas.add(new Arco("E-2-O",'v',of,en2,1.0));
 		
 		//union E con Habitacion de Servicio
-		aristas.add(new Arco("E-1-HS-0",'v',e1,hs0,1.0));
+		aristas.add(new Arco("E-1-HS-0",'v',en1,hs0,1.0));
 		
 		//aristas HS
 		aristas.add(new Arco("HS-0-HS-1",'v',hs0,hs1,0.5));
@@ -824,48 +824,48 @@ public class GranInit {
 		
 		//union deck patio trasero
 		
-		aristas.add(new Arco("D-16-PT-1",'h',d16,pt1,2.0));
+		aristas.add(new Arco("D-16-PT-1",'h',de16,pt1,2.0));
 		
 		//union deck con living
 		
-		aristas.add(new Arco("L-0-D-4",'v',d4,l0,1.5));
-		aristas.add(new Arco("L-1-D-3",'v',d3,l1,1.5));
-		aristas.add(new Arco("L-1-D-1",'h',l1,d1,1.5));
-		aristas.add(new Arco("L-2-D-0",'h',l2,d0,1.5));
+		aristas.add(new Arco("L-0-D-4",'v',de4,li0,1.5));
+		aristas.add(new Arco("L-1-D-3",'v',de3,li1,1.5));
+		aristas.add(new Arco("L-1-D-1",'h',li1,de1,1.5));
+		aristas.add(new Arco("L-2-D-0",'h',li2,de0,1.5));
 		
 		//aristas deck superior
-		aristas.add(new Arco("D-0-D-1",'v',d1,d0,1.5));
-		aristas.add(new Arco("D-2-D-1",'v',d2,d1,1.5));
-		aristas.add(new Arco("D-7-D-2",'v',d7,d2,1.5));
-		aristas.add(new Arco("D-6-D-3",'v',d6,d3,1.5));
-		aristas.add(new Arco("D-5-D-4",'v',d5,d4,1.5));
-		aristas.add(new Arco("D-8-D-9",'v',d8,d9,1.5));
-		aristas.add(new Arco("D-3-D-2",'h',d3,d2,1.5));
-		aristas.add(new Arco("D-6-D-7",'h',d6,d7,1.5));
-		aristas.add(new Arco("D-7-D-8",'h',d7,d8,1.5));
-		aristas.add(new Arco("D-2-D-9",'h',d2,d9,1.5));
-		aristas.add(new Arco("D-9-D-12",'h',d9,d12,1.5));
-		aristas.add(new Arco("D-10-D-11",'v',d10,d11,1.5));
-		aristas.add(new Arco("D-0-D-10",'v',d0,d10,1.5));
-		aristas.add(new Arco("D-5-D-6",'h',d5,d6,3.0));		
-		aristas.add(new Arco("D-4-D-3",'h',d4,d3,3.0));
-		aristas.add(new Arco("D-9-D-10",'v',d9,d10,3.0));
-		aristas.add(new Arco("D-12-D-11",'v',d12,d11,3.0));
+		aristas.add(new Arco("D-0-D-1",'v',de1,de0,1.5));
+		aristas.add(new Arco("D-2-D-1",'v',de2,de1,1.5));
+		aristas.add(new Arco("D-7-D-2",'v',de7,de2,1.5));
+		aristas.add(new Arco("D-6-D-3",'v',de6,de3,1.5));
+		aristas.add(new Arco("D-5-D-4",'v',de5,de4,1.5));
+		aristas.add(new Arco("D-8-D-9",'v',de8,de9,1.5));
+		aristas.add(new Arco("D-3-D-2",'h',de3,de2,1.5));
+		aristas.add(new Arco("D-6-D-7",'h',de6,de7,1.5));
+		aristas.add(new Arco("D-7-D-8",'h',de7,de8,1.5));
+		aristas.add(new Arco("D-2-D-9",'h',de2,de9,1.5));
+		aristas.add(new Arco("D-9-D-12",'h',de9,de12,1.5));
+		aristas.add(new Arco("D-10-D-11",'v',de10,de11,1.5));
+		aristas.add(new Arco("D-0-D-10",'v',de0,de10,1.5));
+		aristas.add(new Arco("D-5-D-6",'h',de5,de6,3.0));		
+		aristas.add(new Arco("D-4-D-3",'h',de4,de3,3.0));
+		aristas.add(new Arco("D-9-D-10",'v',de9,de10,3.0));
+		aristas.add(new Arco("D-12-D-11",'v',de12,de11,3.0));
 		
 		// union con escalera deck SD
 		
-		aristas.add(new Arco("D-12-SD",'v',sd,d12,1.0));
+		aristas.add(new Arco("D-12-SD",'v',sd,de12,1.0));
 		aristas.add(new Arco("D-13-SD",'v',d13,sd,1.5));
 		
 		//nodos deck pileta
 		
-		aristas.add(new Arco("D-13-14",'h',d13,d14,0.5));
-		aristas.add(new Arco("D-14-15",'h',d14,d15,2.5));
-		aristas.add(new Arco("D-15-16",'v',d15,d16,2.0));
-		aristas.add(new Arco("D-16-17",'v',d16,d17,2.0));
-		aristas.add(new Arco("D-17-18",'h',d18,d17,2.5));
-		aristas.add(new Arco("D-19-18",'v',d19,d18,1.5));
-		aristas.add(new Arco("D-19-14",'v',d14,d19,2.5));
+		aristas.add(new Arco("D-13-14",'h',de13,de14,0.5));
+		aristas.add(new Arco("D-14-15",'h',de14,de15,2.5));
+		aristas.add(new Arco("D-15-16",'v',de15,de16,2.0));
+		aristas.add(new Arco("D-16-17",'v',de16,de17,2.0));
+		aristas.add(new Arco("D-17-18",'h',de18,de17,2.5));
+		aristas.add(new Arco("D-19-18",'v',de19,de18,1.5));
+		aristas.add(new Arco("D-19-14",'v',de14,de19,2.5));
 		
 		*/
 		
