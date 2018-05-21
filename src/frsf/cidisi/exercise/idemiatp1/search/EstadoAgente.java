@@ -36,14 +36,14 @@ public class EstadoAgente extends SearchBasedAgentState {
 		obstaculos = new ArrayList<Casillero>();
 
     	//Inicializamos posicion inicial del agente
-    	this.posicion = this.mapa.getCasilleroPorId("A");
-    	this.mapa.getCasilleroPorId("A").setVisitado(true);
+    	this.posicion = this.mapa.getCasilleroPorId("ME5");
+    	this.mapa.getCasilleroPorId("ME5").setVisitado(true);
     	
     	//Inicializamos orientacion inicial del agente
-    	this.orientacion = 's';
+    	this.orientacion = 'e';
     	
     	//Inicializamos destino del agente
-    	this.destino = this.mapa.getCasilleroPorId("H");    	
+    	this.destino = this.mapa.getCasilleroPorId("ME4");    	
 
     	
 //		posicion = new Casillero();

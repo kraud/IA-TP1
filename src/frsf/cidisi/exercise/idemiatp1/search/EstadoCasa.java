@@ -39,13 +39,13 @@ public class EstadoCasa extends EnvironmentState {
     	this.mapa.setAristas(iniciar.getMapa().getAristas());
     	
     	//Inicializamos posicion inicial del agente
-    	this.posicionAgente = this.mapa.getCasilleroPorId("A");
+    	this.posicionAgente = this.mapa.getCasilleroPorId("ME5");
     	
     	//Inicializamos orientacion inicial del agente
-    	this.orientacionAgente = 's';
+    	this.orientacionAgente = 'e';
     	
     	//Inicializamos destino del agente
-    	this.destinoAgente = this.mapa.getCasilleroPorId("H");    	
+    	this.destinoAgente = this.mapa.getCasilleroPorId("ME4");    	
     }
 
     /**

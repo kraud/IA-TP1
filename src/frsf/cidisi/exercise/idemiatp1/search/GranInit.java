@@ -31,7 +31,7 @@ public class GranInit {
 		// EJEMPLOS
 		
 		
-		
+		/*
 		  List<Double> aCoord = Arrays.asList(1.0, 3.0);
 		Casillero a = new Casillero("A",1.0,false,0,aCoord);
 		nodos.add(a);
@@ -79,7 +79,7 @@ public class GranInit {
 		aristas.add(new Arco("DI",'h',d,i,1.0));
 		aristas.add(new Arco("AF",'h',a,f,1.0));
 		  
-		
+		*/
 		 
 		
 		//List<Double> n1Coord = Arrays.asList(1.38, 2.56);
@@ -92,7 +92,7 @@ public class GranInit {
 		
 		
 		// nodos patio delantero:
-	/*	List<Double> pd0Coord = Arrays.asList(1.0, 15.0);
+		List<Double> pd0Coord = Arrays.asList(1.0, 15.0);
 		Casillero pd0 = new Casillero("PD0",0.5,false,0,pd0Coord);
 		nodos.add(pd0);
 		
@@ -700,7 +700,7 @@ public class GranInit {
 		
 		//union Corredor con HR
 		
-		aristas.add(new Arco("C-1-HR-0",'v',c1,hr0,1.5));
+		aristas.add(new Arco("C-1-HR-0",'v',co1,hr0,1.5));
 		
 		//aristas HR
 		
@@ -769,6 +769,7 @@ public class GranInit {
 		aristas.add(new Arco("k-8-9",'h',ki9,ki8,2.0));
 		aristas.add(new Arco("k-9-10",'v',ki10,ki9,1.5));
 		aristas.add(new Arco("k-5-9",'h',ki5,ki9,1.5));
+		aristas.add(new Arco("k-6-9",'v',ki9,ki6,2.5));
 		aristas.add(new Arco("k-1-10",'h',ki1,ki10,1.5));
 		aristas.add(new Arco("k-10-SK",'h',ki10,sk,1.0));
 		
@@ -793,7 +794,7 @@ public class GranInit {
 		aristas.add(new Arco("M-1-2",'v',me1,me2,1.0));
 		aristas.add(new Arco("M-2-3",'h',me2,me3,2.0));
 		aristas.add(new Arco("M-3-4",'v',me4,me3,2.0));
-		aristas.add(new Arco("M-0-5",'h',me0,me5,1.0));
+		aristas.add(new Arco("M-0-5",'h',me5,me0,1.0));
 		
 		
 		//union PD con E y E con K
@@ -855,7 +856,7 @@ public class GranInit {
 		// union con escalera deck SD
 		
 		aristas.add(new Arco("D-12-SD",'v',sd,de12,1.0));
-		aristas.add(new Arco("D-13-SD",'v',d13,sd,1.5));
+		aristas.add(new Arco("D-13-SD",'v',de13,sd,1.5));
 		
 		//nodos deck pileta
 		
@@ -867,7 +868,7 @@ public class GranInit {
 		aristas.add(new Arco("D-19-18",'v',de19,de18,1.5));
 		aristas.add(new Arco("D-19-14",'v',de14,de19,2.5));
 		
-		*/
+		
 		
 		
 		this.mapa.setNodos(nodos);

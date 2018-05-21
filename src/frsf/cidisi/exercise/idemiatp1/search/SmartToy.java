@@ -44,18 +44,23 @@ public class SmartToy extends SearchBasedAgent {
 
         // Create the search strategy
         
-        DepthFirstSearch strategy = new DepthFirstSearch();
+    	// Busqueda en profundidad
+        //DepthFirstSearch strategy = new DepthFirstSearch();
     	
+    	// Busqueda en amplitud
     	//BreathFirstSearch strategy = new BreathFirstSearch();
 
+    	// Busqueda costo uniforme
 		//UniformCostSearch strategy = new UniformCostSearch(new CostFunction());
+    	
+    	// Busqueda Avara
         //GreedySearch strategy = new GreedySearch(heuristic);
         
-    	/*
+    	// Busqueda A*
         IStepCostFunction cost = new CostFunction();
         IEstimatedCostFunction heuristic = new Heuristic(); 
         AStarSearch strategy = new AStarSearch(cost, heuristic);         
-        */ 
+        
 
         // Create a Search object with the strategy
         Search searchSolver = new Search(strategy);
