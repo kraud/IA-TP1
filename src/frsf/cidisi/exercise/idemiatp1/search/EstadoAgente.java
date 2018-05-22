@@ -36,14 +36,14 @@ public class EstadoAgente extends SearchBasedAgentState {
 		obstaculos = new ArrayList<Casillero>();
 
     	//Inicializamos posicion inicial del agente
-    	this.posicion = this.mapa.getCasilleroPorId("ME5");
-    	this.mapa.getCasilleroPorId("ME5").setVisitado(true);
+    	this.posicion = this.mapa.getCasilleroPorId("OF");
+    	this.mapa.getCasilleroPorId("OF").setVisitado(true);
     	
     	//Inicializamos orientacion inicial del agente
-    	this.orientacion = 'e';
+    	this.orientacion = 's';
     	
     	//Inicializamos destino del agente
-    	this.destino = this.mapa.getCasilleroPorId("ME4");    	
+    	this.destino = this.mapa.getCasilleroPorId("HG1");    	
 
     	
 //		posicion = new Casillero();
@@ -92,13 +92,13 @@ public class EstadoAgente extends SearchBasedAgentState {
     	// posicion
     	for(Casillero cas : mapaClonado.getNodos()){
     		if(cas.getId().equals(this.posicion.getId())){
-    			estadoClonado.setposicion(cas);
+    			estadoClonado.setposicion(new Casillero(cas));
     		}
     	}
     	// destino
     	for(Casillero casi : mapaClonado.getNodos()){
     		if(casi.getId().equals(this.destino.getId())){
-    			estadoClonado.setdestino(casi);
+    			estadoClonado.setdestino(new Casillero(casi));
     		}
     	}
     	
@@ -116,28 +116,32 @@ public class EstadoAgente extends SearchBasedAgentState {
     	Casillero siguienteCasillero = ((SmartToyPerception) p).getProximoNodo(); // Este Casillero 'sabe' si es un OBSTACULO o si tiene una OBSTRUCCION. Viene desde el Mapa del EstadoAmbiente
     	List<Casillero> nodosMapaAgente = this.getmapa().getNodos();
 		
-    	// actualizamos el mapa del EstadoAgente en caso de que haya un obstaculo
-    	if (siguienteCasillero.isObstaculo()){
-    		// agrego informacion sobre obstaculo en la lista obstaculos del EstadoAgente
-    		this.getobstaculos().add(siguienteCasillero);
-    		// agrego informacion sobre obstaculo en el MAPA del EstadoAgente
-    		for(Casillero cas : nodosMapaAgente){
-    			if(cas.getId().equals(siguienteCasillero.getId())){
-    				cas.setObstaculo(true);
-    				// TODO: AGREGAR EL OBSTACULO EN LA LISTA DE ARISTAS.
+    	if(siguienteCasillero != null){
+    		// actualizamos el mapa del EstadoAgente en caso de que haya un obstaculo
+    		if (siguienteCasillero.isObstaculo()){
+    			// agrego informacion sobre obstaculo en la lista obstaculos del EstadoAgente
+    			this.getobstaculos().add(siguienteCasillero);
+    			// agrego informacion sobre obstaculo en el MAPA del EstadoAgente
+    			for(Casillero cas : nodosMapaAgente){
+    				if(cas.getId().equals(siguienteCasillero.getId())){
+    					cas.setObstaculo(true);
+    					// TODO: AGREGAR EL OBSTACULO EN LA LISTA DE ARISTAS.
+    				}
     			}
-    		}
     		
-    	}
-    	// actualizamos el mapa del EstadoAgente en caso de que haya una obstruccion
-    	if(siguienteCasillero.getObstruccion() != 0){
-    		for(Casillero cas : nodosMapaAgente){
-    			if(cas.getId().equals(siguienteCasillero.getId())){
-    				cas.setObstruccion(siguienteCasillero.getObstruccion());
+    		}
+    		// actualizamos el mapa del EstadoAgente en caso de que haya una obstruccion
+    		if(siguienteCasillero.getObstruccion() != 0){
+    			for(Casillero cas : nodosMapaAgente){
+    				if(cas.getId().equals(siguienteCasillero.getId())){
+    					cas.setObstruccion(siguienteCasillero.getObstruccion());
+    				}
     			}
     		}
     	}
-    	
+    	else{
+    		System.out.println("En " + this.getposicion().getId() + " mirando al " + this.getorientacion() +  " no hay proximo.");
+    	}    	
     }
 
     /**

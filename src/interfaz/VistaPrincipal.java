@@ -20,11 +20,8 @@ public class VistaPrincipal extends JFrame implements ActionListener{
 	PanelFondo aprox = new PanelFondo("/img/alert.png");
 	
 	public VistaPrincipal(Casillero smartToy, Casillero objetivo, List<Casillero> nodosObstaculos, List<Casillero> nodosObstrucciones){
-		//nodos Agua, aqui se va rapido 
-		//nodos lento, se va lento por ej: basura, etc 
-		//nodos bloqueados, bloqueos o paredes
 		
-		//seteo imagen smartToy
+		//set imagen smartToy
 		int smartToyPosX = convertirAPixelesX(smartToy.getCoordenada().get(0));
 		int smartToyPosY = convertirAPixelesY(smartToy.getCoordenada().get(1));
 
@@ -33,7 +30,7 @@ public class VistaPrincipal extends JFrame implements ActionListener{
 		smartToyItem.setSize(25, 25);
 		ventana.add(smartToyItem);
 		smartToyItem.setVisible(true);
-		//seteo imagen objetivo
+		//set imagen objetivo
 		int objetivoPosX = convertirAPixelesX(objetivo.getCoordenada().get(0).intValue());
 		int objetivoPosY = convertirAPixelesY(objetivo.getCoordenada().get(1).intValue());
 
@@ -82,11 +79,15 @@ public class VistaPrincipal extends JFrame implements ActionListener{
 		ventana.setSize(1527,850);
 		ventana.setVisible(true);
 		ventana.setResizable(false);
+		try{
+			Thread.sleep(500);
+		}
+		catch(Exception e){}
 		}
 		
 	public void actualizarPosicionAuto(Casillero nodoActual){
 		try{
-			Thread.sleep(150);
+			Thread.sleep(200);
 		}
 		catch(Exception e){}
 		int posXAux = convertirAPixelesX(nodoActual.getCoordenada().get(0).intValue());
@@ -110,7 +111,7 @@ public class VistaPrincipal extends JFrame implements ActionListener{
 	
 	public int convertirAPixelesY(double pos){
 		int valorEnPixeles = 0;
-		valorEnPixeles = (17*50)-((int)pos*50);
+		valorEnPixeles = (16*50)-((int)pos*50);
 		return valorEnPixeles;
 	}
 }

@@ -1,0 +1,44 @@
+digraph g {
+node [shape = Mrecord];
+nodo0[label="{EO: 0|cost: 0.0|A: null}"]
+nodo1[label="{EO: 1|cost: -1.0|A: GirarDerecha}"]
+nodo3[label="{EO: 3|cost: -2.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nHG3.\nMirando\nhacia\nel\ns.
+}"]
+nodo4[label="{EO: 4|cost: -3.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nHG3.\nMirando\nhacia\nel\no.
+}"]
+nodo5[label="{EO: 5|cost: -4.0|A: Avanzar|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nHG3.\nMirando\nhacia\nel\nn.
+}"]
+nodo6[label="{EO: 6|cost: -5.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nHG2.\nMirando\nhacia\nel\nn.
+}"]
+nodo8[label="{EO: 8|cost: -6.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nHG2.\nMirando\nhacia\nel\ne.
+}"]
+nodo9[label="{EO: 9|cost: -7.0|A: GirarDerecha|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nHG2.\nMirando\nhacia\nel\ns.
+}"]
+nodo10[label="{EO: 10|cost: -8.0|A: Avanzar|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nHG2.\nMirando\nhacia\nel\no.
+}"]
+
+nodo9 -> nodo10;
+
+nodo8 -> nodo9;
+
+nodo6 -> nodo8;
+
+nodo5 -> nodo6;
+nodo7[label="{EO: 7|cost: -5.0|A: GirarIzquierda|El\nSmart\nToy\nse\nencuentra\nen\nel\ncasillero\nHG2.\nMirando\nhacia\nel\nn.
+}"]
+
+nodo5 -> nodo7;
+
+nodo4 -> nodo5;
+
+nodo3 -> nodo4;
+
+nodo1 -> nodo3;
+
+nodo0 -> nodo1;
+nodo2[label="{EO: 2|cost: -1.0|A: GirarIzquierda}"]
+
+nodo0 -> nodo2;
+
+
+}

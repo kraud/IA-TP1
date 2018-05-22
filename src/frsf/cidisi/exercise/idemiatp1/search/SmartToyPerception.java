@@ -87,21 +87,25 @@ public class SmartToyPerception extends Perception {
     public String toString() {
         String str = "";
         
-        str += "El Smart Toy percibe en frente suyo al casillero ";
-        str += proximoNodo.getId() + ". ";
-        str += "El casillero objetivo es ";
-        str += destino.getId();
-        str += "\n";
-        if(proximoNodo.isObstaculo()){
-        	str += "Hay un obstaculo, no puede avanzar." + "\n";
+        if(proximoNodo != null){
+        	str += "El Smart Toy percibe en frente suyo al casillero ";
+        	str += proximoNodo.getId() + ". ";
+        	str += "El casillero objetivo es ";
+        	str += destino.getId();
+        	str += "\n";
+        	if(proximoNodo.isObstaculo()){
+        		str += "Hay un obstaculo, no puede avanzar." + "\n";
+        	}
+        	if(proximoNodo.getObstruccion() < 0){
+        		str += "Hay basura, avanza lento." + "\n";
+        	}
+        	if(proximoNodo.getObstruccion() > 0){
+        		str += "Hay basura, avanza rapido." + "\n";
+        	}
         }
-        if(proximoNodo.getObstruccion() < 0){
-        	str += "Hay basura, avanza lento." + "\n";
+        else {
+        	str += "El Smart Toy no percibe nada en frente suyo." + "\n";
         }
-        if(proximoNodo.getObstruccion() > 0){
-        	str += "Hay basura, avanza rapido." + "\n";
-        }
-        
         return str.toString();
     }
 

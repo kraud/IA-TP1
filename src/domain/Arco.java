@@ -21,8 +21,8 @@ public class Arco {
 	public Arco(Arco nuevoArco){
 		this.id = nuevoArco.id;
 		this.tipoDeArco = nuevoArco.tipoDeArco;
-		this.extremoA = nuevoArco.extremoA;
-		this.extremoB = nuevoArco.extremoB;
+		this.extremoA = new Casillero(nuevoArco.extremoA);
+		this.extremoB = new Casillero(nuevoArco.extremoB);
 		this.longitud = nuevoArco.longitud;		
 	}
 	
