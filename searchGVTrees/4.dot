@@ -1,0 +1,78 @@
+digraph g {
+node [shape = Mrecord];
+nodo0[label="{EO: 0|cost: 0.0|A: null}"]
+nodo1[label="{EO: 1|cost: 4.82842712474619|A: Avanzar}"]
+nodo8[label="{EO: 8|cost: 7.6668542494923795|A: GirarDerecha|En:\nME2\ns}"]
+nodo10[label="{EO: 10|cost: 10.50528137423857|A: GirarDerecha|En:\nME2\no}"]
+nodo13[label="{EO: 13|cost: 13.343708498984759|A: GirarDerecha|En:\nME2\nn}"]
+nodo15[label="{EO: 15|cost: 19.34370849898476|A: Avanzar|En:\nME2\ne}"]
+nodo23[label="{EO: 23|cost: 21.353708498984762|A: GirarDerecha|En:\nME3\ne}"]
+
+nodo15 -> nodo23;
+nodo24[label="{EO: 24|cost: 21.353708498984762|A: GirarIzquierda|En:\nME3\ne}"]
+
+nodo15 -> nodo24;
+
+nodo13 -> nodo15;
+
+nodo10 -> nodo13;
+
+nodo8 -> nodo10;
+
+nodo1 -> nodo8;
+nodo9[label="{EO: 9|cost: 7.6668542494923795|A: GirarIzquierda|En:\nME2\ns}"]
+nodo11[label="{EO: 11|cost: 13.66685424949238|A: Avanzar|En:\nME2\ne}"]
+nodo16[label="{EO: 16|cost: 15.67685424949238|A: GirarDerecha|En:\nME3\ne}"]
+nodo18[label="{EO: 18|cost: 17.686854249492377|A: GirarDerecha|En:\nME3\ns}"]
+nodo21[label="{EO: 21|cost: 19.69685424949238|A: GirarDerecha|En:\nME3\no}"]
+
+nodo18 -> nodo21;
+
+nodo16 -> nodo18;
+
+nodo11 -> nodo16;
+nodo17[label="{EO: 17|cost: 15.67685424949238|A: GirarIzquierda|En:\nME3\ne}"]
+nodo19[label="{EO: 19|cost: 19.67685424949238|A: Avanzar|En:\nME3\nn}"]
+
+nodo17 -> nodo19;
+nodo20[label="{EO: 20|cost: 17.686854249492377|A: GirarIzquierda|En:\nME3\nn}"]
+nodo22[label="{EO: 22|cost: 19.69685424949238|A: GirarIzquierda|En:\nME3\no}"]
+
+nodo20 -> nodo22;
+
+nodo17 -> nodo20;
+
+nodo11 -> nodo17;
+
+nodo9 -> nodo11;
+nodo12[label="{EO: 12|cost: 10.50528137423857|A: GirarIzquierda|En:\nME2\ne}"]
+nodo14[label="{EO: 14|cost: 13.343708498984759|A: GirarIzquierda|En:\nME2\nn}"]
+
+nodo12 -> nodo14;
+
+nodo9 -> nodo12;
+
+nodo1 -> nodo9;
+
+nodo0 -> nodo1;
+nodo2[label="{EO: 2|cost: 2.2460679774997896|A: GirarDerecha}"]
+nodo4[label="{EO: 4|cost: 4.492135954999579|A: GirarDerecha|En:\nME1\no}"]
+nodo6[label="{EO: 6|cost: 6.738203932499369|A: GirarDerecha|En:\nME1\nn}"]
+
+nodo4 -> nodo6;
+
+nodo2 -> nodo4;
+
+nodo0 -> nodo2;
+nodo3[label="{EO: 3|cost: 2.2460679774997896|A: GirarIzquierda}"]
+nodo5[label="{EO: 5|cost: 4.492135954999579|A: GirarIzquierda|En:\nME1\ne}"]
+nodo7[label="{EO: 7|cost: 6.738203932499369|A: GirarIzquierda|En:\nME1\nn}"]
+
+nodo5 -> nodo7;
+
+nodo3 -> nodo5;
+
+nodo0 -> nodo3;
+
+
+}

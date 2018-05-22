@@ -1,0 +1,360 @@
+digraph g {
+node [shape = Mrecord];
+nodo0[label="{EO: 0|cost: 0.0|A: null}"]
+nodo1[label="{EO: 1|cost: 4.13310562561766|A: GirarDerecha}"]
+nodo3[label="{EO: 3|cost: 8.26621125123532|A: GirarDerecha|En:\nME5\no}"]
+nodo6[label="{EO: 6|cost: 12.399316876852982|A: GirarDerecha|En:\nME5\nn}"]
+nodo11[label="{EO: 11|cost: 17.56159453702136|A: Avanzar|En:\nME5\ne}"]
+nodo22[label="{EO: 22|cost: 21.79766251452115|A: Avanzar|En:\nME0\ne}"]
+nodo37[label="{EO: 37|cost: 24.04373049202094|A: GirarDerecha|En:\nME1\ne}"]
+nodo44[label="{EO: 44|cost: 28.872157616767133|A: Avanzar|En:\nME1\ns}"]
+nodo67[label="{EO: 67|cost: 31.710584741513326|A: GirarDerecha|En:\nME2\ns}"]
+nodo82[label="{EO: 82|cost: 34.54901186625952|A: GirarDerecha|En:\nME2\no}"]
+nodo111[label="{EO: 111|cost: 37.38743899100571|A: GirarDerecha|En:\nME2\nn}"]
+
+nodo82 -> nodo111;
+
+nodo67 -> nodo82;
+
+nodo44 -> nodo67;
+nodo68[label="{EO: 68|cost: 31.710584741513326|A: GirarIzquierda|En:\nME2\ns}"]
+nodo83[label="{EO: 83|cost: 37.71058474151333|A: Avanzar|En:\nME2\ne}"]
+
+nodo68 -> nodo83;
+nodo84[label="{EO: 84|cost: 34.54901186625952|A: GirarIzquierda|En:\nME2\ne}"]
+nodo112[label="{EO: 112|cost: 37.38743899100571|A: GirarIzquierda|En:\nME2\nn}"]
+
+nodo84 -> nodo112;
+
+nodo68 -> nodo84;
+
+nodo44 -> nodo68;
+
+nodo37 -> nodo44;
+nodo45[label="{EO: 45|cost: 26.289798469520733|A: GirarDerecha|En:\nME1\ns}"]
+nodo54[label="{EO: 54|cost: 28.535866447020524|A: GirarDerecha|En:\nME1\no}"]
+
+nodo45 -> nodo54;
+
+nodo37 -> nodo45;
+
+nodo22 -> nodo37;
+nodo38[label="{EO: 38|cost: 24.04373049202094|A: GirarIzquierda|En:\nME1\ne}"]
+nodo46[label="{EO: 46|cost: 26.289798469520733|A: GirarIzquierda|En:\nME1\nn}"]
+nodo55[label="{EO: 55|cost: 28.535866447020524|A: GirarIzquierda|En:\nME1\no}"]
+nodo66[label="{EO: 66|cost: 33.364293571766716|A: Avanzar|En:\nME1\ns}"]
+nodo92[label="{EO: 92|cost: 36.202720696512905|A: GirarDerecha|En:\nME2\ns}"]
+
+nodo66 -> nodo92;
+nodo93[label="{EO: 93|cost: 36.202720696512905|A: GirarIzquierda|En:\nME2\ns}"]
+
+nodo66 -> nodo93;
+
+nodo55 -> nodo66;
+
+nodo46 -> nodo55;
+
+nodo38 -> nodo46;
+
+nodo22 -> nodo38;
+
+nodo11 -> nodo22;
+nodo23[label="{EO: 23|cost: 20.73387219718974|A: GirarDerecha|En:\nME0\ne}"]
+nodo31[label="{EO: 31|cost: 29.09364442583618|A: Avanzar|En:\nME0\ns}"]
+nodo69[label="{EO: 69|cost: 35.50197133903217|A: Avanzar|En:\nKI0\ns}"]
+
+nodo31 -> nodo69;
+nodo70[label="{EO: 70|cost: 33.71341665448263|A: GirarDerecha|En:\nKI0\ns}"]
+nodo100[label="{EO: 100|cost: 42.73261905968528|A: Avanzar|En:\nKI0\no}"]
+
+nodo70 -> nodo100;
+nodo101[label="{EO: 101|cost: 38.33318888312907|A: GirarDerecha|En:\nKI0\no}"]
+
+nodo70 -> nodo101;
+
+nodo31 -> nodo70;
+nodo71[label="{EO: 71|cost: 33.71341665448263|A: GirarIzquierda|En:\nKI0\ns}"]
+nodo102[label="{EO: 102|cost: 38.33318888312907|A: GirarIzquierda|En:\nKI0\ne}"]
+
+nodo71 -> nodo102;
+
+nodo31 -> nodo71;
+
+nodo23 -> nodo31;
+nodo32[label="{EO: 32|cost: 23.90614985735812|A: GirarDerecha|En:\nME0\ns}"]
+nodo42[label="{EO: 42|cost: 27.0784275175265|A: GirarDerecha|En:\nME0\no}"]
+
+nodo32 -> nodo42;
+
+nodo23 -> nodo32;
+
+nodo11 -> nodo23;
+nodo24[label="{EO: 24|cost: 20.73387219718974|A: GirarIzquierda|En:\nME0\ne}"]
+nodo33[label="{EO: 33|cost: 23.90614985735812|A: GirarIzquierda|En:\nME0\nn}"]
+nodo43[label="{EO: 43|cost: 27.0784275175265|A: GirarIzquierda|En:\nME0\no}"]
+nodo56[label="{EO: 56|cost: 35.43819974617294|A: Avanzar|En:\nME0\ns}"]
+nodo116[label="{EO: 116|cost: 41.84652665936893|A: Avanzar|En:\nKI0\ns}"]
+
+nodo56 -> nodo116;
+nodo117[label="{EO: 117|cost: 40.05797197481938|A: GirarDerecha|En:\nKI0\ns}"]
+
+nodo56 -> nodo117;
+nodo118[label="{EO: 118|cost: 40.05797197481938|A: GirarIzquierda|En:\nKI0\ns}"]
+
+nodo56 -> nodo118;
+
+nodo43 -> nodo56;
+
+nodo33 -> nodo43;
+
+nodo24 -> nodo33;
+
+nodo11 -> nodo24;
+
+nodo6 -> nodo11;
+
+nodo3 -> nodo6;
+
+nodo1 -> nodo3;
+
+nodo0 -> nodo1;
+nodo2[label="{EO: 2|cost: 4.13310562561766|A: GirarIzquierda}"]
+nodo4[label="{EO: 4|cost: 9.29538328578604|A: Avanzar|En:\nME5\ne}"]
+nodo8[label="{EO: 8|cost: 13.53145126328583|A: Avanzar|En:\nME0\ne}"]
+nodo15[label="{EO: 15|cost: 15.777519240785619|A: GirarDerecha|En:\nME1\ne}"]
+nodo19[label="{EO: 19|cost: 20.60594636553181|A: Avanzar|En:\nME1\ns}"]
+nodo29[label="{EO: 29|cost: 23.444373490278004|A: GirarDerecha|En:\nME2\ns}"]
+nodo39[label="{EO: 39|cost: 26.282800615024197|A: GirarDerecha|En:\nME2\no}"]
+nodo52[label="{EO: 52|cost: 29.12122773977039|A: GirarDerecha|En:\nME2\nn}"]
+nodo72[label="{EO: 72|cost: 35.12122773977039|A: Avanzar|En:\nME2\ne}"]
+nodo114[label="{EO: 114|cost: 37.13122773977039|A: GirarDerecha|En:\nME3\ne}"]
+
+nodo72 -> nodo114;
+nodo115[label="{EO: 115|cost: 37.13122773977039|A: GirarIzquierda|En:\nME3\ne}"]
+
+nodo72 -> nodo115;
+
+nodo52 -> nodo72;
+
+nodo39 -> nodo52;
+
+nodo29 -> nodo39;
+
+nodo19 -> nodo29;
+nodo30[label="{EO: 30|cost: 23.444373490278004|A: GirarIzquierda|En:\nME2\ns}"]
+nodo40[label="{EO: 40|cost: 29.444373490278004|A: Avanzar|En:\nME2\ne}"]
+nodo73[label="{EO: 73|cost: 31.454373490278005|A: GirarDerecha|En:\nME3\ne}"]
+nodo79[label="{EO: 79|cost: 33.46437349027801|A: GirarDerecha|En:\nME3\ns}"]
+nodo94[label="{EO: 94|cost: 35.474373490278005|A: GirarDerecha|En:\nME3\no}"]
+
+nodo79 -> nodo94;
+
+nodo73 -> nodo79;
+
+nodo40 -> nodo73;
+nodo74[label="{EO: 74|cost: 31.454373490278005|A: GirarIzquierda|En:\nME3\ne}"]
+nodo80[label="{EO: 80|cost: 35.454373490278|A: Avanzar|En:\nME3\nn}"]
+
+nodo74 -> nodo80;
+nodo81[label="{EO: 81|cost: 33.46437349027801|A: GirarIzquierda|En:\nME3\nn}"]
+nodo95[label="{EO: 95|cost: 35.474373490278005|A: GirarIzquierda|En:\nME3\no}"]
+
+nodo81 -> nodo95;
+
+nodo74 -> nodo81;
+
+nodo40 -> nodo74;
+
+nodo30 -> nodo40;
+nodo41[label="{EO: 41|cost: 26.282800615024197|A: GirarIzquierda|En:\nME2\ne}"]
+nodo53[label="{EO: 53|cost: 29.12122773977039|A: GirarIzquierda|En:\nME2\nn}"]
+
+nodo41 -> nodo53;
+
+nodo30 -> nodo41;
+
+nodo19 -> nodo30;
+
+nodo15 -> nodo19;
+nodo20[label="{EO: 20|cost: 18.023587218285407|A: GirarDerecha|En:\nME1\ns}"]
+nodo25[label="{EO: 25|cost: 20.269655195785198|A: GirarDerecha|En:\nME1\no}"]
+
+nodo20 -> nodo25;
+
+nodo15 -> nodo20;
+
+nodo8 -> nodo15;
+nodo16[label="{EO: 16|cost: 15.777519240785619|A: GirarIzquierda|En:\nME1\ne}"]
+nodo21[label="{EO: 21|cost: 18.023587218285407|A: GirarIzquierda|En:\nME1\nn}"]
+nodo26[label="{EO: 26|cost: 20.269655195785198|A: GirarIzquierda|En:\nME1\no}"]
+nodo28[label="{EO: 28|cost: 25.09808232053139|A: Avanzar|En:\nME1\ns}"]
+nodo47[label="{EO: 47|cost: 27.936509445277583|A: GirarDerecha|En:\nME2\ns}"]
+nodo63[label="{EO: 63|cost: 30.774936570023776|A: GirarDerecha|En:\nME2\no}"]
+nodo77[label="{EO: 77|cost: 33.613363694769966|A: GirarDerecha|En:\nME2\nn}"]
+nodo99[label="{EO: 99|cost: 39.613363694769966|A: Avanzar|En:\nME2\ne}"]
+
+nodo77 -> nodo99;
+
+nodo63 -> nodo77;
+
+nodo47 -> nodo63;
+
+nodo28 -> nodo47;
+nodo48[label="{EO: 48|cost: 27.936509445277583|A: GirarIzquierda|En:\nME2\ns}"]
+nodo64[label="{EO: 64|cost: 33.93650944527758|A: Avanzar|En:\nME2\ne}"]
+nodo103[label="{EO: 103|cost: 35.94650944527758|A: GirarDerecha|En:\nME3\ne}"]
+
+nodo64 -> nodo103;
+nodo104[label="{EO: 104|cost: 35.94650944527758|A: GirarIzquierda|En:\nME3\ne}"]
+
+nodo64 -> nodo104;
+
+nodo48 -> nodo64;
+nodo65[label="{EO: 65|cost: 30.774936570023776|A: GirarIzquierda|En:\nME2\ne}"]
+nodo78[label="{EO: 78|cost: 33.613363694769966|A: GirarIzquierda|En:\nME2\nn}"]
+
+nodo65 -> nodo78;
+
+nodo48 -> nodo65;
+
+nodo28 -> nodo48;
+
+nodo26 -> nodo28;
+
+nodo21 -> nodo26;
+
+nodo16 -> nodo21;
+
+nodo8 -> nodo16;
+
+nodo4 -> nodo8;
+nodo9[label="{EO: 9|cost: 12.46766094595442|A: GirarDerecha|En:\nME0\ne}"]
+nodo12[label="{EO: 12|cost: 20.827433174600863|A: Avanzar|En:\nME0\ns}"]
+nodo34[label="{EO: 34|cost: 27.235760087796848|A: Avanzar|En:\nKI0\ns}"]
+nodo60[label="{EO: 60|cost: 34.50074213086768|A: Avanzar|En:\nKI1\ns}"]
+nodo108[label="{EO: 108|cost: 46.51462031952765|A: Avanzar|En:\nKI5\ns}"]
+
+nodo60 -> nodo108;
+nodo109[label="{EO: 109|cost: 40.775724173938514|A: GirarDerecha|En:\nKI5\ns}"]
+
+nodo60 -> nodo109;
+nodo110[label="{EO: 110|cost: 40.775724173938514|A: GirarIzquierda|En:\nKI5\ns}"]
+
+nodo60 -> nodo110;
+
+nodo34 -> nodo60;
+nodo61[label="{EO: 61|cost: 32.65408700099283|A: GirarDerecha|En:\nKI1\ns}"]
+nodo88[label="{EO: 88|cost: 40.51804803167176|A: Avanzar|En:\nKI1\no}"]
+
+nodo61 -> nodo88;
+nodo89[label="{EO: 89|cost: 38.072413914188814|A: GirarDerecha|En:\nKI1\no}"]
+
+nodo61 -> nodo89;
+
+nodo34 -> nodo61;
+nodo62[label="{EO: 62|cost: 32.65408700099283|A: GirarIzquierda|En:\nKI1\ns}"]
+nodo90[label="{EO: 90|cost: 38.8975034912454|A: Avanzar|En:\nKI1\ne}"]
+
+nodo62 -> nodo90;
+nodo91[label="{EO: 91|cost: 38.072413914188814|A: GirarIzquierda|En:\nKI1\ne}"]
+
+nodo62 -> nodo91;
+
+nodo34 -> nodo62;
+
+nodo12 -> nodo34;
+nodo35[label="{EO: 35|cost: 25.44720540324731|A: GirarDerecha|En:\nKI0\ns}"]
+nodo49[label="{EO: 49|cost: 34.46640780844996|A: Avanzar|En:\nKI0\no}"]
+nodo105[label="{EO: 105|cost: 44.74288048707338|A: Avanzar|En:\nEN2\no}"]
+
+nodo49 -> nodo105;
+nodo106[label="{EO: 106|cost: 40.995610213652604|A: GirarDerecha|En:\nEN2\no}"]
+
+nodo49 -> nodo106;
+nodo107[label="{EO: 107|cost: 40.995610213652604|A: GirarIzquierda|En:\nEN2\no}"]
+
+nodo49 -> nodo107;
+
+nodo35 -> nodo49;
+nodo50[label="{EO: 50|cost: 30.066977631893756|A: GirarDerecha|En:\nKI0\no}"]
+nodo75[label="{EO: 75|cost: 34.6867498605402|A: GirarDerecha|En:\nKI0\nn}"]
+
+nodo50 -> nodo75;
+
+nodo35 -> nodo50;
+
+nodo12 -> nodo35;
+nodo36[label="{EO: 36|cost: 25.44720540324731|A: GirarIzquierda|En:\nKI0\ns}"]
+nodo51[label="{EO: 51|cost: 30.066977631893756|A: GirarIzquierda|En:\nKI0\ne}"]
+nodo76[label="{EO: 76|cost: 34.6867498605402|A: GirarIzquierda|En:\nKI0\nn}"]
+nodo113[label="{EO: 113|cost: 43.70595226574285|A: Avanzar|En:\nKI0\no}"]
+
+nodo76 -> nodo113;
+
+nodo51 -> nodo76;
+
+nodo36 -> nodo51;
+
+nodo12 -> nodo36;
+
+nodo9 -> nodo12;
+nodo13[label="{EO: 13|cost: 15.639938606122799|A: GirarDerecha|En:\nME0\ns}"]
+nodo17[label="{EO: 17|cost: 18.812216266291177|A: GirarDerecha|En:\nME0\no}"]
+
+nodo13 -> nodo17;
+
+nodo9 -> nodo13;
+
+nodo4 -> nodo9;
+nodo10[label="{EO: 10|cost: 12.46766094595442|A: GirarIzquierda|En:\nME0\ne}"]
+nodo14[label="{EO: 14|cost: 15.639938606122799|A: GirarIzquierda|En:\nME0\nn}"]
+nodo18[label="{EO: 18|cost: 18.812216266291177|A: GirarIzquierda|En:\nME0\no}"]
+nodo27[label="{EO: 27|cost: 27.171988494937622|A: Avanzar|En:\nME0\ns}"]
+nodo57[label="{EO: 57|cost: 33.58031540813361|A: Avanzar|En:\nKI0\ns}"]
+nodo96[label="{EO: 96|cost: 40.845297451204445|A: Avanzar|En:\nKI1\ns}"]
+
+nodo57 -> nodo96;
+nodo97[label="{EO: 97|cost: 38.99864232132959|A: GirarDerecha|En:\nKI1\ns}"]
+
+nodo57 -> nodo97;
+nodo98[label="{EO: 98|cost: 38.99864232132959|A: GirarIzquierda|En:\nKI1\ns}"]
+
+nodo57 -> nodo98;
+
+nodo27 -> nodo57;
+nodo58[label="{EO: 58|cost: 31.79176072358407|A: GirarDerecha|En:\nKI0\ns}"]
+nodo85[label="{EO: 85|cost: 40.81096312878672|A: Avanzar|En:\nKI0\no}"]
+
+nodo58 -> nodo85;
+nodo86[label="{EO: 86|cost: 36.411532952230516|A: GirarDerecha|En:\nKI0\no}"]
+
+nodo58 -> nodo86;
+
+nodo27 -> nodo58;
+nodo59[label="{EO: 59|cost: 31.79176072358407|A: GirarIzquierda|En:\nKI0\ns}"]
+nodo87[label="{EO: 87|cost: 36.411532952230516|A: GirarIzquierda|En:\nKI0\ne}"]
+
+nodo59 -> nodo87;
+
+nodo27 -> nodo59;
+
+nodo18 -> nodo27;
+
+nodo14 -> nodo18;
+
+nodo10 -> nodo14;
+
+nodo4 -> nodo10;
+
+nodo2 -> nodo4;
+nodo5[label="{EO: 5|cost: 8.26621125123532|A: GirarIzquierda|En:\nME5\ne}"]
+nodo7[label="{EO: 7|cost: 12.399316876852982|A: GirarIzquierda|En:\nME5\nn}"]
+
+nodo5 -> nodo7;
+
+nodo2 -> nodo5;
+
+nodo0 -> nodo2;
+
+
+}

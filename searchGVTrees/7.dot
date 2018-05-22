@@ -1,0 +1,27 @@
+digraph g {
+node [shape = Mrecord];
+nodo0[label="{EO: 0|cost: 0.0|A: null}"]
+nodo1[label="{EO: 1|cost: 2.01|A: GirarDerecha}"]
+nodo3[label="{EO: 3|cost: 4.02|A: GirarDerecha|En:\nME3\ns}"]
+nodo6[label="{EO: 6|cost: 6.029999999999999|A: GirarDerecha|En:\nME3\no}"]
+
+nodo3 -> nodo6;
+
+nodo1 -> nodo3;
+
+nodo0 -> nodo1;
+nodo2[label="{EO: 2|cost: 2.01|A: GirarIzquierda}"]
+nodo4[label="{EO: 4|cost: 6.01|A: Avanzar|En:\nME3\nn}"]
+
+nodo2 -> nodo4;
+nodo5[label="{EO: 5|cost: 4.02|A: GirarIzquierda|En:\nME3\nn}"]
+nodo7[label="{EO: 7|cost: 6.029999999999999|A: GirarIzquierda|En:\nME3\no}"]
+
+nodo5 -> nodo7;
+
+nodo2 -> nodo5;
+
+nodo0 -> nodo2;
+
+
+}
