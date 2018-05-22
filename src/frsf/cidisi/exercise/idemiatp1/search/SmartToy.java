@@ -23,7 +23,7 @@ public class SmartToy extends SearchBasedAgent {
 
         // The Agent State
         EstadoAgente agState = new EstadoAgente();
-        //agState.initState();
+        agState.initState();
         this.setAgentState(agState);
 
         // Create the operators
@@ -46,10 +46,10 @@ public class SmartToy extends SearchBasedAgent {
         // Create the search strategy
         
     	// Busqueda en profundidad
-        DepthFirstSearch strategy = new DepthFirstSearch();
+        //DepthFirstSearch strategy = new DepthFirstSearch();
     	
     	// Busqueda en amplitud
-    	//BreathFirstSearch strategy = new BreathFirstSearch();
+    	BreathFirstSearch strategy = new BreathFirstSearch();
 
     	// Busqueda costo uniforme
 		//UniformCostSearch strategy = new UniformCostSearch(new CostFunction());
@@ -58,8 +58,8 @@ public class SmartToy extends SearchBasedAgent {
         //GreedySearch strategy = new GreedySearch(heuristic);
         
     	// Busqueda A*
-        IStepCostFunction cost = new CostFunction();
-        IEstimatedCostFunction heuristic = new Heuristic(); 
+        //IStepCostFunction cost = new CostFunction();
+        //IEstimatedCostFunction heuristic = new Heuristic(); 
         //AStarSearch strategy = new AStarSearch(cost, heuristic);         
         
 

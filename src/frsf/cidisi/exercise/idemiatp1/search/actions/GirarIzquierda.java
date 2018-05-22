@@ -1,5 +1,6 @@
 package frsf.cidisi.exercise.idemiatp1.search.actions;
 
+import interfaz.VistaPrincipal;
 import frsf.cidisi.exercise.idemiatp1.search.*;
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
@@ -8,6 +9,7 @@ import frsf.cidisi.faia.state.EnvironmentState;
 
 public class GirarIzquierda extends SearchAction {
 
+	private VistaPrincipal ventana;
     /**
      * This method updates a tree node state when the search process is running.
      * It does not updates the real world state.
@@ -20,7 +22,7 @@ public class GirarIzquierda extends SearchAction {
         // PostConditions: null
     	EstadoAgente agState = (EstadoAgente) s;
         
-    	System.out.println("GIRÉ IZQUIERDA BUSQUEDA!!!!");
+    	System.out.println("Pienso en girar izquierda en " + agState.getposicion().getId() + ".");
         switch (agState.getorientacion()) {
         	case 'n':	agState.setorientacion('o');
         				break;
@@ -49,7 +51,7 @@ public class GirarIzquierda extends SearchAction {
         
         if (true) {
             // Update the real world
-    		System.out.println("GIRÉ IZQUIERDA REAL!!!!");
+    		System.out.println("Gire realmente a la izquierda en " + agState.getposicion().getId() + ".");
         	switch (agState.getorientacion()) {
         	// Uso solamente la orientacion del agState porque deberia ser igual a la del environmentState
 
@@ -66,6 +68,7 @@ public class GirarIzquierda extends SearchAction {
         					environmentState.setOrientacionAgente('n');
         					break;
         	}
+        	//environmentState.girarAgente(agState, 'i');
             return environmentState;
         }
         return null;

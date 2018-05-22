@@ -7,7 +7,6 @@ import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
 
 public class GirarDerecha extends SearchAction {
-
     /**
      * This method updates a tree node state when the search process is running.
      * It does not updates the real world state.
@@ -20,7 +19,7 @@ public class GirarDerecha extends SearchAction {
         // PostConditions: null
     	EstadoAgente agState = (EstadoAgente) s;
         
-    	System.out.println("GIRÉ DERECHA BUSQUEDA!!!!");
+    	System.out.println("Pienso en girar derecha en " + agState.getposicion().getId() + ".");
         switch (agState.getorientacion()){
         	case 'n':	agState.setorientacion('e');
         				break;
@@ -31,7 +30,6 @@ public class GirarDerecha extends SearchAction {
         	case 'e':	agState.setorientacion('s');
 						break;
         }
-
         return agState; // siempre va a poder girar, y por eso borramos el return null predeterminado
     }
 
@@ -49,7 +47,7 @@ public class GirarDerecha extends SearchAction {
         
         if (true) {
             // Update the real world
-        	System.out.println("GIRÉ DERECHA REAL!!!!");
+        	System.out.println("Gire realmente a la derecha en " + agState.getposicion().getId() + ".");
         	switch (agState.getorientacion()){ // Uso solamente la orientacion del agState porque deberia ser igual a la del environmentState
         		case 'n':	agState.setorientacion('e');
         					environmentState.setOrientacionAgente('e');
@@ -64,6 +62,7 @@ public class GirarDerecha extends SearchAction {
         					environmentState.setOrientacionAgente('s');
         					break;
         	}
+        	//environmentState.girarAgente(agState, 'd');
             return environmentState;
         }
         return null;

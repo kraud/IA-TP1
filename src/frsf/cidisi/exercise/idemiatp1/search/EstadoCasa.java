@@ -19,6 +19,7 @@ public class EstadoCasa extends EnvironmentState {
     private Casillero destinoAgente;
     private List<Casillero> obstaculosCasa;
 	private GrafoCasa mapa;
+	// Para la Interfaz
 	private VistaPrincipal ventana;
     
 	public EstadoCasa() {
@@ -42,13 +43,13 @@ public class EstadoCasa extends EnvironmentState {
     	this.mapa.setAristas(iniciar.getMapa().getAristas());
     	
     	//Inicializamos posicion inicial del agente
-    	this.posicionAgente = this.mapa.getCasilleroPorId("OF");
+    	this.posicionAgente = this.mapa.getCasilleroPorId("PD0");
     	
     	//Inicializamos orientacion inicial del agente
     	this.orientacionAgente = 's';
     	
     	//Inicializamos destino del agente
-    	this.destinoAgente = this.mapa.getCasilleroPorId("HG1");
+    	this.destinoAgente = this.mapa.getCasilleroPorId("PD8");
     	
     	//INTERFAZ
     	List<Casillero> obstaculos = new ArrayList<Casillero>();
@@ -57,12 +58,17 @@ public class EstadoCasa extends EnvironmentState {
     			obstaculos.add(n);
     		}
     	}
-    	ventana = new VistaPrincipal(this.posicionAgente,this.destinoAgente, this.getobstaculosCasa(), obstaculos);
+    	ventana = new VistaPrincipal(this.posicionAgente, this.orientacionAgente, this.destinoAgente, this.getobstaculosCasa(), obstaculos);
     }
     
     public void modificarPosicionSmartToy(Casillero destino) {
 		ventana.actualizarPosicionAuto(destino);
 	}
+    
+    public void girarAgente(EstadoAgente estado, char giro) {
+		ventana.girarAgente(estado, giro);
+	}
+    
 
     /**
      * String representation of the real world state.

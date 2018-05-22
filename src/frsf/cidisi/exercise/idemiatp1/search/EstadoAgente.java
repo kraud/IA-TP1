@@ -22,9 +22,14 @@ public class EstadoAgente extends SearchBasedAgentState {
 	
 
     public EstadoAgente() {
-    	
-    	//TODO: Complete Method
 
+    }
+
+    /**
+     * This method is OPTIONAL, and sets the initial state of the agent.
+     */
+    @Override
+    public void initState() {
     	// Inicializamos el mapa
 		mapa = new GrafoCasa();
 		
@@ -36,21 +41,14 @@ public class EstadoAgente extends SearchBasedAgentState {
 		obstaculos = new ArrayList<Casillero>();
 
     	//Inicializamos posicion inicial del agente
-    	this.posicion = this.mapa.getCasilleroPorId("OF");
-    	this.mapa.getCasilleroPorId("OF").setVisitado(true);
+    	this.posicion = this.mapa.getCasilleroPorId("PD0");
+    	this.mapa.getCasilleroPorId("PD0").setVisitado(true);
     	
     	//Inicializamos orientacion inicial del agente
     	this.orientacion = 's';
     	
     	//Inicializamos destino del agente
-    	this.destino = this.mapa.getCasilleroPorId("HG1");    	
-
-    	
-//		posicion = new Casillero();
-//		orientacion = '\0'; // Equivalente a 'null' char -> hacer condiciones considerando esto.
-//		destino = new Casillero();
-        
-        this.initState();
+    	this.destino = this.mapa.getCasilleroPorId("PD8");
     }
 
     /**
@@ -145,16 +143,6 @@ public class EstadoAgente extends SearchBasedAgentState {
     }
 
     /**
-     * This method is OPTIONAL, and sets the initial state of the agent.
-     */
-    @Override
-    public void initState() {
-        
-	//TODO: Complete Method
-
-    }
-
-    /**
      * This method returns the String representation of the agent state.
      */
     @Override
@@ -178,51 +166,10 @@ public class EstadoAgente extends SearchBasedAgentState {
        EstadoAgente estado = (EstadoAgente) obj;
 
     	boolean igualId = false;
-    	/*
-    	boolean igualesObstaculos = false;
-       	boolean igualesVisitados = false;
-    	boolean igualesObstrucciones = false;
-    	*/
     	boolean igualOrientacion = false;
-    	
-    	
-    	// IGUAL ID
+    	// Igual ID
     	igualId = this.getposicion().getId().equals(estado.getposicion().getId());
-    	
-    	
-    	/* IGUAL OBSTACULOS
-    	for(int i=0; i < this.getmapa().getNodos().size(); i++){
-    		igualesObstaculos =
-    			igualesObstaculos
-    			&&
-    			(this.getmapa().getNodos().get(i).isObstaculo()
-    			==
-    			estado.getmapa().getNodos().get(i).isObstaculo());
-    	}
-    	
-    	// IGUAL VISITADOS
-    	for(int i=0; i < this.getmapa().getNodos().size(); i++){
-    		igualesVisitados =
-    			igualesVisitados
-    			&&
-    			(this.getmapa().getNodos().get(i).isVisitado()
-    			==
-    			estado.getmapa().getNodos().get(i).isVisitado());
-    	}
-    	
-    	// IGUAL OBSTRUCCIONES
-    	for(int i=0; i < this.getmapa().getNodos().size(); i++){
-    		igualesObstrucciones =
-    			igualesObstrucciones
-    			&&
-    			(this.getmapa().getNodos().get(i).getObstruccion()
-    			==
-    			estado.getmapa().getNodos().get(i).getObstruccion());
-    	}
-    	
-    	
-        return (igualId && igualesObstaculos && igualesVisitados && igualesObstrucciones);
-        */
+    	// Ifual Orientacion    	
     	igualOrientacion = (this.getorientacion()==estado.getorientacion());
     	
     	return (igualId && igualOrientacion);

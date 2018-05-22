@@ -20,6 +20,6 @@ public class CostFunction implements IStepCostFunction {
            	
     	
         double auxCosto = mapa.costoAvanzar(estado); 
-        return auxCosto;
+        return auxCosto; // para debug
     }
 }

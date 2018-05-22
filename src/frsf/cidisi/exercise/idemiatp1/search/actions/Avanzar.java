@@ -86,18 +86,8 @@ public class Avanzar extends SearchAction {
         	}
             
         	// Update the real world
-            
-            /*//NO SE TIENEN QUE MARCAR COMO VISITADOS LOS NODOS DEL MAPA AMBIENTE
-        	//Busco el nodo correspondiente a 'proximoNodo', pero EN el mapa DEL AMBIENTE, para actualizar la informacion de visitado
-        	List<Casillero> listaCasillerosAmbiente = environmentState.getMapa().getNodos();
-        	for(Casillero c : listaCasillerosAmbiente){
-        		if(c.getId().equals(proximoNodo.getId())){
-        			c.setVisitado(true);
-        			// TODO: marcar arcos
-        		}
-        	}
-        	*/
             environmentState.setposicionAgente(proximoNodo);
+            // para interfaz
             environmentState.modificarPosicionSmartToy(proximoNodo);
         	System.out.println("Avance REAL.");
             return environmentState;
