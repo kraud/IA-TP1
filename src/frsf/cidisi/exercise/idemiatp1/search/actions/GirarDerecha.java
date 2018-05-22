@@ -30,6 +30,7 @@ public class GirarDerecha extends SearchAction {
         	case 'e':	agState.setorientacion('s');
 						break;
         }
+        agState.setUltimaAccion('g');
         return agState; // siempre va a poder girar, y por eso borramos el return null predeterminado
     }
 
@@ -63,6 +64,7 @@ public class GirarDerecha extends SearchAction {
         					break;
         	}
         	//environmentState.girarAgente(agState, 'd');
+        	agState.setUltimaAccion('g');
             return environmentState;
         }
         return null;

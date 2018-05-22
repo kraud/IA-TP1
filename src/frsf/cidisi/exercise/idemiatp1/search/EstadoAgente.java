@@ -19,6 +19,7 @@ public class EstadoAgente extends SearchBasedAgentState {
     private Casillero destino;
     private GrafoCasa mapa;
     private List<Casillero> obstaculos;
+    private char ultimaAccion; // Necesario para definir un costo diferente para avanzar y girar
 	
 
     public EstadoAgente() {
@@ -41,14 +42,17 @@ public class EstadoAgente extends SearchBasedAgentState {
 		obstaculos = new ArrayList<Casillero>();
 
     	//Inicializamos posicion inicial del agente
-    	this.posicion = this.mapa.getCasilleroPorId("PD0");
-    	this.mapa.getCasilleroPorId("PD0").setVisitado(true);
+    	this.posicion = this.mapa.getCasilleroPorId("PT1");
+    	this.mapa.getCasilleroPorId("PT1").setVisitado(true);
     	
     	//Inicializamos orientacion inicial del agente
     	this.orientacion = 's';
     	
     	//Inicializamos destino del agente
-    	this.destino = this.mapa.getCasilleroPorId("PD8");
+    	this.destino = this.mapa.getCasilleroPorId("LI0");
+    	
+    	// Inicializamos la ultima accion
+    	this.ultimaAccion = '\n';
     }
 
     /**
@@ -62,8 +66,12 @@ public class EstadoAgente extends SearchBasedAgentState {
     	EstadoAgente estadoClonado = new EstadoAgente();
     	
     	// Atributo primitivo, se pasa por copia
+    	
     	//	orientacion
     	estadoClonado.setorientacion(this.getorientacion());
+    	// ultima accion
+    	estadoClonado.setUltimaAccion(this.getUltimaAccion());
+    	
     	// Atributos objeto, se clonan (usamos constructor que es lo mismo)
     	//	mapa
     	List<Casillero> mapaNodosClonados = new ArrayList<Casillero>();
@@ -110,7 +118,6 @@ public class EstadoAgente extends SearchBasedAgentState {
     @Override
     public void updateState(Perception p) {
         
-        //TODO: Revisar que pasa cuando el siguienteCasillero retorna null (osea que no hay casillero libre y/o no-visitado)
     	Casillero siguienteCasillero = ((SmartToyPerception) p).getProximoNodo(); // Este Casillero 'sabe' si es un OBSTACULO o si tiene una OBSTRUCCION. Viene desde el Mapa del EstadoAmbiente
     	List<Casillero> nodosMapaAgente = this.getmapa().getNodos();
 		
@@ -149,10 +156,9 @@ public class EstadoAgente extends SearchBasedAgentState {
     public String toString() {
         String str = "";
 
-        str += "El Smart Toy se encuentra en el casillero ";
-        str += this.getposicion().getId() + ". Mirando hacia el ";
-        str += String.valueOf(this.getorientacion()) + ".";
-        str += "\n";
+        str += "En: ";
+        str += this.getposicion().getId() + ", ";
+        str += String.valueOf(this.getorientacion());
         return str;
     }
 
@@ -208,6 +214,14 @@ public class EstadoAgente extends SearchBasedAgentState {
      public void setobstaculos(List<Casillero> arg){
         obstaculos = arg;
      }
+
+	public void setUltimaAccion(char ultimaAccion) {
+		this.ultimaAccion = ultimaAccion;
+	}
+
+	public char getUltimaAccion() {
+		return ultimaAccion;
+	}
 	
 }
 

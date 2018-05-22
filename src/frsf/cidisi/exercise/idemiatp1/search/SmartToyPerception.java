@@ -58,7 +58,6 @@ public class SmartToyPerception extends Perception {
         // Asignamos al EstadoAgente la informacion del EstadoCasa
         estadoAg.setposicion(pos.clone());
         estadoAg.setdestino(dest.clone());
-        // estadoAg.setobstaculos(new ArrayList<Casillero>()); -> ya esta en EstadoAgente()
         estadoAg.setorientacion(orient);
         
         //	clonar mapa

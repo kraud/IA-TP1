@@ -184,7 +184,7 @@ public class VistaPrincipal extends JFrame implements ActionListener{
 	
 	public int convertirAPixelesY(double pos){
 		int valorEnPixeles = 0;
-		valorEnPixeles = (16*50)-((int)pos*50);
+		valorEnPixeles = (int)pos*50;
 		return valorEnPixeles;
 	}
 }

@@ -26,7 +26,8 @@ public class Avanzar extends SearchAction {
         
         Casillero proximoNodo = agState.getmapa().proximoEnDireccion(agState.getposicion(), agState.getorientacion());
         boolean obstaculizado = agState.getobstaculos().contains(proximoNodo); // revisa si objeto pertenece a la lista. Puede ser que nunca de verdadero. Revisar por ID
-        
+
+    	System.out.println("Pienso en avanzar en " + agState.getposicion().getId() + ", hacia " + agState.getorientacion() + ".");
         if(proximoNodo!=null && !obstaculizado){
         	// proximoNodo.setVisitado(true);
         	agState.getmapa().getCasilleroPorId(proximoNodo.getId()).setVisitado(true); // Marco como visitado el NODO en el mapa DEL AGENTE
@@ -41,9 +42,8 @@ public class Avanzar extends SearchAction {
             		arc.getExtremoB().setVisitado(true);
             	}
         	}
-        	
         	agState.setposicion(proximoNodo);
-        	System.out.println("Avance BUSQUEDA.");
+        	agState.setUltimaAccion('a');
         	return agState;
         }        
         return null;
@@ -89,7 +89,8 @@ public class Avanzar extends SearchAction {
             environmentState.setposicionAgente(proximoNodo);
             // para interfaz
             environmentState.modificarPosicionSmartToy(proximoNodo);
-        	System.out.println("Avance REAL.");
+        	agState.setUltimaAccion('a');
+        	System.out.println("Avance REAL.");        	
             return environmentState;
         }
 
@@ -102,7 +103,7 @@ public class Avanzar extends SearchAction {
     @Override
     public Double getCost() {
     	
-        return new Double(1.0);
+        return new Double(1);
     }
 
     /**
