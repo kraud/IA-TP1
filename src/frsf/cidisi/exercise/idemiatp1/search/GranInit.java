@@ -448,27 +448,27 @@ public class GranInit {
 		
 		//nodos media M
 		
-		List<Double> me0Coord = Arrays.asList(12.5, 4.0);
+		List<Double> me0Coord = Arrays.asList(12.5, 3.0);
 		Casillero me0 = new Casillero("ME0",0.5,false,0,me0Coord);
 		nodos.add(me0);
 		
-		List<Double> me1Coord = Arrays.asList(13.5, 4.0);
+		List<Double> me1Coord = Arrays.asList(13.5, 3.0);
 		Casillero me1 = new Casillero("ME1",0.5,false,0,me1Coord);
 		nodos.add(me1);
 		
-		List<Double> me2Coord = Arrays.asList(13.5, 5.0);
+		List<Double> me2Coord = Arrays.asList(13.5, 4.0);
 		Casillero me2 = new Casillero("ME2",0.5,false,0,me2Coord);
 		nodos.add(me2);
 		
-		List<Double> me3Coord = Arrays.asList(15.5, 5.0);
+		List<Double> me3Coord = Arrays.asList(15.5, 4.0);
 		Casillero me3 = new Casillero("ME3",0.5,false,0,me3Coord);
 		nodos.add(me3);
 		
-		List<Double> me4Coord = Arrays.asList(15.5, 3.0);
+		List<Double> me4Coord = Arrays.asList(15.5, 2.0);
 		Casillero me4 = new Casillero("ME4",0.5,false,0,me4Coord);
 		nodos.add(me4);
 		
-		List<Double> me5Coord = Arrays.asList(11.5, 4.0);
+		List<Double> me5Coord = Arrays.asList(11.5, 3.0);
 		Casillero me5 = new Casillero("ME5",0.5,false,0,me5Coord);
 		nodos.add(me5);
 		
@@ -785,7 +785,7 @@ public class GranInit {
 		
 		//union k con M
 		
-		aristas.add(new Arco("K-0-M-0",'v',me0,ki0,1.5));
+		aristas.add(new Arco("K-0-M-0",'v',me0,ki0,2.5));
 		
 		//aristas media
 		
