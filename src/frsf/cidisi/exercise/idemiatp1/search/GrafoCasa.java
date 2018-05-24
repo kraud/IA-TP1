@@ -64,6 +64,206 @@ public class GrafoCasa {
 		return  arcosBuscados;
 	}
 	
+	// A partir de un Casillero de origen(la posicion del Smart Toy) y un Casillero destino (la posicion real del usuario),
+	// devuelve un Casillero por el cual debe ingresar al cuarto (la puerta) y un destino final opuesto a esa puerta dentro de ese cuarto
+	public List<Casillero> getMetasAgente(String origen, String destino){
+		
+		List<Casillero> metas = new ArrayList<Casillero>();
+	    int numArea = this.getNumeroHabitacionPorId(destino);
+	    
+	    Casillero casilleroOrigen = this.getCasilleroPorId(origen);
+	    Casillero CasilleroDestino = this.getCasilleroPorId(destino);
+	    List<Casillero> puertas = this.getListaDePuertas(numArea); // Todas las puertas del cuarto donde se encuentra el usuario
+	    
+	    Casillero puertaMasCercana = this.getPuertaMasCercana(casilleroOrigen, puertas); // La puerta mas cercana al agente (la meta intermedia).
+	    Casillero destinoEnHabitacion = this.getPuntoOpuesto(puertaMasCercana, numArea); // El punto en la habitacion correspondiente para cada puerta
+	    	
+	    metas.add(puertaMasCercana);
+	    metas.add(destinoEnHabitacion);
+	    
+	    return metas;
+	 }
+	
+	///////////////////////////////////
+	///IMPLEMENTAR ESTOS DOS METODOS///
+	///////////////////////////////////
+	
+	// A partir del numero de habitacion, devuelve la lista de puertas de esa habitacion
+	public List<Casillero> getListaDePuertas(int numeroDeCuartoDestino){
+		List<Casillero> listaDePuertas = new ArrayList<Casillero>();
+		
+		// Agregar todos los casilleros que son puerta, para CADA cuarto
+		List<Casillero> listaDePuertas1 = new ArrayList<Casillero>();
+		listaDePuertas1.add(this.getCasilleroPorId("")); //aca entre las comillas poner el ID de un nodo que es 'puerta' del cuarto
+		listaDePuertas1.add(this.getCasilleroPorId(""));
+		
+		List<Casillero> listaDePuertas2 = new ArrayList<Casillero>();
+		listaDePuertas2.add(this.getCasilleroPorId(""));
+		listaDePuertas2.add(this.getCasilleroPorId(""));
+		
+		List<Casillero> listaDePuertas3 = new ArrayList<Casillero>();
+		listaDePuertas3.add(this.getCasilleroPorId(""));
+		listaDePuertas3.add(this.getCasilleroPorId(""));
+
+		// ... y asi sucesivamente con todos los IDs
+		
+		switch(numeroDeCuartoDestino){
+		case(1):
+			listaDePuertas = listaDePuertas1;
+			break;
+		case(2):
+			listaDePuertas = listaDePuertas2;
+			break;
+		case(3):
+			listaDePuertas = listaDePuertas3;
+			break;
+		// ... y asi con todos los casos
+		}
+		
+		return listaDePuertas;
+	}
+	// A partir de la lista de todas las puertas de una habitacion, devuelve la puerta mas cercana al agente
+	public Casillero getPuertaMasCercana(Casillero posicionOrigen, List<Casillero> listaPuertas){
+		double distancia = 0;
+	    double distanciaAux = 0;
+		Casillero puertaMasCercana = listaPuertas.get(0);
+		
+		distancia = this.funcionHeuristica(posicionOrigen,listaPuertas.get(0));
+		for(Casillero p : listaPuertas){
+			distanciaAux = this.funcionHeuristica(posicionOrigen, p);
+			if(distanciaAux < distancia){ // Iterar hasta conseguir las puerta mas cercana
+				puertaMasCercana = p.clone();
+			}
+		}
+		return puertaMasCercana;
+	}
+	
+	// Tiene en cuenta la habitacion tambien, porque cada puerta lleva a dos lugares
+	public Casillero getPuntoOpuesto(Casillero puertaCerca, int habitacion){
+		Casillero puntoOpuesto = null;
+		
+		/* EJEMPLO: para la puerta X, entrando a la habitacion i, el punto al que debe ir el agente es el casillero Y
+		if((puertaCerca.getId()=="X") && (habitacion == i)){
+			puntoOpuesto = this.getCasilleroPorId("Y");
+		}
+		*/
+		
+		if((puertaCerca.getId()=="") && (habitacion == 1)){
+			puntoOpuesto = this.getCasilleroPorId("Y");
+		}
+		if((puertaCerca.getId()=="") && (habitacion == 2)){
+			puntoOpuesto = this.getCasilleroPorId("Y");
+		}
+		if((puertaCerca.getId()=="") && (habitacion == 3)){
+			puntoOpuesto = this.getCasilleroPorId("Y");
+		}
+		
+		return puntoOpuesto;
+	}
+	
+	//////////////////////////////////////////////////////////////////
+	
+	// Metodo auxiliar (horrible) de getMetasAgente para recibir el numero que corresponde para cada habitacion
+	public int getNumeroHabitacionPorId(String origenId){
+		String area = origenId.substring(0,2);
+		int numeroHabitacion = 0;
+		
+		if(area.equals("PD")){
+			numeroHabitacion = 1;
+			return numeroHabitacion;
+		}
+		if(area.equals("PR")){
+			numeroHabitacion = 2;
+			return numeroHabitacion;
+		}
+		if(area.equals("PL")){
+			numeroHabitacion = 3;
+			return numeroHabitacion;
+		}
+		if(area.equals("PT")){
+			numeroHabitacion = 4;
+			return numeroHabitacion;
+		}
+		if(area.equals("GA")){
+			numeroHabitacion = 5;
+			return numeroHabitacion;
+		}
+		if(area.equals("CO")){
+			numeroHabitacion = 6;
+			return numeroHabitacion;
+		}
+		if(area.equals("HR")){
+			numeroHabitacion = 7;
+			return numeroHabitacion;
+		}
+		if(area.equals("BC")){
+			numeroHabitacion = 8;
+			return numeroHabitacion;
+		}
+		if(area.equals("HL")){
+			numeroHabitacion = 9;
+			return numeroHabitacion;
+		}
+		if(area.equals("WW")){
+			numeroHabitacion = 10;
+			return numeroHabitacion;
+		}
+		if(area.equals("HG")){
+			numeroHabitacion = 11;
+			return numeroHabitacion;
+		}
+		if(area.equals("BG")){
+			numeroHabitacion = 12;
+			return numeroHabitacion;
+		}
+		if(area.equals("KI")){
+			numeroHabitacion = 13;
+			return numeroHabitacion;
+		}
+		if(area.equals("LI")){
+			numeroHabitacion = 14;
+			return numeroHabitacion;
+		}
+		if(area.equals("ME")){
+			numeroHabitacion = 15;
+			return numeroHabitacion;
+		}
+		if(area.equals("EN")){
+			numeroHabitacion = 16;
+			return numeroHabitacion;
+		}
+		if(area.equals("HS")){
+			numeroHabitacion = 17;
+			return numeroHabitacion;
+		}
+		if(area.equals("BS")){
+			numeroHabitacion = 18;
+			return numeroHabitacion;
+		}
+		if(area.equals("DE")){
+			numeroHabitacion = 19;
+			return numeroHabitacion;
+		}
+		if(area.equals("OF")){
+			numeroHabitacion = 20;
+			return numeroHabitacion;
+		}
+		if(area.equals("SC")){
+			numeroHabitacion = 21;
+			return numeroHabitacion;
+		}
+		if(area.equals("SK")){
+			numeroHabitacion = 22;
+			return numeroHabitacion;
+		}
+		if(area.equals("SD")){
+			numeroHabitacion = 23;
+			return numeroHabitacion;
+		}
+		
+		return numeroHabitacion;
+	}
+	
 	
 	// A partir de un nodo, busca si hay una arista que lo incluye y corrobora si hay otro nodo en la orientacion determinada. Si no lo hay, retorna null.
 	public Casillero proximoEnDireccion(Casillero posicion, char orientacion){

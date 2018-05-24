@@ -37,19 +37,26 @@ public class EstadoCasa extends EnvironmentState {
     @Override // aca se pueden inicializar si no se inicializaron en EstadoCasa(). Es OPCIONAL.
     public void initState() {
     	
+    	////////////////////////////////////////////////////
+    	// 				INICIALIZAR EL AMBIENTE           //
+    	////////////////////////////////////////////////////
+    	String posicionAgente = "SC";
+    	char orientacionAgente = 'e';
+    	String posicionUsuario = "KI10";
+    	
     	// Inicializamos el mapa
     	GranInit iniciar = new GranInit();
     	this.mapa.setNodos(iniciar.getMapa().getNodos());
     	this.mapa.setAristas(iniciar.getMapa().getAristas());
     	
     	//Inicializamos posicion inicial del agente
-    	this.posicionAgente = this.mapa.getCasilleroPorId("DE5");
+    	this.posicionAgente = this.mapa.getCasilleroPorId(posicionAgente);
+
+    	//Inicializamos destino del agente
+    	this.destinoAgente = this.mapa.getCasilleroPorId(posicionUsuario);
     	
     	//Inicializamos orientacion inicial del agente
-    	this.orientacionAgente = 's';
-    	
-    	//Inicializamos destino del agente
-    	this.destinoAgente = this.mapa.getCasilleroPorId("DE9");
+    	this.orientacionAgente = orientacionAgente;
     	
     	//INTERFAZ
     	List<Casillero> obstaculos = new ArrayList<Casillero>();

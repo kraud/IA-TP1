@@ -33,9 +33,14 @@ public class Casa extends Environment {
         		 																estadoAmbiente.getOrientacionAgente()
         		 																);
          Casillero destinoNodo = estadoAmbiente.getdestinoAgente();
-         
+         boolean usuarioVisible = false;
+         if(siguienteNodo != null){
+        	 usuarioVisible = siguienteNodo.getId().equals(estadoAmbiente.getdestinoAgente().getId());
+         }
+                 
          perception.setProximoNodo(siguienteNodo);
          perception.setdestino(destinoNodo);
+         perception.setUsuarioVisible(usuarioVisible);
         
         // Return the perception
         return perception;

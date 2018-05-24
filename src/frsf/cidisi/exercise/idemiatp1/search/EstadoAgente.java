@@ -20,6 +20,8 @@ public class EstadoAgente extends SearchBasedAgentState {
     private GrafoCasa mapa;
     private List<Casillero> obstaculos;
     private char ultimaAccion; // Necesario para definir un costo diferente para avanzar y girar
+    private Casillero metaIntermedia;
+    private boolean usuarioPercibido;
 	
 
     public EstadoAgente() {
@@ -31,28 +33,52 @@ public class EstadoAgente extends SearchBasedAgentState {
      */
     @Override
     public void initState() {
+
+    	////////////////////////////////////////////////////
+    	// 				INICIALIZAR EL AGENTE             //
+    	////////////////////////////////////////////////////    	
+    	String origenAgente = "SC";
+    	char orientacionAgente = 'e';
+    	String metaIntermedia = "KI6";
+    	String destinoAgente = "KI0";
+
+    	
     	// Inicializamos el mapa
-		mapa = new GrafoCasa();
+		this.setmapa(new GrafoCasa());
 		
 		// TODO: Proablemente la inicializacion deberia ser otra para el agente. Toda informacion sobre las condiciones del estado del mapa no deberian verse
 		GranInit iniciar = new GranInit();
     	this.mapa.setNodos(iniciar.getMapa().getNodos());
     	this.mapa.setAristas(iniciar.getMapa().getAristas());
-
-		obstaculos = new ArrayList<Casillero>();
-
-    	//Inicializamos posicion inicial del agente
-    	this.posicion = this.mapa.getCasilleroPorId("DE5");
-    	this.mapa.getCasilleroPorId("DE5").setVisitado(true);
     	
+    	//List<Casillero> metasAgente = this.getmapa().getMetasAgente(origenAgente, destinoAgente);
+    	
+    	//Inicializamos posicion inicial del agente
+    	this.posicion = this.mapa.getCasilleroPorId(origenAgente);
+    	this.mapa.getCasilleroPorId(origenAgente).setVisitado(true);
+
     	//Inicializamos orientacion inicial del agente
-    	this.orientacion = 's';
+    	this.orientacion = orientacionAgente;
     	
     	//Inicializamos destino del agente
-    	this.destino = this.mapa.getCasilleroPorId("DE9");
-    	
+    	// METODO QUE DEVUELVE CON UN DESTINO Y ORIGEN, LA META CORRESPONDIENTE EN EL CUARTO
+    	//this.destino = this.mapa.getCasilleroPorId(metasAgente.get(1).getId());
+    	this.destino = this.mapa.getCasilleroPorId(destinoAgente);
+
+    	// Inicializamos la meta intermedia
+    	// METODO QUE DEVUELVE CON UN DESTINO Y ORIGEN, LA META INTERMEDIA
+    	//this.metaIntermedia = this.getmapa().getCasilleroPorId(metasAgente.get(0).getId());
+    	this.metaIntermedia = this.getmapa().getCasilleroPorId(metaIntermedia);
+
     	// Inicializamos la ultima accion
     	this.ultimaAccion = '\n';
+
+    	// Inicializamos los obstaculos
+		this.obstaculos = new ArrayList<Casillero>();
+		
+		// Inicializamos si el usuario es percibido
+		this.usuarioPercibido = false;
+
     }
 
     /**
@@ -71,8 +97,11 @@ public class EstadoAgente extends SearchBasedAgentState {
     	estadoClonado.setorientacion(this.getorientacion());
     	// ultima accion
     	estadoClonado.setUltimaAccion(this.getUltimaAccion());
+    	// usuario percibido
+    	estadoClonado.setUsuarioPercibido(this.isUsuarioPercibido());
     	
     	// Atributos objeto, se clonan (usamos constructor que es lo mismo)
+    	
     	//	mapa
     	List<Casillero> mapaNodosClonados = new ArrayList<Casillero>();
     	for(Casillero c : this.mapa.getNodos()){
@@ -95,12 +124,21 @@ public class EstadoAgente extends SearchBasedAgentState {
     		}
     	}
     	estadoClonado.setobstaculos(obstaculosClonados);
+    	
+    	// ESTOS TRES 'FOR' no deberian existir? O era necesario recorrer la lista clonada? Revisar algun dia.
     	// posicion
     	for(Casillero cas : mapaClonado.getNodos()){
     		if(cas.getId().equals(this.posicion.getId())){
     			estadoClonado.setposicion(new Casillero(cas));
     		}
     	}
+    	// meta intermedia
+    	for(Casillero casiller : mapaClonado.getNodos()){
+    		if(casiller.getId().equals(this.metaIntermedia.getId())){
+    			estadoClonado.setMetaIntermedia(new Casillero(casiller));
+    		}
+    	}
+    	
     	// destino
     	for(Casillero casi : mapaClonado.getNodos()){
     		if(casi.getId().equals(this.destino.getId())){
@@ -117,8 +155,8 @@ public class EstadoAgente extends SearchBasedAgentState {
      */
     @Override
     public void updateState(Perception p) {
-        
-    	Casillero siguienteCasillero = ((SmartToyPerception) p).getProximoNodo(); // Este Casillero 'sabe' si es un OBSTACULO o si tiene una OBSTRUCCION. Viene desde el Mapa del EstadoAmbiente
+    	SmartToyPerception percepcion = (SmartToyPerception) p;
+    	Casillero siguienteCasillero = percepcion.getProximoNodo(); // Este Casillero 'sabe' si es un OBSTACULO o si tiene una OBSTRUCCION. Viene desde el Mapa del EstadoAmbiente
     	List<Casillero> nodosMapaAgente = this.getmapa().getNodos();
 		
     	if(siguienteCasillero != null){
@@ -146,7 +184,9 @@ public class EstadoAgente extends SearchBasedAgentState {
     	}
     	else{
     		System.out.println("En " + this.getposicion().getId() + " mirando al " + this.getorientacion() +  " no hay proximo.");
-    	}    	
+    	}
+    	// Corroboramos si el usuario esta en el siguiente casillero
+    	this.setUsuarioPercibido(percepcion.isUsuarioVisible());
     }
 
     /**
@@ -221,6 +261,22 @@ public class EstadoAgente extends SearchBasedAgentState {
 
 	public char getUltimaAccion() {
 		return ultimaAccion;
+	}
+
+	public void setMetaIntermedia(Casillero metaIntermedia) {
+		this.metaIntermedia = metaIntermedia;
+	}
+
+	public Casillero getMetaIntermedia() {
+		return metaIntermedia;
+	}
+
+	public void setUsuarioPercibido(boolean usrPercibido) {
+		this.usuarioPercibido = usrPercibido;
+	}
+
+	public boolean isUsuarioPercibido() {
+		return usuarioPercibido;
 	}
 	
 }
