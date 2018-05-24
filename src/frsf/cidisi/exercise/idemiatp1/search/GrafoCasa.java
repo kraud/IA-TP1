@@ -120,9 +120,9 @@ public class GrafoCasa {
 		}
 	
 		if (proximoNodo != null ) {
-			System.out.println("POS+O+V: " + posicion.getId() + "+" + orientacion + "+" + posicion.isVisitado()+ " ---> " + proximoNodo.getId()+"+" + proximoNodo.isVisitado());
+			//System.out.println("POS+O+V: " + posicion.getId() + "+" + orientacion + "+" + posicion.isVisitado()+ " ---> " + proximoNodo.getId()+"+" + proximoNodo.isVisitado());
 		} else {
-			System.out.println("SIN PROXIMO: " + posicion.getId() + ", " + orientacion);
+			//System.out.println("SIN PROXIMO: " + posicion.getId() + ", " + orientacion);
 		}
 		return proximoNodo;
 	}
@@ -181,9 +181,9 @@ public class GrafoCasa {
 		}
 	
 		if (proximoNodoOpuesto != null ) {
-			System.out.println("Anterior de " + posicion.getId() + "+" + orientacion + " es: " + proximoNodoOpuesto.getId());
+			//System.out.println("Anterior de " + posicion.getId() + "+" + orientacion + " es: " + proximoNodoOpuesto.getId());
 		} else {
-			System.out.println("Error en calcular anterior de: " + posicion.getId() + "+" + orientacion);
+			//System.out.println("Error en calcular anterior de: " + posicion.getId() + "+" + orientacion);
 		}
 		return proximoNodoOpuesto;
 	}
@@ -221,7 +221,7 @@ public class GrafoCasa {
 			case('g'):
 				return 0.01;
 		}
-		System.out.println("No registro ninguna ultima accion. Devuelve costo cero.");
+		//System.out.println("No registro ninguna ultima accion. Devuelve costo cero.");
 		return 0.0; // para cumplir con la condicion de retornar un Double - nunca se deberia ejecutar
 	}
 	

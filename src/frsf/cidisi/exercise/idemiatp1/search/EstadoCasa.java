@@ -43,22 +43,29 @@ public class EstadoCasa extends EnvironmentState {
     	this.mapa.setAristas(iniciar.getMapa().getAristas());
     	
     	//Inicializamos posicion inicial del agente
-    	this.posicionAgente = this.mapa.getCasilleroPorId("DE5");
+    	this.posicionAgente = this.mapa.getCasilleroPorId("DE13");
     	
     	//Inicializamos orientacion inicial del agente
     	this.orientacionAgente = 's';
     	
     	//Inicializamos destino del agente
-    	this.destinoAgente = this.mapa.getCasilleroPorId("DE9");
+    	this.destinoAgente = this.mapa.getCasilleroPorId("LI0");
     	
-    	//INTERFAZ
-    	List<Casillero> obstaculos = new ArrayList<Casillero>();
+    	//Inicializamos los obstaculos
     	for(Casillero n : this.getMapa().getNodos()){
-    		if(n.getObstruccion() != 0){
-    			obstaculos.add(n);
+    		if(n.isObstaculo()){
+    			obstaculosCasa.add(n);
     		}
     	}
-    	ventana = new VistaPrincipal(this.posicionAgente, this.orientacionAgente, this.destinoAgente, this.getobstaculosCasa(), obstaculos);
+    	//Inicializamos las obstrucciones
+    	List<Casillero> obstrucciones = new ArrayList<Casillero>();
+    	for(Casillero n : this.getMapa().getNodos()){
+    		if(n.isObstaculo()){
+    			obstrucciones.add(n);
+    		}
+    	}
+    	//INTERFAZ
+    	ventana = new VistaPrincipal(this.posicionAgente, this.orientacionAgente, this.destinoAgente, this.getobstaculosCasa(), obstrucciones);
     }
     
     public void modificarPosicionSmartToy(Casillero destino) {
@@ -78,6 +85,7 @@ public class EstadoCasa extends EnvironmentState {
     	  String str = "";
     	  String aux = "Los nodos obstaculo son los siguientes: ";
           
+    	  str += "\n";
           str += "El Smart Toy se encuentra en el casillero ";
           str += this.posicionAgente.getId() + ". ";
           str += "El casillero objetivo es ";

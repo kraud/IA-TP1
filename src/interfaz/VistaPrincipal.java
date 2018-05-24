@@ -65,14 +65,16 @@ public class VistaPrincipal extends JFrame implements ActionListener{
 		
 		//agrego obsttrucciones a la imagen
 		for(Casillero n : nodosObstrucciones){
-			int obstruccionX = convertirAPixelesX(n.getCoordenada().get(0).intValue());
-			int obstruccionY = convertirAPixelesY(n.getCoordenada().get(1).intValue());
-
-			PanelFondo agua = new PanelFondo("/img/obstruccion.png");
-			agua.setBounds(obstruccionY, obstruccionX, 25, 25);
-			agua.setSize(25, 25);
-			ventana.add(agua);
-			agua.setVisible(true);
+			if(n.getObstruccion() != 0){
+				int obstruccionX = convertirAPixelesX(n.getCoordenada().get(0).intValue());
+				int obstruccionY = convertirAPixelesY(n.getCoordenada().get(1).intValue());
+	
+				PanelFondo agua = new PanelFondo("/img/obstruccion.png");
+				agua.setBounds(obstruccionY, obstruccionX, 25, 25);
+				agua.setSize(25, 25);
+				ventana.add(agua);
+				agua.setVisible(true);
+			}
 		}
 		
 		for(Casillero n : nodosObstaculos){

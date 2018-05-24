@@ -42,14 +42,14 @@ public class EstadoAgente extends SearchBasedAgentState {
 		obstaculos = new ArrayList<Casillero>();
 
     	//Inicializamos posicion inicial del agente
-    	this.posicion = this.mapa.getCasilleroPorId("DE5");
-    	this.mapa.getCasilleroPorId("DE5").setVisitado(true);
+    	this.posicion = this.mapa.getCasilleroPorId("DE13");
+    	this.mapa.getCasilleroPorId("DE13").setVisitado(true);
     	
     	//Inicializamos orientacion inicial del agente
     	this.orientacion = 's';
     	
     	//Inicializamos destino del agente
-    	this.destino = this.mapa.getCasilleroPorId("DE9");
+    	this.destino = this.mapa.getCasilleroPorId("LI0");
     	
     	// Inicializamos la ultima accion
     	this.ultimaAccion = '\n';
@@ -145,7 +145,7 @@ public class EstadoAgente extends SearchBasedAgentState {
     		}
     	}
     	else{
-    		System.out.println("En " + this.getposicion().getId() + " mirando al " + this.getorientacion() +  " no hay proximo.");
+    		//System.out.println("En " + this.getposicion().getId() + " mirando al " + this.getorientacion() +  " no hay proximo.");
     	}    	
     }
 
@@ -156,8 +156,8 @@ public class EstadoAgente extends SearchBasedAgentState {
     public String toString() {
         String str = "";
 
-        str += "En: ";
-        str += this.getposicion().getId() + ", ";
+        str += "En casillero ";
+        str += this.getposicion().getId() + ", mirando hacia ";
         str += String.valueOf(this.getorientacion());
         return str;
     }

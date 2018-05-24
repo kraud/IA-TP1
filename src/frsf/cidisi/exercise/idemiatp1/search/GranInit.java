@@ -525,7 +525,7 @@ public class GranInit {
 		nodos.add(de0);
 		
 		List<Double> de1Coord = Arrays.asList(21.5, 6.5);
-		Casillero de1 = new Casillero("DE1",1.0,false,0,de1Coord);
+		Casillero de1 = new Casillero("DE1",1.0,true,0,de1Coord);
 		nodos.add(de1);
 		
 		List<Double> de2Coord = Arrays.asList(21.5, 5.0);
@@ -553,7 +553,7 @@ public class GranInit {
 		nodos.add(de7);
 		
 		List<Double> de8Coord = Arrays.asList(22.5, 3.0);
-		Casillero de8 = new Casillero("DE8",1.0,false,0,de8Coord);
+		Casillero de8 = new Casillero("DE8",1.0,true,0,de8Coord);
 		nodos.add(de8);
 		
 		List<Double> de9Coord = Arrays.asList(22.5, 5.0);
@@ -577,7 +577,7 @@ public class GranInit {
 		nodos.add(de13);
 		
 		List<Double> de14Coord = Arrays.asList(25.0, 2.5);
-		Casillero de14 = new Casillero("DE14",1.0,false,0,de14Coord);
+		Casillero de14 = new Casillero("DE14",1.0,true,0,de14Coord);
 		nodos.add(de14);
 		
 		List<Double> de15Coord = Arrays.asList(27.5, 2.5);
@@ -597,7 +597,7 @@ public class GranInit {
 		nodos.add(de18);
 		
 		List<Double> de19Coord = Arrays.asList(25.0, 5.0);
-		Casillero de19 = new Casillero("DE19",1.0,false,0,de19Coord);
+		Casillero de19 = new Casillero("DE19",1.0,true,0,de19Coord);
 		nodos.add(de19);
 		
 		//step deck SD
