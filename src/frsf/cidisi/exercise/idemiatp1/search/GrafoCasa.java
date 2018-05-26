@@ -93,33 +93,180 @@ public class GrafoCasa {
 		List<Casillero> listaDePuertas = new ArrayList<Casillero>();
 		
 		// Agregar todos los casilleros que son puerta, para CADA cuarto
-		List<Casillero> listaDePuertas1 = new ArrayList<Casillero>();
-		listaDePuertas1.add(this.getCasilleroPorId("")); //aca entre las comillas poner el ID de un nodo que es 'puerta' del cuarto
-		listaDePuertas1.add(this.getCasilleroPorId(""));
 		
-		List<Casillero> listaDePuertas2 = new ArrayList<Casillero>();
-		listaDePuertas2.add(this.getCasilleroPorId(""));
-		listaDePuertas2.add(this.getCasilleroPorId(""));
 		
-		List<Casillero> listaDePuertas3 = new ArrayList<Casillero>();
-		listaDePuertas3.add(this.getCasilleroPorId(""));
-		listaDePuertas3.add(this.getCasilleroPorId(""));
-
-		// ... y asi sucesivamente con todos los IDs
+		//
 		
 		switch(numeroDeCuartoDestino){
 		case(1):
+			
+			List<Casillero> listaDePuertas1 = new ArrayList<Casillero>();
+			listaDePuertas1.add(this.getCasilleroPorId("PD0")); 
+			listaDePuertas1.add(this.getCasilleroPorId("PD4"));
+			listaDePuertas1.add(this.getCasilleroPorId("PD5"));
+			listaDePuertas1.add(this.getCasilleroPorId("PD7"));
+			listaDePuertas1.add(this.getCasilleroPorId("PD8"));	
 			listaDePuertas = listaDePuertas1;
 			break;
+			
 		case(2):
+			List<Casillero> listaDePuertas2 = new ArrayList<Casillero>();
+			listaDePuertas2.add(this.getCasilleroPorId("PR0"));
+			listaDePuertas2.add(this.getCasilleroPorId("PR4"));
 			listaDePuertas = listaDePuertas2;
 			break;
 		case(3):
+			List<Casillero> listaDePuertas3 = new ArrayList<Casillero>();
+		listaDePuertas3.add(this.getCasilleroPorId("PL0"));
+		listaDePuertas3.add(this.getCasilleroPorId("PL4"));
 			listaDePuertas = listaDePuertas3;
 			break;
-		// ... y asi con todos los casos
-		}
 		
+		case(4):
+			List<Casillero> listaDePuertas4 = new ArrayList<Casillero>();
+			listaDePuertas4.add(this.getCasilleroPorId("PT0"));
+			listaDePuertas4.add(this.getCasilleroPorId("PT1"));
+			listaDePuertas4.add(this.getCasilleroPorId("PT6"));
+			listaDePuertas = listaDePuertas4;
+			break;
+			
+		case(5):
+			List<Casillero> listaDePuertas5 = new ArrayList<Casillero>();
+			listaDePuertas5.add(this.getCasilleroPorId("GA0"));
+			listaDePuertas5.add(this.getCasilleroPorId("GA2"));
+			listaDePuertas5.add(this.getCasilleroPorId("GA5"));
+			listaDePuertas = listaDePuertas5;
+			break;
+			
+		case(6):
+			List<Casillero> listaDePuertas6 = new ArrayList<Casillero>();
+			listaDePuertas6.add(this.getCasilleroPorId("CO0"));
+			listaDePuertas6.add(this.getCasilleroPorId("CO1"));
+			listaDePuertas6.add(this.getCasilleroPorId("CO2"));
+			listaDePuertas6.add(this.getCasilleroPorId("CO3"));
+			listaDePuertas6.add(this.getCasilleroPorId("CO4"));
+			listaDePuertas6.add(this.getCasilleroPorId("CO5"));
+			listaDePuertas = listaDePuertas6;
+			break;
+			
+		case(7):
+			List<Casillero> listaDePuertas7 = new ArrayList<Casillero>();
+			listaDePuertas7.add(this.getCasilleroPorId("HR0"));
+			listaDePuertas = listaDePuertas7;
+			break;
+			
+		case(8):
+			List<Casillero> listaDePuertas8 = new ArrayList<Casillero>();
+			listaDePuertas8.add(this.getCasilleroPorId("BC0"));
+			listaDePuertas = listaDePuertas8;
+			break;
+			
+		case(9):
+			List<Casillero> listaDePuertas9 = new ArrayList<Casillero>();
+			listaDePuertas9.add(this.getCasilleroPorId("HL0"));
+			listaDePuertas = listaDePuertas9;
+			break;
+			
+		case(10):
+			List<Casillero> listaDePuertas10 = new ArrayList<Casillero>();
+			listaDePuertas10.add(this.getCasilleroPorId("WW"));
+			listaDePuertas = listaDePuertas10;
+			break;
+			
+		case(11):
+			List<Casillero> listaDePuertas11 = new ArrayList<Casillero>();
+			listaDePuertas11.add(this.getCasilleroPorId("HG0"));
+			listaDePuertas11.add(this.getCasilleroPorId("HG4"));
+			listaDePuertas = listaDePuertas11;
+			break;
+			
+		case(12):
+			List<Casillero> listaDePuertas12 = new ArrayList<Casillero>();
+			listaDePuertas12.add(this.getCasilleroPorId("BG0"));
+			listaDePuertas = listaDePuertas12;
+			break;
+			
+		case(13):
+			
+			List<Casillero> listaDePuertas13 = new ArrayList<Casillero>();
+			listaDePuertas13.add(this.getCasilleroPorId("KI0"));
+			listaDePuertas13.add(this.getCasilleroPorId("KI6"));
+			listaDePuertas13.add(this.getCasilleroPorId("KI10"));
+			listaDePuertas = listaDePuertas13;
+			break;
+			
+		case(14):
+			List<Casillero> listaDePuertas14 = new ArrayList<Casillero>();
+			listaDePuertas14.add(this.getCasilleroPorId("LI0"));
+			listaDePuertas14.add(this.getCasilleroPorId("LI1"));
+			listaDePuertas14.add(this.getCasilleroPorId("LI2"));
+			listaDePuertas = listaDePuertas14;
+			break;
+			
+		case(15):
+			List<Casillero> listaDePuertas15 = new ArrayList<Casillero>();
+			listaDePuertas15.add(this.getCasilleroPorId("ME0"));
+			listaDePuertas = listaDePuertas15;
+			break;
+			
+		case(16):
+			List<Casillero> listaDePuertas16 = new ArrayList<Casillero>();
+			listaDePuertas16.add(this.getCasilleroPorId("EN0"));
+			listaDePuertas16.add(this.getCasilleroPorId("EN1"));
+			listaDePuertas16.add(this.getCasilleroPorId("EN2"));
+			listaDePuertas = listaDePuertas16;
+			break;
+			
+		case(17):
+			List<Casillero> listaDePuertas17 = new ArrayList<Casillero>();
+			listaDePuertas17.add(this.getCasilleroPorId("HS0"));
+			listaDePuertas17.add(this.getCasilleroPorId("HS1"));
+			listaDePuertas = listaDePuertas17;
+			break;
+			
+		case(18):
+			List<Casillero> listaDePuertas18 = new ArrayList<Casillero>();
+			listaDePuertas18.add(this.getCasilleroPorId("BS0"));
+			listaDePuertas = listaDePuertas18;
+			break;
+			
+		case(19):
+			List<Casillero> listaDePuertas19 = new ArrayList<Casillero>();
+			listaDePuertas19.add(this.getCasilleroPorId("DE0"));
+			listaDePuertas19.add(this.getCasilleroPorId("DE1"));
+			listaDePuertas19.add(this.getCasilleroPorId("DE3"));
+			listaDePuertas19.add(this.getCasilleroPorId("DE12"));
+			listaDePuertas19.add(this.getCasilleroPorId("DE13"));
+			listaDePuertas19.add(this.getCasilleroPorId("DE16"));
+			listaDePuertas = listaDePuertas19;
+			break;
+			
+		case(20):
+			List<Casillero> listaDePuertas20 = new ArrayList<Casillero>();
+			listaDePuertas20.add(this.getCasilleroPorId("OF"));
+			listaDePuertas = listaDePuertas20;
+			break;
+			
+		case(21):
+			List<Casillero> listaDePuertas21 = new ArrayList<Casillero>();
+			listaDePuertas21.add(this.getCasilleroPorId("SC"));
+			listaDePuertas = listaDePuertas21;
+			break;
+			
+		case(22):
+			List<Casillero> listaDePuertas22 = new ArrayList<Casillero>();
+			listaDePuertas22.add(this.getCasilleroPorId("SK"));
+			listaDePuertas = listaDePuertas22;
+			break;
+			
+		case(23):
+			List<Casillero> listaDePuertas23 = new ArrayList<Casillero>();
+			listaDePuertas23.add(this.getCasilleroPorId("SD"));
+			listaDePuertas = listaDePuertas23;
+			break;
+			
+		}
+		Casillero aux = new Casillero();
 		return listaDePuertas;
 	}
 	// A partir de la lista de todas las puertas de una habitacion, devuelve la puerta mas cercana al agente
@@ -148,17 +295,170 @@ public class GrafoCasa {
 		}
 		*/
 		
-		if((puertaCerca.getId()=="") && (habitacion == 1)){
-			puntoOpuesto = this.getCasilleroPorId("Y");
+		if((puertaCerca.getId()=="PD0") && (habitacion == 1)){
+			puntoOpuesto = this.getCasilleroPorId("PD8");
 		}
-		if((puertaCerca.getId()=="") && (habitacion == 2)){
-			puntoOpuesto = this.getCasilleroPorId("Y");
+		if((puertaCerca.getId()=="PD5") && (habitacion == 1)){
+			puntoOpuesto = this.getCasilleroPorId("PD4");
 		}
-		if((puertaCerca.getId()=="") && (habitacion == 3)){
-			puntoOpuesto = this.getCasilleroPorId("Y");
+		if((puertaCerca.getId()=="PD4") && (habitacion == 1)){
+			puntoOpuesto = this.getCasilleroPorId("PD5");
+		}
+		if((puertaCerca.getId()=="PD7") && (habitacion == 1)){
+			puntoOpuesto = this.getCasilleroPorId("PD0");
+		}
+		if((puertaCerca.getId()=="PD8") && (habitacion == 1)){
+			puntoOpuesto = this.getCasilleroPorId("PD0");
 		}
 		
-		return puntoOpuesto;
+		if((puertaCerca.getId()=="PRO") && (habitacion == 2)){
+			puntoOpuesto = this.getCasilleroPorId("PR4");
+		}
+		if((puertaCerca.getId()=="PR4") && (habitacion == 2)){
+			puntoOpuesto = this.getCasilleroPorId("PR0");
+		}
+		if((puertaCerca.getId()=="PL0") && (habitacion == 3)){
+			puntoOpuesto = this.getCasilleroPorId("PL4");
+		}
+		if((puertaCerca.getId()=="PL4") && (habitacion == 3)){
+			puntoOpuesto = this.getCasilleroPorId("PL0");
+		}
+		
+		if((puertaCerca.getId()=="PT0") && (habitacion ==4 )){
+			puntoOpuesto = this.getCasilleroPorId("PT6");
+		}
+		if((puertaCerca.getId()=="PT1") && (habitacion ==4 )){
+			puntoOpuesto = this.getCasilleroPorId("PT6");
+		}
+		if((puertaCerca.getId()=="PT6") && (habitacion ==4 )){
+			puntoOpuesto = this.getCasilleroPorId("PT0");
+		}
+		if((puertaCerca.getId()=="GA0") && (habitacion ==5 )){
+			puntoOpuesto = this.getCasilleroPorId("GA4");
+		}
+		if((puertaCerca.getId()=="GA2") && (habitacion ==5 )){
+			puntoOpuesto = this.getCasilleroPorId("GA4");
+		}
+		if((puertaCerca.getId()=="GA5") && (habitacion ==5 )){
+			puntoOpuesto = this.getCasilleroPorId("GA0");
+		}
+		if((puertaCerca.getId()=="CO0") && (habitacion ==6 )){
+			puntoOpuesto = this.getCasilleroPorId("CO5");
+		}
+		if((puertaCerca.getId()=="C01") && (habitacion ==6 )){
+			puntoOpuesto = this.getCasilleroPorId("CO5");
+		}
+		if((puertaCerca.getId()=="C02") && (habitacion ==6 )){
+			puntoOpuesto = this.getCasilleroPorId("CO5");
+		}
+		if((puertaCerca.getId()=="CO3") && (habitacion ==6 )){
+			puntoOpuesto = this.getCasilleroPorId("CO0");
+		}
+		if((puertaCerca.getId()=="CO4") && (habitacion ==6 )){
+			puntoOpuesto = this.getCasilleroPorId("CO0");
+		}
+		if((puertaCerca.getId()=="CO5") && (habitacion ==6 )){
+			puntoOpuesto = this.getCasilleroPorId("CO0");
+		}
+		if((puertaCerca.getId()=="HR0") && (habitacion ==7 )){
+			puntoOpuesto = this.getCasilleroPorId("HR2");
+		}
+		if((puertaCerca.getId()=="BC0") && (habitacion ==8 )){
+			puntoOpuesto = this.getCasilleroPorId("BC3");
+		}
+		if((puertaCerca.getId()=="HL0") && (habitacion ==9 )){
+			puntoOpuesto = this.getCasilleroPorId("HL2");
+		}
+		if((puertaCerca.getId()=="WW") && (habitacion ==10 )){
+			puntoOpuesto = this.getCasilleroPorId("WW");
+		}
+		if((puertaCerca.getId()=="HG0") && (habitacion ==11 )){
+			puntoOpuesto = this.getCasilleroPorId("HG2");
+		}
+		if((puertaCerca.getId()=="HG4") && (habitacion ==11 )){
+			puntoOpuesto = this.getCasilleroPorId("HG2");
+		}
+		if((puertaCerca.getId()=="BG0") && (habitacion ==12 )){
+			puntoOpuesto = this.getCasilleroPorId("BG2");
+		}
+		if((puertaCerca.getId()=="KI0") && (habitacion ==13 )){
+			puntoOpuesto = this.getCasilleroPorId("KI7");
+		}
+		if((puertaCerca.getId()=="KI6") && (habitacion ==13 )){
+			puntoOpuesto = this.getCasilleroPorId("KI2");
+		}
+		if((puertaCerca.getId()=="KI10") && (habitacion ==13 )){
+			puntoOpuesto = this.getCasilleroPorId("KI3");
+		}
+		if((puertaCerca.getId()=="LI0") && (habitacion ==14 )){
+			puntoOpuesto = this.getCasilleroPorId("LI4");
+		}
+		if((puertaCerca.getId()=="LI1") && (habitacion ==14 )){
+			puntoOpuesto = this.getCasilleroPorId("LI4");
+		}
+		if((puertaCerca.getId()=="LI2") && (habitacion ==14 )){
+			puntoOpuesto = this.getCasilleroPorId("LI4");
+		}
+		if((puertaCerca.getId()=="ME0") && (habitacion ==15 )){
+			puntoOpuesto = this.getCasilleroPorId("ME4");
+		}
+		if((puertaCerca.getId()=="EN0") && (habitacion ==16 )){
+			puntoOpuesto = this.getCasilleroPorId("EN2");
+		}
+		if((puertaCerca.getId()=="EN1") && (habitacion ==16 )){
+			puntoOpuesto = this.getCasilleroPorId("EN2");
+		}
+		if((puertaCerca.getId()=="EN2") && (habitacion ==16 )){
+			puntoOpuesto = this.getCasilleroPorId("EN0");
+		}
+		if((puertaCerca.getId()=="HS0") && (habitacion ==17 )){
+			puntoOpuesto = this.getCasilleroPorId("HS3");
+		}	
+		if((puertaCerca.getId()=="HS1") && (habitacion ==17 )){
+			puntoOpuesto = this.getCasilleroPorId("HS3");
+		}	
+		if((puertaCerca.getId()=="BS0") && (habitacion ==18 )){
+			puntoOpuesto = this.getCasilleroPorId("BS1");
+		}
+		if((puertaCerca.getId()=="DE0") && (habitacion ==19 )){
+			puntoOpuesto = this.getCasilleroPorId("EN2");
+		}
+		if((puertaCerca.getId()=="DE1") && (habitacion ==19 )){
+			puntoOpuesto = this.getCasilleroPorId("EN2");
+		}
+		if((puertaCerca.getId()=="DE3") && (habitacion ==19 )){
+			puntoOpuesto = this.getCasilleroPorId("EN2");
+		}
+		if((puertaCerca.getId()=="DE4") && (habitacion ==19 )){
+			puntoOpuesto = this.getCasilleroPorId("DE17");
+		}
+		if((puertaCerca.getId()=="DE12") && (habitacion ==19 )){
+			puntoOpuesto = this.getCasilleroPorId("DE5");
+		}
+		if((puertaCerca.getId()=="DE13") && (habitacion ==19 )){
+			puntoOpuesto = this.getCasilleroPorId("DE17");
+		}
+		if((puertaCerca.getId()=="DE16") && (habitacion ==19 )){
+			puntoOpuesto = this.getCasilleroPorId("DE5");
+		}
+		if((puertaCerca.getId()=="OF") && (habitacion ==20 )){
+			puntoOpuesto = this.getCasilleroPorId("OF");
+		}
+		if((puertaCerca.getId()=="SC") && (habitacion ==21 )){
+			puntoOpuesto = this.getCasilleroPorId("SC");
+		}
+		if((puertaCerca.getId()=="SK") && (habitacion ==22 )){
+			puntoOpuesto = this.getCasilleroPorId("SK");
+		}
+		if((puertaCerca.getId()=="SD") && (habitacion ==23 )){
+			puntoOpuesto = this.getCasilleroPorId("SD");
+		}
+			
+			
+			
+			
+			
+			return puntoOpuesto;
 	}
 	
 	//////////////////////////////////////////////////////////////////

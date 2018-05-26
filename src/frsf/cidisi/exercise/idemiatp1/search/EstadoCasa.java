@@ -40,9 +40,9 @@ public class EstadoCasa extends EnvironmentState {
     	////////////////////////////////////////////////////
     	// 				INICIALIZAR EL AMBIENTE           //
     	////////////////////////////////////////////////////
-    	String posicionAgente = "SC";
-    	char orientacionAgente = 'e';
-    	String posicionUsuario = "KI10";
+    	String posicionAgente = "CO1";
+    	char orientacionAgente = 's';
+    	String posicionUsuario = "HR1";
     	
     	// Inicializamos el mapa
     	GranInit iniciar = new GranInit();

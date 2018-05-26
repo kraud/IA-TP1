@@ -37,10 +37,9 @@ public class EstadoAgente extends SearchBasedAgentState {
     	////////////////////////////////////////////////////
     	// 				INICIALIZAR EL AGENTE             //
     	////////////////////////////////////////////////////    	
-    	String origenAgente = "SC";
-    	char orientacionAgente = 'e';
-    	String metaIntermedia = "KI6";
-    	String destinoAgente = "KI0";
+    	String origenAgente = "CO1";
+    	char orientacionAgente = 's';
+    	String destinoAgente = "HR1";
 
     	
     	// Inicializamos el mapa
@@ -51,7 +50,7 @@ public class EstadoAgente extends SearchBasedAgentState {
     	this.mapa.setNodos(iniciar.getMapa().getNodos());
     	this.mapa.setAristas(iniciar.getMapa().getAristas());
     	
-    	//List<Casillero> metasAgente = this.getmapa().getMetasAgente(origenAgente, destinoAgente);
+    	List<Casillero> metasAgente = this.getmapa().getMetasAgente(origenAgente, destinoAgente);
     	
     	//Inicializamos posicion inicial del agente
     	this.posicion = this.mapa.getCasilleroPorId(origenAgente);
@@ -62,13 +61,15 @@ public class EstadoAgente extends SearchBasedAgentState {
     	
     	//Inicializamos destino del agente
     	// METODO QUE DEVUELVE CON UN DESTINO Y ORIGEN, LA META CORRESPONDIENTE EN EL CUARTO
-    	//this.destino = this.mapa.getCasilleroPorId(metasAgente.get(1).getId());
-    	this.destino = this.mapa.getCasilleroPorId(destinoAgente);
+    	this.destino = this.mapa.getCasilleroPorId(metasAgente.get(1).getId());
+    	System.out.println("DESTINO AGENTE: "+this.destino.getId());
+    	//this.destino = this.mapa.getCasilleroPorId(destinoAgente);
 
     	// Inicializamos la meta intermedia
     	// METODO QUE DEVUELVE CON UN DESTINO Y ORIGEN, LA META INTERMEDIA
-    	//this.metaIntermedia = this.getmapa().getCasilleroPorId(metasAgente.get(0).getId());
-    	this.metaIntermedia = this.getmapa().getCasilleroPorId(metaIntermedia);
+    	this.metaIntermedia = this.getmapa().getCasilleroPorId(metasAgente.get(0).getId());
+    	System.out.println("DESTINO AGENTE: "+this.metaIntermedia.getId());
+    	//this.metaIntermedia = this.getmapa().getCasilleroPorId(metaIntermedia);
 
     	// Inicializamos la ultima accion
     	this.ultimaAccion = '\n';
