@@ -19,4 +19,8 @@ public class PanelItem extends javax.swing.JPanel {
 		setOpaque(false);
 		super.paintComponent(g);
 	}
+	
+	public void setUrl(String urlNueva){
+		this.url = urlNueva;
+	}
 }

@@ -9,9 +9,12 @@ public class SmartToyMain {
         SmartToy agent = new SmartToy();
 
         Casa environment = new Casa();
-
+        // Interfaz
+        environment.getEnvironmentState().cargarMetaIntermediaYDestinoArbitrario((EstadoAgente) agent.getAgentState());
+        
         SearchBasedAgentSimulator simulator =
                 new SearchBasedAgentSimulator(environment, agent);
+        
         
         simulator.start();
     }

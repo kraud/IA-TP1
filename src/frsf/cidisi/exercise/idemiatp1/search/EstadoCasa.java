@@ -23,7 +23,7 @@ public class EstadoCasa extends EnvironmentState {
 	private VistaPrincipal ventana;
     
 	public EstadoCasa() {
-        //TODO: Complete Method -- Aca se pueden crear los nodos / e inicializar
+        //Aca se pueden crear los nodos / e inicializar
 		
 		obstaculosCasa = new ArrayList<Casillero>();
 		mapa = new GrafoCasa();
@@ -40,9 +40,11 @@ public class EstadoCasa extends EnvironmentState {
     	////////////////////////////////////////////////////
     	// 				INICIALIZAR EL AMBIENTE           //
     	////////////////////////////////////////////////////
-    	String posicionAgente = "CO1";
-    	char orientacionAgente = 's';
-    	String posicionUsuario = "HR1";
+    	String posicionAgente = "CO2";
+    	char orientacionAgente = 'o';
+    	String posicionUsuario = "PD1";
+    	////////////////////////////////////////////////////
+    	////////////////////////////////////////////////////
     	
     	// Inicializamos el mapa
     	GranInit iniciar = new GranInit();
@@ -59,21 +61,30 @@ public class EstadoCasa extends EnvironmentState {
     	this.orientacionAgente = orientacionAgente;
     	
     	//INTERFAZ
-    	List<Casillero> obstaculos = new ArrayList<Casillero>();
+    	List<Casillero> listaObstrucciones = new ArrayList<Casillero>();
     	for(Casillero n : this.getMapa().getNodos()){
     		if(n.getObstruccion() != 0){
-    			obstaculos.add(n);
+    			listaObstrucciones.add(n);
     		}
     	}
-    	ventana = new VistaPrincipal(this.posicionAgente, this.orientacionAgente, this.destinoAgente, this.getobstaculosCasa(), obstaculos);
+    	for(Casillero n : this.getMapa().getNodos()){
+    		if(n.isObstaculo()){
+    			this.obstaculosCasa.add(n);
+    		}
+    	}
+    	ventana = new VistaPrincipal(this.posicionAgente, this.orientacionAgente, this.destinoAgente, this.getobstaculosCasa(), listaObstrucciones);
+    }
+    
+    public void cargarMetaIntermediaYDestinoArbitrario(EstadoAgente agentState){
+    	ventana.cargarMetaIntermediaYDestinoArbitrario(agentState);
     }
     
     public void modificarPosicionSmartToy(Casillero destino) {
 		ventana.actualizarPosicionAuto(destino);
 	}
     
-    public void girarAgente(EstadoAgente estado, char giro) {
-		ventana.girarAgente(estado, giro);
+    public void girarAgente(EstadoAgente estado) {
+		ventana.girarAgente(estado);
 	}
     
 

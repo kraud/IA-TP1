@@ -17,9 +17,10 @@ public class ObjetivoSmartToy extends GoalTest {
     @Override
     public boolean isGoalState (AgentState agentState) {
     	EstadoAgente estado = (EstadoAgente) agentState;
+    	enZonaCercana = estado.getposicion().getId().substring(0,2).equals(estado.getdestino().getId().substring(0,2));
     	if(!flag){
     		if(contador<1){ // vuelve a cero cuando ademas de haber pasado por la metaIntermedia, estoy en la zona intermedia y alcance el destino o al usuario
-        		metaIntermedia = estado.getposicion().getId().equals(estado.getMetaIntermedia().getId());
+        		metaIntermedia = (estado.getposicion().getId().equals(estado.getMetaIntermedia().getId()) || enZonaCercana); // una vez dentro de la habitacion correspondiente, deja de fijarse si pasa por la puerta y en corrobora que este dentro de la habitacion
         		if(metaIntermedia){
         			System.out.println("SMART TOY LLEGO A LA META INTERMEDIA.");
         			contador++;

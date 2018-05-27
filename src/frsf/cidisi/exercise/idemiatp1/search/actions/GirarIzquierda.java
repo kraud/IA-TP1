@@ -68,7 +68,7 @@ public class GirarIzquierda extends SearchAction {
         					environmentState.setOrientacionAgente('n');
         					break;
         	}
-        	//environmentState.girarAgente(agState, 'i');
+        	environmentState.girarAgente(agState);
         	agState.setUltimaAccion('g');
             return environmentState;
         }

@@ -37,10 +37,11 @@ public class EstadoAgente extends SearchBasedAgentState {
     	////////////////////////////////////////////////////
     	// 				INICIALIZAR EL AGENTE             //
     	////////////////////////////////////////////////////    	
-    	String origenAgente = "CO1";
-    	char orientacionAgente = 's';
-    	String destinoAgente = "HR1";
-
+    	String origenAgente = "CO2";
+    	char orientacionAgente = 'o';
+    	String destinoAgente = "PD1";
+    	////////////////////////////////////////////////////
+    	////////////////////////////////////////////////////
     	
     	// Inicializamos el mapa
 		this.setmapa(new GrafoCasa());
@@ -159,6 +160,7 @@ public class EstadoAgente extends SearchBasedAgentState {
     	SmartToyPerception percepcion = (SmartToyPerception) p;
     	Casillero siguienteCasillero = percepcion.getProximoNodo(); // Este Casillero 'sabe' si es un OBSTACULO o si tiene una OBSTRUCCION. Viene desde el Mapa del EstadoAmbiente
     	List<Casillero> nodosMapaAgente = this.getmapa().getNodos();
+    	List<Arco> arcosMapaAgente = this.getmapa().getAristas();
 		
     	if(siguienteCasillero != null){
     		// actualizamos el mapa del EstadoAgente en caso de que haya un obstaculo
@@ -169,9 +171,18 @@ public class EstadoAgente extends SearchBasedAgentState {
     			for(Casillero cas : nodosMapaAgente){
     				if(cas.getId().equals(siguienteCasillero.getId())){
     					cas.setObstaculo(true);
-    					// TODO: AGREGAR EL OBSTACULO EN LA LISTA DE ARISTAS.
     				}
     			}
+    			// agrego informacion en los arcos
+    			for(Arco arc : arcosMapaAgente){
+    				if(arc.getExtremoA().getId().equals(siguienteCasillero.getId())){
+    					arc.getExtremoA().setObstaculo(true);
+    				}
+    				if(arc.getExtremoB().getId().equals(siguienteCasillero.getId())){
+    					arc.getExtremoB().setObstaculo(true);
+    				}
+    			}
+    			
     		
     		}
     		// actualizamos el mapa del EstadoAgente en caso de que haya una obstruccion
@@ -181,7 +192,16 @@ public class EstadoAgente extends SearchBasedAgentState {
     					cas.setObstruccion(siguienteCasillero.getObstruccion());
     				}
     			}
+    			for(Arco arc : arcosMapaAgente){
+    				if(arc.getExtremoA().getId().equals(siguienteCasillero.getId())){
+    					arc.getExtremoA().setObstruccion(siguienteCasillero.getObstruccion());
+    				}
+    				if(arc.getExtremoB().getId().equals(siguienteCasillero.getId())){
+    					arc.getExtremoB().setObstruccion(siguienteCasillero.getObstruccion());
+    				}
+    			}
     		}
+    		
     	}
     	else{
     		System.out.println("En " + this.getposicion().getId() + " mirando al " + this.getorientacion() +  " no hay proximo.");

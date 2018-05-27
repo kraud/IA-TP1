@@ -25,11 +25,18 @@ public class Avanzar extends SearchAction {
         // PostConditions: null
         
         Casillero proximoNodo = agState.getmapa().proximoEnDireccion(agState.getposicion(), agState.getorientacion());
-        boolean obstaculizado = agState.getobstaculos().contains(proximoNodo); // revisa si objeto pertenece a la lista. Puede ser que nunca de verdadero. Revisar por ID
-
+        boolean obstaculizado = false;
+        if(proximoNodo != null){
+	        for(Casillero aux : agState.getobstaculos()){
+	        	if(aux.getId().equals(proximoNodo.getId())){
+	        		obstaculizado = true;
+	        	}
+	        }
+        }
+        
     	System.out.println("Pienso en avanzar en " + agState.getposicion().getId() + ", hacia " + agState.getorientacion() + ".");
         if(proximoNodo!=null && !obstaculizado){
-        	// proximoNodo.setVisitado(true);
+        	proximoNodo.setVisitado(true);
         	agState.getmapa().getCasilleroPorId(proximoNodo.getId()).setVisitado(true); // Marco como visitado el NODO en el mapa DEL AGENTE
         	
         	// Al parecer los extremos de los arcos NO son punteros a los nodos del mapa, asique los modifico manualmente
@@ -56,9 +63,17 @@ public class Avanzar extends SearchAction {
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
         EstadoCasa environmentState = (EstadoCasa) est;
         EstadoAgente agState = ((EstadoAgente) ast);
-
+        
         Casillero proximoNodo = agState.getmapa().proximoEnDireccion(agState.getposicion(), agState.getorientacion());
-        boolean obstaculizado = agState.getobstaculos().contains(proximoNodo);
+        
+        boolean obstaculizado = false;
+        if(proximoNodo != null){
+	        for(Casillero aux : agState.getobstaculos()){
+	        	if(aux.getId().equals(proximoNodo.getId())){
+	        		obstaculizado = true;
+	        	}
+	        }
+        }
         
         // TODO: Use this conditions
         // PreConditions: null

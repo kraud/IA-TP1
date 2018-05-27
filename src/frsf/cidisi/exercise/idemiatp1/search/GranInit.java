@@ -113,11 +113,11 @@ public class GranInit {
 		nodos.add(pd4);
 		
 		List<Double> pd5Coord = Arrays.asList(3.5, 5.5);
-		Casillero pd5 = new Casillero("PD5",1.0,false,0,pd5Coord);
+		Casillero pd5 = new Casillero("PD5",1.0,false,1,pd5Coord);
 		nodos.add(pd5);
 		
 		List<Double> pd6Coord = Arrays.asList(3.5, 9.0);
-		Casillero pd6 = new Casillero("PD6",1.0,false,0,pd6Coord);
+		Casillero pd6 = new Casillero("PD6",1.0,false,1,pd6Coord);
 		nodos.add(pd6);
 		
 		List<Double> pd7Coord = Arrays.asList(3.5, 11.5);
@@ -233,7 +233,7 @@ public class GranInit {
 		nodos.add(ga4);
 		
 		List<Double> ga5Coord = Arrays.asList(5.5, 11.5);
-		Casillero ga5 = new Casillero("GA5",1.0,false,0,ga5Coord);
+		Casillero ga5 = new Casillero("GA5",1.0,true,0,ga5Coord);
 		nodos.add(ga5);
 		
 		//nodos corredor

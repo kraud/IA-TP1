@@ -63,7 +63,7 @@ public class GirarDerecha extends SearchAction {
         					environmentState.setOrientacionAgente('s');
         					break;
         	}
-        	//environmentState.girarAgente(agState, 'd');
+        	environmentState.girarAgente(agState);
         	agState.setUltimaAccion('g');
             return environmentState;
         }
