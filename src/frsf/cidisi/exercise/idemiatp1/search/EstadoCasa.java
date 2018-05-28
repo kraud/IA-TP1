@@ -40,9 +40,9 @@ public class EstadoCasa extends EnvironmentState {
     	////////////////////////////////////////////////////
     	// 				INICIALIZAR EL AMBIENTE           //
     	////////////////////////////////////////////////////
-    	String posicionAgente = "CO2";
-    	char orientacionAgente = 'o';
-    	String posicionUsuario = "PD1";
+    	String posicionAgente = "EN1";
+    	char orientacionAgente = 'e';
+    	String posicionUsuario = "DE9";
     	////////////////////////////////////////////////////
     	////////////////////////////////////////////////////
     	

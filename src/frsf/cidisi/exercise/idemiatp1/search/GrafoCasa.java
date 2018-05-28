@@ -421,13 +421,13 @@ public class GrafoCasa {
 			puntoOpuesto = this.getCasilleroPorId("BS1");
 		}
 		if((puertaCerca.getId()=="DE0") && (habitacion ==19 )){
-			puntoOpuesto = this.getCasilleroPorId("EN2");
+			puntoOpuesto = this.getCasilleroPorId("DE12");
 		}
 		if((puertaCerca.getId()=="DE1") && (habitacion ==19 )){
-			puntoOpuesto = this.getCasilleroPorId("EN2");
+			puntoOpuesto = this.getCasilleroPorId("DE8");
 		}
 		if((puertaCerca.getId()=="DE3") && (habitacion ==19 )){
-			puntoOpuesto = this.getCasilleroPorId("EN2");
+			puntoOpuesto = this.getCasilleroPorId("DE11");
 		}
 		if((puertaCerca.getId()=="DE4") && (habitacion ==19 )){
 			puntoOpuesto = this.getCasilleroPorId("DE17");

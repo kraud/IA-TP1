@@ -37,9 +37,9 @@ public class EstadoAgente extends SearchBasedAgentState {
     	////////////////////////////////////////////////////
     	// 				INICIALIZAR EL AGENTE             //
     	////////////////////////////////////////////////////    	
-    	String origenAgente = "CO2";
-    	char orientacionAgente = 'o';
-    	String destinoAgente = "PD1";
+    	String origenAgente = "EN1";
+    	char orientacionAgente = 'e';
+    	String destinoAgente = "DE9";
     	////////////////////////////////////////////////////
     	////////////////////////////////////////////////////
     	
